@@ -27,6 +27,7 @@ namespace ProyectoFinal
             tbSex.Text = Convert.ToString(modifyChild.GetSex());
             tbSurnames.Text = modifyChild.GetSurname();
             tbObservation.Text = modifyChild.GetObservations();
+
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
@@ -37,6 +38,17 @@ namespace ProyectoFinal
         private void tbSex_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btOK_Click(object sender, EventArgs e)
+        {
+            ModifyChild child = new ModifyChild();
+            Child modifiedChild = new Child(Convert.ToInt32(tbCod.Text),
+                tbName.Text,tbSurnames.Text,Convert.ToChar(tbSex.Text), 
+                Convert.ToInt32(tbAge.Text),tbObservation.Text,
+                clbVegFrt.Text);
+            child.SetModifiedChild(modifiedChild,child.GetIndex());
+            this.Close();
         }
     }
 }

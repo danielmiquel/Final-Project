@@ -19,6 +19,11 @@ namespace ProyectoFinal
             return listChildren;
         }
 
+        public void SetList(List<Child> list)
+        {
+            listChildren = list;
+        }
+
         public int CompareChildren(Child c1,Child c2)
         {
             return c1.GetCod() - c2.GetCod();

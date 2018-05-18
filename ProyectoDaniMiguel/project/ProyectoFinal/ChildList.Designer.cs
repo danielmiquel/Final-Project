@@ -35,6 +35,7 @@
             this.btShow = new System.Windows.Forms.Button();
             this.btNormalDiet = new System.Windows.Forms.Button();
             this.btAllergiesDiet = new System.Windows.Forms.Button();
+            this.btRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btAdd
@@ -104,11 +105,22 @@
             this.btAllergiesDiet.UseVisualStyleBackColor = true;
             this.btAllergiesDiet.Click += new System.EventHandler(this.btAllergiesDiet_Click);
             // 
+            // btRefresh
+            // 
+            this.btRefresh.Location = new System.Drawing.Point(27, 28);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btRefresh.TabIndex = 7;
+            this.btRefresh.Text = "Refresh";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
             // ChildList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.btRefresh);
             this.Controls.Add(this.btAllergiesDiet);
             this.Controls.Add(this.btNormalDiet);
             this.Controls.Add(this.btShow);
@@ -133,5 +145,6 @@
         private System.Windows.Forms.Button btShow;
         private System.Windows.Forms.Button btNormalDiet;
         private System.Windows.Forms.Button btAllergiesDiet;
+        private System.Windows.Forms.Button btRefresh;
     }
 }

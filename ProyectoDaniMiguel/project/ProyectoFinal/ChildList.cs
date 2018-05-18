@@ -63,13 +63,18 @@ namespace ProyectoFinal
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            if(clbChildren.SelectedIndex != null)
+            if(clbChildren.CheckedItems.Count > 0)
             {
                 ListOfChild list = new ListOfChild();
                 list.listChildren.RemoveAt(clbChildren.SelectedIndex);
                 list.SaveListOfChildren();
                 clbChildren.Items.RemoveAt(clbChildren.SelectedIndex);
             }
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
         }
     }
 }

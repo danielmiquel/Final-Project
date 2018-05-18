@@ -91,6 +91,7 @@
             this.btOK.TabIndex = 62;
             this.btOK.Text = "OK";
             this.btOK.UseVisualStyleBackColor = true;
+            this.btOK.Click += new System.EventHandler(this.btOK_Click);
             // 
             // lbAllergy
             // 
