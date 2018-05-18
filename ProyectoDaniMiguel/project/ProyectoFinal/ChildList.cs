@@ -31,12 +31,24 @@ namespace ProyectoFinal
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            if (clbChildren.SelectedIndex == 1)
+            
+            if (clbChildren.CheckedItems.Count == 1)
             {
                 ModifyChild m = new ModifyChild();
                 m.SetIndex(clbChildren.SelectedIndex);
+                fEdit.Show();
             }
-            fEdit.Show();
+            else if(clbChildren.CheckedItems.Count == 0)
+            {
+                WarningNotSelct w = new WarningNotSelct();
+                w.Show();
+            }
+            else
+            {
+                WarningSelectOnlyOne w = new WarningSelectOnlyOne();
+                w.Show();
+            }
+            
         }
 
         private void clbChildren_SelectedIndexChanged(object sender, EventArgs e)

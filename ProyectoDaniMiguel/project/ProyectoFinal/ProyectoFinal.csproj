@@ -79,6 +79,18 @@
     <Compile Include="ModifyChild.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WarningChildNotSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningChildNotSelect.Designer.cs">
+      <DependentUpon>WarningChildNotSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarningSelectOnlyOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningSelectOnlyOne.Designer.cs">
+      <DependentUpon>WarningSelectOnlyOne.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChildList.resx">
       <DependentUpon>ChildList.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +113,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WarningChildNotSelect.resx">
+      <DependentUpon>WarningChildNotSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarningSelectOnlyOne.resx">
+      <DependentUpon>WarningSelectOnlyOne.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
