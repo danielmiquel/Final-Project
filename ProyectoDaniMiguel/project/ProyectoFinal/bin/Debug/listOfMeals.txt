@@ -1,0 +1,3 @@
+lunch|apple,pine|puree|apple,pine
+breakfast|carne de pollo|cocido|ninguna
+snack|patatas hervidas|tortilla|huevo
