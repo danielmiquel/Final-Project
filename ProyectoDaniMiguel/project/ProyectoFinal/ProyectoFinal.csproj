@@ -60,8 +60,15 @@
     <Compile Include="Diet.Designer.cs">
       <DependentUpon>Diet.cs</DependentUpon>
     </Compile>
+    <Compile Include="DietSpecificForChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DietSpecificForChild.Designer.cs">
+      <DependentUpon>DietSpecificForChild.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileChild.cs" />
     <Compile Include="FileMeals.cs" />
+    <Compile Include="FoodSelection.cs" />
     <Compile Include="FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +83,7 @@
     </Compile>
     <Compile Include="ListOfChild.cs" />
     <Compile Include="ListOfMeals.cs" />
-    <Compile Include="Meals.cs" />
+    <Compile Include="Meal.cs" />
     <Compile Include="ModifyChild.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Diet.resx">
       <DependentUpon>Diet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DietSpecificForChild.resx">
+      <DependentUpon>DietSpecificForChild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>

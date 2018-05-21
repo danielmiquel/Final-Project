@@ -1,3 +1,9 @@
-lunch|apple,pine|puree|apple,pine
-breakfast|carne de pollo|cocido|ninguna
-snack|patatas hervidas|tortilla|huevo
+breakfast|apple,pine|fruit puree|apple,pine
+breakfast|milk|milk|lactose,apple
+breakfast|cereals,milk|creals with milk|lactose
+lunch|carrots,tomato|raw carrots with tomato in cubes|carrots,tomato
+lunch|chicken|cooked chicken|ckicken
+lunch|hake|grilled hake|fish
+snack|yogurt|whole yogurt|lactose
+snack|orange|orange cut into eights or cubes|orange
+snack|pear|pear puree|pear

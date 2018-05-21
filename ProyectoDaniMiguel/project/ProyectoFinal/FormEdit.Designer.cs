@@ -56,6 +56,7 @@
             "Apple",
             "Carrot",
             "Celery",
+            "Chicken",
             "Eggs",
             "Fish",
             "Leek",

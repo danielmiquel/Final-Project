@@ -91,5 +91,13 @@
         {
             allergies = newAllergy;
         }
+
+        //Function that changes from a string to an 
+        //array in order to work with allergies
+        public string[] GetArrayAllergies()
+        {
+            string[] allergies = GetAllergies().Split(',');
+            return allergies;
+        }
     }
 }

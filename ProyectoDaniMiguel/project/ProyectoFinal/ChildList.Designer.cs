@@ -94,6 +94,7 @@
             this.btNormalDiet.TabIndex = 5;
             this.btNormalDiet.Text = "Diet";
             this.btNormalDiet.UseVisualStyleBackColor = true;
+            this.btNormalDiet.Click += new System.EventHandler(this.btNormalDiet_Click);
             // 
             // btAllergiesDiet
             // 

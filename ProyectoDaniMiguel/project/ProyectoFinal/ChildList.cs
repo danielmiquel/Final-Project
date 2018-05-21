@@ -6,7 +6,7 @@ namespace ProyectoFinal
     public partial class ChildList : Form
     {
         FormAdd fAdd = new FormAdd();
-        FormEdit fEdit = new FormEdit();
+        DietSpecificForChild fDietAll = new DietSpecificForChild();
         Diet fDiet = new Diet();
 
         public ChildList()
@@ -29,11 +29,14 @@ namespace ProyectoFinal
             fAdd.Show();
         }
 
+        //Conditions for edit a child,if the condition is not met, 
+        //an alert message will be
         private void btEdit_Click(object sender, EventArgs e)
         {
             
             if (clbChildren.CheckedItems.Count == 1)
             {
+                FormEdit fEdit = new FormEdit();
                 ModifyChild m = new ModifyChild();
                 m.SetIndex(clbChildren.SelectedIndex);
                 fEdit.Show();
@@ -58,7 +61,7 @@ namespace ProyectoFinal
 
         private void btAllergiesDiet_Click(object sender, EventArgs e)
         {
-            fDiet.Show();
+            fDietAll.Show();
         }
 
         private void btDelete_Click(object sender, EventArgs e)
@@ -74,7 +77,17 @@ namespace ProyectoFinal
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            ListOfChild listChildren = new ListOfChild();
+            clbChildren.Items.Clear();
+            foreach (string i in listChildren.ListForShow())
+            {
+                clbChildren.Items.Add(i);
+            }
+        }
+
+        private void btNormalDiet_Click(object sender, EventArgs e)
+        {
+            fDiet.Show();
         }
     }
 }

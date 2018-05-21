@@ -1,13 +1,13 @@
 ﻿namespace ProyectoFinal
 {
-    class Meals
+    class Meal
     {
         protected string foodType;
         protected string dish;
         protected string foodstuff;
         protected string allergies;
 
-        public Meals(string foodType,string dish,string foodstuff,string allergies)
+        public Meal(string foodType,string dish,string foodstuff,string allergies)
         {
             this.foodType = foodType;
             this.dish = dish;
@@ -54,7 +54,18 @@
         {
             foodType = newFoodType;
         }
-        
+
+        public string[] GetArrayAllergies()
+        {
+            string[] allergies = GetAllergies().Split(',');
+            return allergies;
+        }
+
+        public string GetFood()
+        {
+            return "Dish: "+dish+"   Foodstruff: "
+                +foodstuff+"   Allergies: "+allergies;
+        }
     }
 }
 
