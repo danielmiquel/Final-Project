@@ -7,11 +7,10 @@ namespace ProyectoFinal
     //Class to select meals according to the time of day
     class FoodSelection
     {
-        protected List<Child> children;
-        protected List<Meal> meals;
-        ListOfChild listC = new ListOfChild();
-        ListOfMeals listM = new ListOfMeals();
-        Random rnd = new Random();
+        protected int index;
+        protected ListOfChild listC = new ListOfChild();
+        protected ListOfMeals listM = new ListOfMeals();
+        protected Random rnd = new Random();
         
         public FoodSelection() { }
 
@@ -29,6 +28,18 @@ namespace ProyectoFinal
         public string GetSnack()
         {
             return FoodForShow(listM.GetSnackFood());
+        }
+
+        //Return index of child to modify
+        public int GetIndex()
+        {
+            return index;
+        }
+
+        //set the index of child to modify
+        public void SetIndex(int newIndex)
+        {
+            this.index = newIndex;
         }
 
         //Function to take a meal randomly
@@ -53,8 +64,9 @@ namespace ProyectoFinal
         }
 
         //Function that chooses a meal according to a child's allergies
-        public string SelectFoodForChild(Child c,List<Meal> m)
+        public string SelectFoodForChild(List<Meal> m)
         {
+            Child c = listC.GetChildOfList(index);
             int cont = 0;
             bool found = false;
             do

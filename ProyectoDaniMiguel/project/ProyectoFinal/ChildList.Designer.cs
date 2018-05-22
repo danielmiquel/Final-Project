@@ -85,6 +85,7 @@
             this.btShow.TabIndex = 4;
             this.btShow.Text = "Show";
             this.btShow.UseVisualStyleBackColor = true;
+            this.btShow.Click += new System.EventHandler(this.btShow_Click);
             // 
             // btNormalDiet
             // 

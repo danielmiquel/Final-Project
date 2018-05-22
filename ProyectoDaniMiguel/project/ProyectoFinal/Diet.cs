@@ -5,6 +5,10 @@ namespace ProyectoFinal
 {
     public partial class Diet : Form
     {
+        protected string breakfast;
+        protected string lunch;
+        protected string snack;
+
         public Diet()
         {
             InitializeComponent();
@@ -12,11 +16,22 @@ namespace ProyectoFinal
 
         private void Diet_Load(object sender, EventArgs e)
         {
-            FoodSelection food = new FoodSelection();
-            tbBreak.Text = food.GetBreakfast();
-            tbLunch.Text = food.GetLunch();
-            tbSnack.Text = food.GetSnack();
-            
+            if (breakfast == null && lunch == null && snack == null)
+            {
+                FoodSelection food = new FoodSelection();
+                tbBreak.Text = food.GetBreakfast();
+                tbLunch.Text = food.GetLunch();
+                tbSnack.Text = food.GetSnack();
+                breakfast = food.GetBreakfast();
+                lunch = food.GetLunch();
+                snack = food.GetSnack();
+            }
+            else
+            {
+                tbBreak.Text = breakfast;
+                tbLunch.Text = lunch;
+                tbSnack.Text = snack;
+            }
         }
 
         private void btOk_Click(object sender, EventArgs e)
@@ -46,6 +61,9 @@ namespace ProyectoFinal
             tbBreak.Text = food.GetBreakfast();
             tbLunch.Text = food.GetLunch();
             tbSnack.Text = food.GetSnack();
+            breakfast = food.GetBreakfast();
+            lunch = food.GetLunch();
+            snack = food.GetSnack();
         }
     }
 }

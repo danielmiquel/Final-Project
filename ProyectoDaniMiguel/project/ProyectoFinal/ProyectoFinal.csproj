@@ -67,6 +67,7 @@
       <DependentUpon>DietSpecificForChild.cs</DependentUpon>
     </Compile>
     <Compile Include="FileChild.cs" />
+    <Compile Include="FileInformationOfDay.cs" />
     <Compile Include="FileMeals.cs" />
     <Compile Include="FoodSelection.cs" />
     <Compile Include="FormAdd.cs">
@@ -81,12 +82,26 @@
     <Compile Include="FormEdit.Designer.cs">
       <DependentUpon>FormEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListInformationOfDay.cs" />
     <Compile Include="ListOfChild.cs" />
     <Compile Include="ListOfMeals.cs" />
     <Compile Include="Meal.cs" />
     <Compile Include="ModifyChild.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowChild.Designer.cs">
+      <DependentUpon>ShowChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowInformationOfDay.cs" />
+    <Compile Include="Warning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warning.Designer.cs">
+      <DependentUpon>Warning.cs</DependentUpon>
+    </Compile>
     <Compile Include="WarningChildNotSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +139,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShowChild.resx">
+      <DependentUpon>ShowChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warning.resx">
+      <DependentUpon>Warning.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarningChildNotSelect.resx">
       <DependentUpon>WarningChildNotSelect.cs</DependentUpon>
     </EmbeddedResource>

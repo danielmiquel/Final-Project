@@ -27,8 +27,11 @@ namespace ProyectoFinal
             FoodSelection food = new FoodSelection();
             ListOfChild child = new ListOfChild();
             ListOfMeals m = new ListOfMeals();
-            Child c = child.GetChildOfList(0);
-            label1.Text =   food.SelectFoodForChild(c, m.GetBreakfastFood());
+            Child c = child.GetChildOfList(food.GetIndex());
+            lbInfoChild.Text = c.GetCod().ToString()+"--"+ c.GetName() + " " + c.GetSurname();
+            tbBreak.Text = food.SelectFoodForChild(m.GetBreakfastFood());
+            tbLunch.Text = food.SelectFoodForChild( m.GetLunchFood());
+            tbSnack.Text = food.SelectFoodForChild(m.GetSnackFood());
         }
     }
 }

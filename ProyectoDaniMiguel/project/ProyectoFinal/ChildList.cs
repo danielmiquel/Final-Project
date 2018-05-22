@@ -7,7 +7,7 @@ namespace ProyectoFinal
     {
         FormAdd fAdd = new FormAdd();
         DietSpecificForChild fDietAll = new DietSpecificForChild();
-        Diet fDiet = new Diet();
+        
 
         public ChildList()
         {
@@ -33,25 +33,31 @@ namespace ProyectoFinal
         //an alert message will be
         private void btEdit_Click(object sender, EventArgs e)
         {
-            
-            if (clbChildren.CheckedItems.Count == 1)
+            try
             {
-                FormEdit fEdit = new FormEdit();
-                ModifyChild m = new ModifyChild();
-                m.SetIndex(clbChildren.SelectedIndex);
-                fEdit.Show();
+                if (clbChildren.CheckedItems.Count == 1)
+                {
+                    FormEdit fEdit = new FormEdit();
+                    ModifyChild m = new ModifyChild();
+                    m.SetIndex(clbChildren.SelectedIndex);
+                    fEdit.Show();
+                }
+                else if (clbChildren.CheckedItems.Count == 0)
+                {
+                    WarningNotSelct w = new WarningNotSelct();
+                    w.Show();
+                }
+                else
+                {
+                    WarningSelectOnlyOne w = new WarningSelectOnlyOne();
+                    w.Show();
+                }
             }
-            else if(clbChildren.CheckedItems.Count == 0)
+            catch (Exception)
             {
-                WarningNotSelct w = new WarningNotSelct();
+                Warning w = new Warning();
                 w.Show();
             }
-            else
-            {
-                WarningSelectOnlyOne w = new WarningSelectOnlyOne();
-                w.Show();
-            }
-            
         }
 
         private void clbChildren_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +67,31 @@ namespace ProyectoFinal
 
         private void btAllergiesDiet_Click(object sender, EventArgs e)
         {
-            fDietAll.Show();
+            try
+            {
+                if (clbChildren.CheckedItems.Count == 1)
+                {
+                    DietSpecificForChild fDietAll = new DietSpecificForChild();
+                    FoodSelection food = new FoodSelection();
+                    food.SetIndex(clbChildren.SelectedIndex);
+                    fDietAll.Show();
+                }
+                else if (clbChildren.CheckedItems.Count == 0)
+                {
+                    WarningNotSelct w = new WarningNotSelct();
+                    w.Show();
+                }
+                else
+                {
+                    WarningSelectOnlyOne w = new WarningSelectOnlyOne();
+                    w.Show();
+                }
+            }
+            catch (Exception)
+            {
+                Warning w = new Warning();
+                w.Show();
+            }
         }
 
         private void btDelete_Click(object sender, EventArgs e)
@@ -87,7 +117,22 @@ namespace ProyectoFinal
 
         private void btNormalDiet_Click(object sender, EventArgs e)
         {
-            fDiet.Show();
+            try
+            {
+                Diet fDiet = new Diet();
+                fDiet.Show();
+            }
+            catch (Exception)
+            {
+                Warning w = new Warning();
+                w.Show();
+            }
+        }
+
+        private void btShow_Click(object sender, EventArgs e)
+        {
+            ShowChild sForm = new ShowChild();
+            sForm.Show();
         }
     }
 }
