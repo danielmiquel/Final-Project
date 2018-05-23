@@ -6,16 +6,16 @@ using System.Collections.Generic;
 
 namespace ProyectoFinal
 {
-    class ModifyChild
+    public class ModifyChild
     {
-        protected  int index;
-        protected List<Child> listChildren;
+        public  int index;
+        public List<Child> listChildren;
 
         public ModifyChild()
         {
         }
 
-        public ListOfChild ModList(ListOfChild listChild)
+        public ListOfChildren ModList(ListOfChildren listChild)
         {
             return listChild;
         }
@@ -35,15 +35,15 @@ namespace ProyectoFinal
         //Return the current list
         public List<Child> GetListChildren()
         {
-            ListOfChild list = new ListOfChild();
+            ListOfChildren list = new ListOfChildren();
             return list.GetList();
         }
 
         //Return the select child  for modify
-        public Child GetSelectChild()
+        public Child GetSelectChild(int i)
         {
             listChildren = GetListChildren();
-            return listChildren[index];
+            return listChildren[i];
         }
 
         //Insert the modified child in list and save
@@ -52,7 +52,7 @@ namespace ProyectoFinal
             listChildren = GetListChildren();
             listChildren.RemoveAt(i);
             listChildren.Insert(i, c);
-            ListOfChild save = new ListOfChild();
+            ListOfChildren save = new ListOfChildren();
             save.SetList(listChildren);
             save.SaveListOfChildren();
         }

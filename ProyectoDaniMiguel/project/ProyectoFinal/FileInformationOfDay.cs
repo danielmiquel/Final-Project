@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal
 {
-    class FileInformationOfDay
+    class FileInformationOfDay : Files
     {
-        public void SaveInfo(List<Information> listSave)
+        protected List<Information> listInfo;
+
+        public override void Save()
         {
             try
             {
-                if (!File.Exists("lisInformationOfDay.txt"))
-                    Console.WriteLine("Eror,file not found");
-
                 StreamWriter file = File.CreateText("lisInformationOfDay.txt");
 
-                foreach (Information i in listSave)
+                foreach (Information i in listInfo)
                 {
-                    file.WriteLine(i.child + "|" + i.meal + "|" + i.day + "|"
+                    file.WriteLine(i.child.GetCod() + "|" + i.meal + "|" + i.day + "|"
                         + i.eatAmoutB + "|" + i.eatAmoutL
                         + "|" + i.eatAmoutS + "|" + i.depositionsMor
                         + "|" + i.depositionsAft + "|" + i.sleepMor + "|"
@@ -36,9 +35,9 @@ namespace ProyectoFinal
 
         }
 
-        public List<Information> LoadInfo()
+        public override void Load()
         {
-            List<Information> listLoadInfo = new List<Information>();
+            List<Information> list = new List<Information>();
 
             try
             {
@@ -46,6 +45,7 @@ namespace ProyectoFinal
                 string[] data = new string[14];
                 string line;
                 Information info;
+                ListOfChildren listChildren = new ListOfChildren();
 
                 do
                 {
@@ -53,9 +53,10 @@ namespace ProyectoFinal
                     if (line != null)
                     {
                         data = line.Split('|');
-                        info.child = data[0];
+                        info.child = listChildren.GetChildOfList
+                            (Convert.ToInt32(data[0]));
                         info.meal = data[1];
-                        info.day = data[2];
+                        info.day = Convert.ToDateTime(data[2]);
                         info.eatAmoutB = Convert.ToInt32(data[3]);
                         info.eatAmoutL = Convert.ToInt32(data[4]);
                         info.eatAmoutS = Convert.ToInt32(data[5]);
@@ -67,7 +68,7 @@ namespace ProyectoFinal
                         info.timeSleepAft = data[11];
                         info.messageForHome = data[12];
                         info.messageForSchool = data[13];
-                        listLoadInfo.Add(info);
+                        list.Add(info);
                     }
                 } while (line != null);
                 file.Close();
@@ -78,7 +79,17 @@ namespace ProyectoFinal
                 Console.WriteLine("Eror: " + e.Message);
             }
 
-            return listLoadInfo;
+            listInfo = list;
+        }
+
+        public List<Information> GetList()
+        {
+            return listInfo;
+        }
+
+        public void SetList(List<Information> l)
+        {
+            listInfo = l;
         }
     }
 }

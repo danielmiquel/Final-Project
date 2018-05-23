@@ -55,6 +55,7 @@
             this.btChange.TabIndex = 15;
             this.btChange.Text = "Change";
             this.btChange.UseVisualStyleBackColor = true;
+            this.btChange.Click += new System.EventHandler(this.btChange_Click);
             // 
             // btOk
             // 
@@ -64,6 +65,7 @@
             this.btOk.TabIndex = 14;
             this.btOk.Text = "Ok";
             this.btOk.UseVisualStyleBackColor = true;
+            this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
             // label3
             // 

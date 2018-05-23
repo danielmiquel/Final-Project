@@ -4,9 +4,11 @@ using System.IO;
 
 namespace ProyectoFinal
 {
-    class FileMeals
+    class FileMeals : Files
     {
-        public void SaveMeals(List<Meal> listSave)
+        protected List<Meal> listMeals;
+
+        public override void Save()
         {
             try
             {
@@ -15,7 +17,7 @@ namespace ProyectoFinal
 
                 StreamWriter file = File.AppendText("lisOfMeals.txt");
 
-                foreach (Meal i in listSave)
+                foreach (Meal i in listMeals)
                 {
                     file.WriteLine(i.GetFoodType()+"|"+i.GetFoodstuff() 
                         + "|" + i.GetDish()+ "|" + i.GetAllergies());
@@ -28,9 +30,9 @@ namespace ProyectoFinal
             }
         }
 
-        public List<Meal> LoadMeals()
+        public override void Load()
         {
-            List<Meal> listLoadMeals = new List<Meal>();
+            List<Meal> list= new List<Meal>();
 
             try
             {
@@ -46,7 +48,7 @@ namespace ProyectoFinal
                     {
                         data = line.Split('|');
                         meal = new Meal(data[0],data[1],data[2],data[3]);
-                        listLoadMeals.Add(meal);
+                        list.Add(meal);
                     }
                 } while (line != null);
                 file.Close();
@@ -57,7 +59,17 @@ namespace ProyectoFinal
                 Console.WriteLine("Eror: " + e.Message);
             }
 
-            return listLoadMeals;
+            listMeals = list;
+        }
+
+        public List<Meal> GetList()
+        {
+            return listMeals;
+        }
+
+        public void SetList(List<Meal> l)
+        {
+            listMeals = l;
         }
     }
 }

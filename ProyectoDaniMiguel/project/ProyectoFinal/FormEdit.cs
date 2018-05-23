@@ -12,15 +12,18 @@ namespace ProyectoFinal
 {
     public partial class FormEdit : Form
     {
-        public FormEdit()
+        private int index;
+        public FormEdit(int c)
         {
             InitializeComponent();
+            index = c;
         }
 
         private void FormEdit_Load(object sender, EventArgs e)
         {
+            
             ModifyChild child = new ModifyChild();
-            Child modifyChild = child.GetSelectChild();
+            Child modifyChild = child.GetSelectChild(index);
             string[] allergies = modifyChild.GetArrayAllergies();
 
             tbAge.Text =Convert.ToString(modifyChild.GetAge());
@@ -28,7 +31,7 @@ namespace ProyectoFinal
             tbCod.Text = Convert.ToString(modifyChild.GetCod());
             tbSex.Text = Convert.ToString(modifyChild.GetSex());
             tbSurnames.Text = modifyChild.GetSurname();
-            tbObservation.Text = modifyChild.GetObservations();
+            tbObservation.Text = modifyChild.GetObservations()+index;
 
             //Convert an array of string into corresponding 
             //checked boxes in the checkBox

@@ -66,6 +66,7 @@
     <Compile Include="DietSpecificForChild.Designer.cs">
       <DependentUpon>DietSpecificForChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Files.cs" />
     <Compile Include="FileChild.cs" />
     <Compile Include="FileInformationOfDay.cs" />
     <Compile Include="FileMeals.cs" />
@@ -83,12 +84,13 @@
       <DependentUpon>FormEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="ListInformationOfDay.cs" />
-    <Compile Include="ListOfChild.cs" />
+    <Compile Include="ListOfChildren.cs" />
     <Compile Include="ListOfMeals.cs" />
     <Compile Include="Meal.cs" />
     <Compile Include="ModifyChild.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveChild.cs" />
     <Compile Include="ShowChild.cs">
       <SubType>Form</SubType>
     </Compile>

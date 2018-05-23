@@ -13,7 +13,8 @@ namespace ProyectoFinal
 
         public ListOfMeals()
         {
-            listMeals = list.LoadMeals();
+            list.Load();
+            listMeals = list.GetList();
         }
 
         public List<Meal> GetListOfMeals()

@@ -4,14 +4,15 @@ namespace ProyectoFinal
 {
 
     //This class get the list of children that FileChild load
-    class ListOfChild
+    public class ListOfChildren
     {
         public List<Child> listChildren;
         private FileChild children = new FileChild();
 
-        public ListOfChild()
+        public ListOfChildren()
         {
-            listChildren = children.LoadChildren();
+            children.Load();
+            listChildren = children.GetList();
         }
 
         public List<Child> GetList()
@@ -32,14 +33,16 @@ namespace ProyectoFinal
         public void SaveListOfChildren()
         {
             listChildren.Sort(CompareChildren);
-            children.SaveChildren(listChildren);
+            children.SetList(listChildren);
+            children.Save();
         }
 
         //Method to remove a children
         public void RemoveChild(int n)
         {
             listChildren.RemoveAt(n);
-            children.SaveChildren(listChildren);
+            children.SetList(listChildren);
+            children.Save();
         }
 
         public List<string> ListForShow()
@@ -58,5 +61,11 @@ namespace ProyectoFinal
         {
             return listChildren[n];
         }
+        /*
+        public Child GetChildOfListByCod(int n)
+        {
+            return listChildren;
+        }
+        */
     }
 }

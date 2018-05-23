@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.lbDate = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbAllergies = new System.Windows.Forms.TextBox();
+            this.tbObservations = new System.Windows.Forms.TextBox();
+            this.tbCod = new System.Windows.Forms.TextBox();
+            this.tbSex = new System.Windows.Forms.TextBox();
+            this.tbAge = new System.Windows.Forms.TextBox();
+            this.tbSurnames = new System.Windows.Forms.TextBox();
             this.lbObservations = new System.Windows.Forms.Label();
             this.lbCod = new System.Windows.Forms.Label();
             this.lbSex = new System.Windows.Forms.Label();
@@ -44,18 +43,21 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbAllergies = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.cbEatAllB = new System.Windows.Forms.CheckBox();
+            this.cbEatHalfB = new System.Windows.Forms.CheckBox();
+            this.cbEatLittleB = new System.Windows.Forms.CheckBox();
             this.lbInfoBeak = new System.Windows.Forms.Label();
             this.lbInfLunch = new System.Windows.Forms.Label();
             this.lbInfSnack = new System.Windows.Forms.Label();
+            this.btOk = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.cbEatLittleL = new System.Windows.Forms.CheckBox();
+            this.cbEatHalfL = new System.Windows.Forms.CheckBox();
+            this.cbEatAllL = new System.Windows.Forms.CheckBox();
+            this.cbEatLittleS = new System.Windows.Forms.CheckBox();
+            this.cbEatHalfS = new System.Windows.Forms.CheckBox();
+            this.cbEatAllS = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lbDate
@@ -67,54 +69,53 @@
             this.lbDate.TabIndex = 0;
             this.lbDate.Text = "//TO DO: Date of day";
             // 
-            // textBox2
+            // tbAllergies
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(265, 20);
-            this.textBox2.TabIndex = 2;
+            this.tbAllergies.Location = new System.Drawing.Point(97, 334);
+            this.tbAllergies.Name = "tbAllergies";
+            this.tbAllergies.ReadOnly = true;
+            this.tbAllergies.Size = new System.Drawing.Size(265, 20);
+            this.tbAllergies.TabIndex = 5;
             // 
-            // textBox5
+            // tbObservations
             // 
-            this.textBox5.Location = new System.Drawing.Point(97, 334);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 20);
-            this.textBox5.TabIndex = 5;
+            this.tbObservations.Location = new System.Drawing.Point(97, 283);
+            this.tbObservations.Name = "tbObservations";
+            this.tbObservations.ReadOnly = true;
+            this.tbObservations.Size = new System.Drawing.Size(265, 20);
+            this.tbObservations.TabIndex = 6;
             // 
-            // textBox6
+            // tbCod
             // 
-            this.textBox6.Location = new System.Drawing.Point(97, 283);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(265, 20);
-            this.textBox6.TabIndex = 6;
+            this.tbCod.Location = new System.Drawing.Point(97, 237);
+            this.tbCod.Name = "tbCod";
+            this.tbCod.ReadOnly = true;
+            this.tbCod.Size = new System.Drawing.Size(265, 20);
+            this.tbCod.TabIndex = 7;
             // 
-            // textBox7
+            // tbSex
             // 
-            this.textBox7.Location = new System.Drawing.Point(97, 237);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(265, 20);
-            this.textBox7.TabIndex = 7;
+            this.tbSex.Location = new System.Drawing.Point(97, 193);
+            this.tbSex.Name = "tbSex";
+            this.tbSex.ReadOnly = true;
+            this.tbSex.Size = new System.Drawing.Size(265, 20);
+            this.tbSex.TabIndex = 8;
             // 
-            // textBox8
+            // tbAge
             // 
-            this.textBox8.Location = new System.Drawing.Point(97, 193);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(265, 20);
-            this.textBox8.TabIndex = 8;
+            this.tbAge.Location = new System.Drawing.Point(97, 146);
+            this.tbAge.Name = "tbAge";
+            this.tbAge.ReadOnly = true;
+            this.tbAge.Size = new System.Drawing.Size(265, 20);
+            this.tbAge.TabIndex = 9;
             // 
-            // textBox9
+            // tbSurnames
             // 
-            this.textBox9.Location = new System.Drawing.Point(97, 146);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(265, 20);
-            this.textBox9.TabIndex = 9;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(97, 96);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(265, 20);
-            this.textBox10.TabIndex = 10;
+            this.tbSurnames.Location = new System.Drawing.Point(97, 96);
+            this.tbSurnames.Name = "tbSurnames";
+            this.tbSurnames.ReadOnly = true;
+            this.tbSurnames.Size = new System.Drawing.Size(265, 20);
+            this.tbSurnames.TabIndex = 10;
             // 
             // lbObservations
             // 
@@ -186,100 +187,40 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 19;
             // 
-            // checkBox1
+            // cbEatAllB
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(406, 55);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbEatAllB.AutoSize = true;
+            this.cbEatAllB.Location = new System.Drawing.Point(406, 55);
+            this.cbEatAllB.Name = "cbEatAllB";
+            this.cbEatAllB.Size = new System.Drawing.Size(37, 17);
+            this.cbEatAllB.TabIndex = 20;
+            this.cbEatAllB.Text = "All";
+            this.cbEatAllB.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbEatHalfB
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(515, 55);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbEatHalfB.AutoSize = true;
+            this.cbEatHalfB.Location = new System.Drawing.Point(515, 55);
+            this.cbEatHalfB.Name = "cbEatHalfB";
+            this.cbEatHalfB.Size = new System.Drawing.Size(45, 17);
+            this.cbEatHalfB.TabIndex = 21;
+            this.cbEatHalfB.Text = "Half";
+            this.cbEatHalfB.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cbEatLittleB
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(625, 54);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
-            this.checkBox3.TabIndex = 22;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(625, 148);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
-            this.checkBox4.TabIndex = 25;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(515, 149);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
-            this.checkBox5.TabIndex = 24;
-            this.checkBox5.Text = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(406, 149);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(80, 17);
-            this.checkBox6.TabIndex = 23;
-            this.checkBox6.Text = "checkBox6";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(625, 240);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(80, 17);
-            this.checkBox7.TabIndex = 28;
-            this.checkBox7.Text = "checkBox7";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(515, 241);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(80, 17);
-            this.checkBox8.TabIndex = 27;
-            this.checkBox8.Text = "checkBox8";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(406, 241);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(80, 17);
-            this.checkBox9.TabIndex = 26;
-            this.checkBox9.Text = "checkBox9";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.cbEatLittleB.AutoSize = true;
+            this.cbEatLittleB.Location = new System.Drawing.Point(625, 54);
+            this.cbEatLittleB.Name = "cbEatLittleB";
+            this.cbEatLittleB.Size = new System.Drawing.Size(48, 17);
+            this.cbEatLittleB.TabIndex = 22;
+            this.cbEatLittleB.Text = "Little";
+            this.cbEatLittleB.UseVisualStyleBackColor = true;
             // 
             // lbInfoBeak
             // 
             this.lbInfoBeak.AutoSize = true;
-            this.lbInfoBeak.Location = new System.Drawing.Point(496, 29);
+            this.lbInfoBeak.Location = new System.Drawing.Point(481, 20);
             this.lbInfoBeak.Name = "lbInfoBeak";
             this.lbInfoBeak.Size = new System.Drawing.Size(114, 13);
             this.lbInfoBeak.TabIndex = 29;
@@ -303,23 +244,113 @@
             this.lbInfSnack.TabIndex = 31;
             this.lbInfSnack.Text = "I have eaten snack";
             // 
+            // btOk
+            // 
+            this.btOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btOk.Location = new System.Drawing.Point(97, 687);
+            this.btOk.Name = "btOk";
+            this.btOk.Size = new System.Drawing.Size(75, 23);
+            this.btOk.TabIndex = 32;
+            this.btOk.Text = "Ok";
+            this.btOk.UseVisualStyleBackColor = true;
+            this.btOk.Click += new System.EventHandler(this.btOk_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(245, 687);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(97, 52);
+            this.tbName.Name = "tbName";
+            this.tbName.ReadOnly = true;
+            this.tbName.Size = new System.Drawing.Size(265, 20);
+            this.tbName.TabIndex = 2;
+            // 
+            // cbEatLittleL
+            // 
+            this.cbEatLittleL.AutoSize = true;
+            this.cbEatLittleL.Location = new System.Drawing.Point(625, 153);
+            this.cbEatLittleL.Name = "cbEatLittleL";
+            this.cbEatLittleL.Size = new System.Drawing.Size(48, 17);
+            this.cbEatLittleL.TabIndex = 36;
+            this.cbEatLittleL.Text = "Little";
+            this.cbEatLittleL.UseVisualStyleBackColor = true;
+            // 
+            // cbEatHalfL
+            // 
+            this.cbEatHalfL.AutoSize = true;
+            this.cbEatHalfL.Location = new System.Drawing.Point(515, 154);
+            this.cbEatHalfL.Name = "cbEatHalfL";
+            this.cbEatHalfL.Size = new System.Drawing.Size(45, 17);
+            this.cbEatHalfL.TabIndex = 35;
+            this.cbEatHalfL.Text = "Half";
+            this.cbEatHalfL.UseVisualStyleBackColor = true;
+            // 
+            // cbEatAllL
+            // 
+            this.cbEatAllL.AutoSize = true;
+            this.cbEatAllL.Location = new System.Drawing.Point(406, 154);
+            this.cbEatAllL.Name = "cbEatAllL";
+            this.cbEatAllL.Size = new System.Drawing.Size(37, 17);
+            this.cbEatAllL.TabIndex = 34;
+            this.cbEatAllL.Text = "All";
+            this.cbEatAllL.UseVisualStyleBackColor = true;
+            // 
+            // cbEatLittleS
+            // 
+            this.cbEatLittleS.AutoSize = true;
+            this.cbEatLittleS.Location = new System.Drawing.Point(625, 256);
+            this.cbEatLittleS.Name = "cbEatLittleS";
+            this.cbEatLittleS.Size = new System.Drawing.Size(48, 17);
+            this.cbEatLittleS.TabIndex = 39;
+            this.cbEatLittleS.Text = "Little";
+            this.cbEatLittleS.UseVisualStyleBackColor = true;
+            // 
+            // cbEatHalfS
+            // 
+            this.cbEatHalfS.AutoSize = true;
+            this.cbEatHalfS.Location = new System.Drawing.Point(515, 257);
+            this.cbEatHalfS.Name = "cbEatHalfS";
+            this.cbEatHalfS.Size = new System.Drawing.Size(45, 17);
+            this.cbEatHalfS.TabIndex = 38;
+            this.cbEatHalfS.Text = "Half";
+            this.cbEatHalfS.UseVisualStyleBackColor = true;
+            // 
+            // cbEatAllS
+            // 
+            this.cbEatAllS.AutoSize = true;
+            this.cbEatAllS.Location = new System.Drawing.Point(406, 257);
+            this.cbEatAllS.Name = "cbEatAllS";
+            this.cbEatAllS.Size = new System.Drawing.Size(37, 17);
+            this.cbEatAllS.TabIndex = 37;
+            this.cbEatAllS.Text = "All";
+            this.cbEatAllS.UseVisualStyleBackColor = true;
+            // 
             // ShowChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 749);
+            this.Controls.Add(this.cbEatLittleS);
+            this.Controls.Add(this.cbEatHalfS);
+            this.Controls.Add(this.cbEatAllS);
+            this.Controls.Add(this.cbEatLittleL);
+            this.Controls.Add(this.cbEatHalfL);
+            this.Controls.Add(this.cbEatAllL);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btOk);
             this.Controls.Add(this.lbInfSnack);
             this.Controls.Add(this.lbInfLunch);
             this.Controls.Add(this.lbInfoBeak);
-            this.Controls.Add(this.checkBox7);
-            this.Controls.Add(this.checkBox8);
-            this.Controls.Add(this.checkBox9);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox6);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbEatLittleB);
+            this.Controls.Add(this.cbEatHalfB);
+            this.Controls.Add(this.cbEatAllB);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbAllergies);
             this.Controls.Add(this.lbName);
@@ -328,16 +359,17 @@
             this.Controls.Add(this.lbSex);
             this.Controls.Add(this.lbCod);
             this.Controls.Add(this.lbObservations);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbSurnames);
+            this.Controls.Add(this.tbAge);
+            this.Controls.Add(this.tbSex);
+            this.Controls.Add(this.tbCod);
+            this.Controls.Add(this.tbObservations);
+            this.Controls.Add(this.tbAllergies);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.lbDate);
             this.Name = "ShowChild";
             this.Text = "ShowChild";
+            this.Load += new System.EventHandler(this.ShowChild_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,13 +378,12 @@
         #endregion
 
         private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbAllergies;
+        private System.Windows.Forms.TextBox tbObservations;
+        private System.Windows.Forms.TextBox tbCod;
+        private System.Windows.Forms.TextBox tbSex;
+        private System.Windows.Forms.TextBox tbAge;
+        private System.Windows.Forms.TextBox tbSurnames;
         private System.Windows.Forms.Label lbObservations;
         private System.Windows.Forms.Label lbCod;
         private System.Windows.Forms.Label lbSex;
@@ -361,17 +392,20 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbAllergies;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox cbEatAllB;
+        private System.Windows.Forms.CheckBox cbEatHalfB;
+        private System.Windows.Forms.CheckBox cbEatLittleB;
         private System.Windows.Forms.Label lbInfoBeak;
         private System.Windows.Forms.Label lbInfLunch;
         private System.Windows.Forms.Label lbInfSnack;
+        private System.Windows.Forms.Button btOk;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.CheckBox cbEatLittleL;
+        private System.Windows.Forms.CheckBox cbEatHalfL;
+        private System.Windows.Forms.CheckBox cbEatAllL;
+        private System.Windows.Forms.CheckBox cbEatLittleS;
+        private System.Windows.Forms.CheckBox cbEatHalfS;
+        private System.Windows.Forms.CheckBox cbEatAllS;
     }
 }

@@ -12,14 +12,17 @@ namespace ProyectoFinal
 {
     public partial class FormAdd : Form
     {
-        public FormAdd()
+        protected int index;
+
+        public FormAdd(int i)
         {
             InitializeComponent();
+            index = i;
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
-
+            tbCod.Text = Convert.ToString(index + 1);
         }
 
         //Add a new child
@@ -42,13 +45,21 @@ namespace ProyectoFinal
                     addCo = true;
                 }
             }
-
-            AddChild newChild = new AddChild();
-            newChild.SetListWithNewChild(newChild.SetNewChild(
-                tbName.Text, tbSurnames.Text, tbObservation.Text,
-                Convert.ToInt32(tbAge.Text), Convert.ToInt32(tbCod.Text),
-                allergies, Convert.ToChar(tbSex.Text)));
-            this.Close();
+            if((tbAge.Text == "" ) | (tbName.Text == "") | 
+                (tbSurnames.Text == "") | (tbSex.Text == ""))
+            {
+                Warning w = new Warning();
+                w.Show();
+            }
+            else
+            {
+                AddChild newChild = new AddChild();
+                newChild.SetListWithNewChild(newChild.SetNewChild(
+                    tbName.Text, tbSurnames.Text, tbObservation.Text,
+                    Convert.ToInt32(tbAge.Text),
+                    allergies, Convert.ToChar(tbSex.Text)));
+                this.Close();
+            }
         }
     }
 }

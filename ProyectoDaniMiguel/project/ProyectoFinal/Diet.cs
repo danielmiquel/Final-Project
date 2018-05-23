@@ -8,10 +8,12 @@ namespace ProyectoFinal
         protected string breakfast;
         protected string lunch;
         protected string snack;
-
-        public Diet()
+        protected int index;
+        
+        public Diet(int i)
         {
             InitializeComponent();
+            index = i;
         }
 
         private void Diet_Load(object sender, EventArgs e)

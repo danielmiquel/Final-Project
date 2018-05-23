@@ -59,11 +59,11 @@
             "Chicken",
             "Eggs",
             "Fish",
+            "Lactose",
             "Leek",
             "Lettuce",
             "Meat proteins",
             "Melon",
-            "Milk",
             "Orange",
             "Pear",
             "Penauts",
@@ -133,6 +133,7 @@
             // 
             this.tbCod.Location = new System.Drawing.Point(153, 199);
             this.tbCod.Name = "tbCod";
+            this.tbCod.ReadOnly = true;
             this.tbCod.Size = new System.Drawing.Size(228, 20);
             this.tbCod.TabIndex = 57;
             // 

@@ -5,10 +5,11 @@ using System.IO;
 namespace ProyectoFinal
 {
     //Class for save and load the file os children
-    class FileChild
+    class FileChild : Files
     {
-        
-        public void SaveChildren(List<Child> listSave)
+        protected List<Child> listChildren;
+
+        public override void Save()
         {
             try
             {
@@ -17,7 +18,7 @@ namespace ProyectoFinal
 
                 StreamWriter file = File.CreateText("lisOfChildren.txt");
 
-                foreach (Child i in listSave)
+                foreach (Child i in listChildren)
                 {
                     file.WriteLine(i.GetCod() + "|" + i.GetName() + "|"
                         + i.GetSurname() + "|" + i.GetSex() + "|" +
@@ -33,9 +34,9 @@ namespace ProyectoFinal
         
         }
 
-        public List<Child> LoadChildren()
+        public override void Load()
         {
-            List<Child> listLoadChild = new List<Child>();
+            List<Child> list = new List<Child>();
 
             try
             {
@@ -53,7 +54,7 @@ namespace ProyectoFinal
                         child = new Child(Convert.ToInt32(data[0]), data[1], 
                             data[2],Convert.ToChar(data[3]), 
                             Convert.ToInt32(data[4]), data[5], data[6]);
-                        listLoadChild.Add(child);
+                        list.Add(child);
                     }
                 } while (line != null);
                 file.Close();
@@ -64,7 +65,17 @@ namespace ProyectoFinal
                 Console.WriteLine("Eror: "+e.Message);
             }
 
-            return listLoadChild;
+            listChildren = list;
+        }
+
+        public List<Child> GetList()
+        {
+            return listChildren;
+        }
+
+        public void SetList(List<Child> l)
+        {
+            listChildren = l;
         }
     }
 }

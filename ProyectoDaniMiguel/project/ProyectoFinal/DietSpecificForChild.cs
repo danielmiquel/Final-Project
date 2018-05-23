@@ -12,9 +12,15 @@ namespace ProyectoFinal
 {
     public partial class DietSpecificForChild : Form
     {
-        public DietSpecificForChild()
+        protected string breakfast;
+        protected string lunch;
+        protected string snack;
+        protected int index;
+
+        public DietSpecificForChild(int i)
         {
             InitializeComponent();
+            index = i;
         }
 
         /*Function that shows the specific food for a child 
@@ -24,14 +30,43 @@ namespace ProyectoFinal
          * */
         private void DietSpecificForChild_Load(object sender, EventArgs e)
         {
-            FoodSelection food = new FoodSelection();
-            ListOfChild child = new ListOfChild();
+            if (breakfast == null && lunch == null && snack == null)
+            {
+                FoodSelection food = new FoodSelection();
+                ListOfChildren child = new ListOfChildren();
+                ListOfMeals m = new ListOfMeals();
+                Child c = child.GetChildOfList(index);
+                lbInfoChild.Text = c.GetCod().ToString() + "--" + c.GetName() + " " + c.GetSurname();
+                tbBreak.Text = food.SelectFoodForChild(m.GetBreakfastFood(), index);
+                tbLunch.Text = food.SelectFoodForChild(m.GetLunchFood(), index);
+                tbSnack.Text = food.SelectFoodForChild(m.GetSnackFood(), index);
+                breakfast = food.GetBreakfast();
+                lunch = food.GetLunch();
+                snack = food.GetSnack();
+            }
+            else
+            {
+                tbBreak.Text = breakfast;
+                tbLunch.Text = lunch;
+                tbSnack.Text = snack;
+            }
+        }
+
+        private void btOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btChange_Click(object sender, EventArgs e)
+        {
             ListOfMeals m = new ListOfMeals();
-            Child c = child.GetChildOfList(food.GetIndex());
-            lbInfoChild.Text = c.GetCod().ToString()+"--"+ c.GetName() + " " + c.GetSurname();
-            tbBreak.Text = food.SelectFoodForChild(m.GetBreakfastFood());
-            tbLunch.Text = food.SelectFoodForChild( m.GetLunchFood());
-            tbSnack.Text = food.SelectFoodForChild(m.GetSnackFood());
+            FoodSelection food = new FoodSelection();
+            tbBreak.Text = food.SelectFoodForChild(m.GetBreakfastFood(), index);
+            tbLunch.Text = food.SelectFoodForChild(m.GetLunchFood(), index);
+            tbSnack.Text = food.SelectFoodForChild(m.GetSnackFood(), index);
+            breakfast = food.GetBreakfast();
+            lunch = food.GetLunch();
+            snack = food.GetSnack();
         }
     }
 }

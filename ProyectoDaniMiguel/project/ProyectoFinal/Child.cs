@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinal
 {
-    class Child
+    public class Child
     {
         protected int age;
         protected string name;

@@ -1,9 +1,9 @@
-breakfast|apple,pine|fruit puree|apple,pine
-breakfast|milk|milk|lactose,apple
-breakfast|cereals,milk|creals with milk|lactose
-lunch|carrots,tomato|raw carrots with tomato in cubes|carrots,tomato
-lunch|chicken|cooked chicken|ckicken
-lunch|hake|grilled hake|fish
-snack|yogurt|whole yogurt|lactose
-snack|orange|orange cut into eights or cubes|orange
-snack|pear|pear puree|pear
+breakfast|apple,pine|fruit puree|Apple,Pine
+breakfast|milk|milk|Lactose,Apple
+breakfast|cereals,milk|creals with milk|Lactose
+lunch|carrots,tomato|raw carrots with tomato in cubes|Carrots,Tomato
+lunch|chicken|cooked chicken|Ckicken
+lunch|hake|grilled hake|Fish
+snack|yogurt|whole yogurt|Lactose
+snack|orange|orange cut into eights or cubes|Orange
+snack|pear|pear puree|Pear

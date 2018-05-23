@@ -8,7 +8,7 @@ namespace ProyectoFinal
     class FoodSelection
     {
         protected int index;
-        protected ListOfChild listC = new ListOfChild();
+        protected ListOfChildren listC = new ListOfChildren();
         protected ListOfMeals listM = new ListOfMeals();
         protected Random rnd = new Random();
         
@@ -64,18 +64,36 @@ namespace ProyectoFinal
         }
 
         //Function that chooses a meal according to a child's allergies
-        public string SelectFoodForChild(List<Meal> m)
+        public string SelectFoodForChild(List<Meal> m,int i)
         {
-            Child c = listC.GetChildOfList(index);
+            Child c = listC.GetChildOfList(i);
             int cont = 0;
-            bool found = false;
+            bool found;
+            string[] allergiesC = c.GetArrayAllergies();
+            List<string> listAlC = new List<string>();
+
+            foreach (string t in allergiesC)
+            {
+                listAlC.Add(t);
+            }
+
             do
             {
-                if (!m[cont].GetAllergies().Contains(c.GetAllergies()))
-                    found = true;
-                cont++;
-            } while (m[cont].GetAllergies().Contains(c.GetAllergies()) && cont < m.Count && !found);
-            return m[cont].GetFood();
+                found = false;
+                string[] allergiesM = m[cont].GetArrayAllergies();
+                for(int j = 0; j < allergiesM.Length && !found; j++)
+                {
+                    if (listAlC.Contains(allergiesM[j]))
+                        found = true;
+                }
+                if(found)
+                    cont++;
+
+            } while (cont < m.Count && found);
+            if (cont >= m.Count)
+                return "Not food";
+            else
+                return m[cont].GetFood();
         }
     }
 }
