@@ -36,6 +36,12 @@
             this.btNormalDiet = new System.Windows.Forms.Button();
             this.btAllergiesDiet = new System.Windows.Forms.Button();
             this.btRefresh = new System.Windows.Forms.Button();
+            this.tbTotalChildren = new System.Windows.Forms.TextBox();
+            this.lbTotalChildren = new System.Windows.Forms.Label();
+            this.lbTotalFemale = new System.Windows.Forms.Label();
+            this.tbTotalFemale = new System.Windows.Forms.TextBox();
+            this.lbTotalMens = new System.Windows.Forms.Label();
+            this.tbTotalMens = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btAdd
@@ -73,7 +79,7 @@
             this.clbChildren.FormattingEnabled = true;
             this.clbChildren.Location = new System.Drawing.Point(140, 78);
             this.clbChildren.Name = "clbChildren";
-            this.clbChildren.Size = new System.Drawing.Size(288, 529);
+            this.clbChildren.Size = new System.Drawing.Size(288, 304);
             this.clbChildren.TabIndex = 3;
             this.clbChildren.SelectedIndexChanged += new System.EventHandler(this.clbChildren_SelectedIndexChanged);
             // 
@@ -109,7 +115,7 @@
             // 
             // btRefresh
             // 
-            this.btRefresh.Location = new System.Drawing.Point(27, 28);
+            this.btRefresh.Location = new System.Drawing.Point(12, 12);
             this.btRefresh.Name = "btRefresh";
             this.btRefresh.Size = new System.Drawing.Size(75, 23);
             this.btRefresh.TabIndex = 7;
@@ -117,11 +123,77 @@
             this.btRefresh.UseVisualStyleBackColor = true;
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
+            // tbTotalChildren
+            // 
+            this.tbTotalChildren.Location = new System.Drawing.Point(80, 114);
+            this.tbTotalChildren.Name = "tbTotalChildren";
+            this.tbTotalChildren.ReadOnly = true;
+            this.tbTotalChildren.Size = new System.Drawing.Size(45, 20);
+            this.tbTotalChildren.TabIndex = 8;
+            this.tbTotalChildren.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lbTotalChildren
+            // 
+            this.lbTotalChildren.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTotalChildren.AutoSize = true;
+            this.lbTotalChildren.Location = new System.Drawing.Point(2, 117);
+            this.lbTotalChildren.Name = "lbTotalChildren";
+            this.lbTotalChildren.Size = new System.Drawing.Size(72, 13);
+            this.lbTotalChildren.TabIndex = 30;
+            this.lbTotalChildren.Text = "Total Children";
+            // 
+            // lbTotalFemale
+            // 
+            this.lbTotalFemale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTotalFemale.AutoSize = true;
+            this.lbTotalFemale.Location = new System.Drawing.Point(2, 182);
+            this.lbTotalFemale.Name = "lbTotalFemale";
+            this.lbTotalFemale.Size = new System.Drawing.Size(71, 13);
+            this.lbTotalFemale.TabIndex = 32;
+            this.lbTotalFemale.Text = "Total Women";
+            // 
+            // tbTotalFemale
+            // 
+            this.tbTotalFemale.Location = new System.Drawing.Point(80, 179);
+            this.tbTotalFemale.Name = "tbTotalFemale";
+            this.tbTotalFemale.ReadOnly = true;
+            this.tbTotalFemale.Size = new System.Drawing.Size(45, 20);
+            this.tbTotalFemale.TabIndex = 31;
+            this.tbTotalFemale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lbTotalMens
+            // 
+            this.lbTotalMens.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTotalMens.AutoSize = true;
+            this.lbTotalMens.Location = new System.Drawing.Point(2, 245);
+            this.lbTotalMens.Name = "lbTotalMens";
+            this.lbTotalMens.Size = new System.Drawing.Size(60, 13);
+            this.lbTotalMens.TabIndex = 34;
+            this.lbTotalMens.Text = "Total Mens";
+            // 
+            // tbTotalMens
+            // 
+            this.tbTotalMens.Location = new System.Drawing.Point(80, 242);
+            this.tbTotalMens.Name = "tbTotalMens";
+            this.tbTotalMens.ReadOnly = true;
+            this.tbTotalMens.Size = new System.Drawing.Size(45, 20);
+            this.tbTotalMens.TabIndex = 33;
+            this.tbTotalMens.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // ChildList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 661);
+            this.ClientSize = new System.Drawing.Size(784, 402);
+            this.Controls.Add(this.lbTotalMens);
+            this.Controls.Add(this.tbTotalMens);
+            this.Controls.Add(this.lbTotalFemale);
+            this.Controls.Add(this.tbTotalFemale);
+            this.Controls.Add(this.lbTotalChildren);
+            this.Controls.Add(this.tbTotalChildren);
             this.Controls.Add(this.btRefresh);
             this.Controls.Add(this.btAllergiesDiet);
             this.Controls.Add(this.btNormalDiet);
@@ -135,6 +207,7 @@
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -148,5 +221,11 @@
         private System.Windows.Forms.Button btNormalDiet;
         private System.Windows.Forms.Button btAllergiesDiet;
         private System.Windows.Forms.Button btRefresh;
+        private System.Windows.Forms.TextBox tbTotalChildren;
+        private System.Windows.Forms.Label lbTotalChildren;
+        private System.Windows.Forms.Label lbTotalFemale;
+        private System.Windows.Forms.TextBox tbTotalFemale;
+        private System.Windows.Forms.Label lbTotalMens;
+        private System.Windows.Forms.TextBox tbTotalMens;
     }
 }

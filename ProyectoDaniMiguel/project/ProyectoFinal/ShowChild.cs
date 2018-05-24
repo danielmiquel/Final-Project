@@ -38,5 +38,25 @@ namespace ProyectoFinal
         {
             this.Close();
         }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbSleepMorGood_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbSleepMorBad_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btDiet_Click(object sender, EventArgs e)
+        {
+            DietSpecificForChild fDietAll =
+                        new DietSpecificForChild(index);
+            fDietAll.Show();
+        }
     }
 }
