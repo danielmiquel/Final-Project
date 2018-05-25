@@ -7,12 +7,13 @@ namespace ProyectoFinal
     {
         //Create new child for insert in list
         public Child SetNewChild(string name, string surname,
-            string observations, int age, string allergy,char sex)
+            string observations, string allergy,char sex,Day birthay)
         {
             ListOfChildren l = new ListOfChildren();
             int cod = l.GetList().Count + 1;
-            Child newChild = new Child(cod,name,surname,sex,age,
+            Child newChild = new Child(cod,name,surname,sex,
                 observations,allergy);
+            //newChild.SetBirthday(birthay);
             return newChild;
         }
 

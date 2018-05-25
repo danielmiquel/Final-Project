@@ -21,8 +21,9 @@ namespace ProyectoFinal
 
         private void ShowChild_Load(object sender, EventArgs e)
         {
-            ListInformationOfDay list = new ListInformationOfDay();
-            list.SetIndex(index);
+            
+            ListInformationAllDays list = new ListInformationAllDays();
+            //list.SetIndex(index);
             ListOfChildren listChildren = new ListOfChildren();
             listChildren.GetChildOfList(index);
             tbName.Text = listChildren.GetChildOfList(index).GetName();
@@ -32,6 +33,7 @@ namespace ProyectoFinal
             tbObservations.Text = listChildren.GetChildOfList(index).GetObservations();
             tbAllergies.Text = listChildren.GetChildOfList(index).GetAllergies();
             tbAge.Text = listChildren.GetChildOfList(index).GetAge().ToString();
+            
         }
 
         private void btOk_Click(object sender, EventArgs e)
@@ -57,6 +59,15 @@ namespace ProyectoFinal
             DietSpecificForChild fDietAll =
                         new DietSpecificForChild(index);
             fDietAll.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex == 1)
+            {
+                HistoricalChild h = new HistoricalChild();
+                h.Show();
+            }
         }
     }
 }

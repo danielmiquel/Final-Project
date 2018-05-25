@@ -8,25 +8,30 @@ namespace ProyectoFinal
 {
     class FileInformationOfDay : Files
     {
-        protected List<Information> listInfo;
+       protected List<InformationOfDay> listInfo;
 
         public override void Save()
         {
             try
             {
                 StreamWriter file = File.CreateText("lisInformationOfDay.txt");
-
-                foreach (Information i in listInfo)
+                
+                foreach (InformationOfDay i in listInfo)
                 {
-                    file.WriteLine(i.child.GetCod() + "|" + i.meal + "|" + i.day + "|"
-                        + i.eatAmoutB + "|" + i.eatAmoutL
-                        + "|" + i.eatAmoutS + "|" + i.depositionsMor
-                        + "|" + i.depositionsAft + "|" + i.sleepMor + "|"
-                        + i.timeSleepMor + "|" + i.sleepAft + "|"
-                        + i.timeSleepAft + "|" + i.messageForHome
-                        + "|" + i.messageForSchool);
+                    file.WriteLine(i.GetCod() + "|" + i.GetMeal() + "|" 
+                        + i.GetDay().day+","+i.GetDay().month+","
+                        + i.GetDay().year + "|"+ i.GetEatAmoutB() +"|" 
+                        + i.GetEatAmoutL()+ "|" + i.GetEatAmoutS() + "|" 
+                        + i.GetDepositionsMor()+ "|"+i.GetDepositionsAft()+"|" 
+                        + i.GetSleepMor() + "|"+ i.GetTimeSleepMor().hour+","
+                        + i.GetTimeSleepMor().minute + "|" 
+                        + i.GetSleepAft() + "|"+i.GetTimeSleepAft().minute+","
+                        + i.GetTimeSleepAft().minute + "|" 
+                        + i.GetMessageForHome()+ "|" + i.GetMessageForSchool());
                 }
+                
                 file.Close();
+                
             }
             catch (IOException e)
             {
@@ -37,39 +42,39 @@ namespace ProyectoFinal
 
         public override void Load()
         {
-            List<Information> list = new List<Information>();
+            
+            List<InformationOfDay> list = new List<InformationOfDay>();
 
             try
             {
                 StreamReader file = File.OpenText("lisInformationOfDay.txt");
-                string[] data = new string[14];
+                string[] data = new string[18];
                 string line;
-                Information info;
-                ListOfChildren listChildren = new ListOfChildren();
+                InformationOfDay info;
+                ListOfChildren listInfo = new ListOfChildren();
 
                 do
                 {
                     line = file.ReadLine();
                     if (line != null)
                     {
-                        data = line.Split('|');
-                        info.child = listChildren.GetChildOfList
-                            (Convert.ToInt32(data[0]));
-                        info.meal = data[1];
-                        info.day = Convert.ToDateTime(data[2]);
-                        info.eatAmoutB = Convert.ToInt32(data[3]);
-                        info.eatAmoutL = Convert.ToInt32(data[4]);
-                        info.eatAmoutS = Convert.ToInt32(data[5]);
-                        info.depositionsMor = Convert.ToBoolean(data[6]);
-                        info.depositionsAft = Convert.ToBoolean(data[7]);
-                        info.sleepMor = Convert.ToBoolean(data[8]);
-                        info.timeSleepMor = data[9];
-                        info.sleepAft = Convert.ToBoolean(data[10]);
-                        info.timeSleepAft = data[11];
-                        info.messageForHome = data[12];
-                        info.messageForSchool = data[13];
+                        info = new InformationOfDay(Convert.ToInt32(data[0]),
+                            Convert.ToInt32(data[5]),Convert.ToInt32(data[6]),
+                            Convert.ToInt32(data[7]),data[16],data[17],
+                            Convert.ToBoolean(data[8]),
+                            Convert.ToBoolean(data[9]), 
+                            Convert.ToBoolean(data[10]), 
+                            Convert.ToBoolean(data[13]),data[1]);
+                        info.AddTimeSleepMor(Convert.ToInt32(data[11]),
+                            Convert.ToInt32(data[12]));
+                        info.AddTimeSleepAft(Convert.ToInt32(data[14]),
+                            Convert.ToInt32(data[15]));
+                        info.AddDaySave(Convert.ToInt32(data[2]),
+                            Convert.ToInt32(data[3]),Convert.ToInt32(data[4]));
+
                         list.Add(info);
                     }
+
                 } while (line != null);
                 file.Close();
 
@@ -81,13 +86,13 @@ namespace ProyectoFinal
 
             listInfo = list;
         }
-
-        public List<Information> GetList()
+        
+        public List<InformationOfDay> GetList()
         {
             return listInfo;
         }
 
-        public void SetList(List<Information> l)
+        public void SetList(List<InformationOfDay> l)
         {
             listInfo = l;
         }

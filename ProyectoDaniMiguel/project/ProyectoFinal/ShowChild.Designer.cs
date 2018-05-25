@@ -42,7 +42,6 @@
             this.lbSurnames = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.lbAllergies = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbEatAllB = new System.Windows.Forms.CheckBox();
             this.cbEatHalfB = new System.Windows.Forms.CheckBox();
             this.cbEatLittleB = new System.Windows.Forms.CheckBox();
@@ -88,6 +87,7 @@
             this.lbMessgeForHome = new System.Windows.Forms.Label();
             this.lbMessageForSchool = new System.Windows.Forms.Label();
             this.btDiet = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbDate
@@ -244,16 +244,6 @@
             this.lbAllergies.Size = new System.Drawing.Size(62, 17);
             this.lbAllergies.TabIndex = 17;
             this.lbAllergies.Text = "Allergies";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(162, 13);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 19;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 5, 24, 15, 26, 0, 0);
             // 
             // cbEatAllB
             // 
@@ -767,12 +757,25 @@
             this.btDiet.UseVisualStyleBackColor = true;
             this.btDiet.Click += new System.EventHandler(this.btDiet_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.comboBox1.Location = new System.Drawing.Point(156, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(206, 21);
+            this.comboBox1.TabIndex = 70;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ShowChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btOk;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btDiet);
             this.Controls.Add(this.lbMessageForSchool);
             this.Controls.Add(this.lbMessgeForHome);
@@ -817,7 +820,6 @@
             this.Controls.Add(this.cbEatLittleB);
             this.Controls.Add(this.cbEatHalfB);
             this.Controls.Add(this.cbEatAllB);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbAllergies);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbSurnames);
@@ -860,7 +862,6 @@
         private System.Windows.Forms.Label lbSurnames;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbAllergies;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox cbEatAllB;
         private System.Windows.Forms.CheckBox cbEatHalfB;
         private System.Windows.Forms.CheckBox cbEatLittleB;
@@ -906,5 +907,6 @@
         private System.Windows.Forms.Label lbMessgeForHome;
         private System.Windows.Forms.Label lbMessageForSchool;
         private System.Windows.Forms.Button btDiet;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

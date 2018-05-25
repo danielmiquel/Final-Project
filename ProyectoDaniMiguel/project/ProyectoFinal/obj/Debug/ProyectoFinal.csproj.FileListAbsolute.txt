@@ -41,3 +41,4 @@ C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFin
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.DietSpecificForChild.resources
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.Warning.resources
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.ShowChild.resources
+C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.HistoricalChild.resources

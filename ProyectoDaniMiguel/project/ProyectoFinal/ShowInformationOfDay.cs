@@ -11,7 +11,7 @@ namespace ProyectoFinal
      */
     class ShowInformationOfDay
     {
-        protected ListInformationOfDay listInfo;
+        protected InformationOfDay listInfo;
 
     }
 }

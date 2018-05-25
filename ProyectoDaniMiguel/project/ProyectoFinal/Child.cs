@@ -1,7 +1,17 @@
-﻿namespace ProyectoFinal
+﻿using System;
+
+namespace ProyectoFinal
 {
+    public struct Birthday
+    {
+        public int day;
+        public int month;
+        public int year;
+    }
+
     public class Child
     {
+        protected Birthday birth;
         protected int age;
         protected string name;
         protected string surname;
@@ -11,9 +21,8 @@
         protected string allergies;
 
         public Child(int cod, string name, string surname, char sex,
-            int age, string observations, string allergies)
+            string observations, string allergies)
         {
-            this.age = age;
             this.name = name;
             this.surname = surname;
             this.sex = sex;
@@ -22,14 +31,34 @@
             this.allergies = allergies;
         }
 
+        public Birthday GetBirthday()
+        {
+            return birth;
+        }
+
         public int GetAge()
         {
             return age;
         }
 
-        public void SetAge(int newAge)
+        public void SetAge()
         {
-            age = newAge;
+            DateTime now = new DateTime();
+            age = now.Year - birth.year;
+            if (now.Month > birth.month && now.Day > birth.day)
+                age++;
+        }
+
+        public void SetBirthdayInt(Birthday d)
+        {
+            birth = d;
+        }
+
+        public void SetBirthdayInt(int day, int month, int year)
+        {
+            birth.day = day;
+            birth.month = month;
+            birth.year = year;
         }
 
         public int GetCod()

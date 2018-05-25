@@ -35,8 +35,6 @@
             this.lbAge = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbSurnames = new System.Windows.Forms.TextBox();
-            this.tbAge = new System.Windows.Forms.TextBox();
-            this.tbSex = new System.Windows.Forms.TextBox();
             this.tbCod = new System.Windows.Forms.TextBox();
             this.lbObservations = new System.Windows.Forms.Label();
             this.tbObservation = new System.Windows.Forms.TextBox();
@@ -44,6 +42,8 @@
             this.lbAllergy = new System.Windows.Forms.Label();
             this.btOK = new System.Windows.Forms.Button();
             this.clbVegFrt = new System.Windows.Forms.CheckedListBox();
+            this.tbSex = new System.Windows.Forms.TextBox();
+            this.dtpAge = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbName
@@ -104,20 +104,6 @@
             this.tbSurnames.Name = "tbSurnames";
             this.tbSurnames.Size = new System.Drawing.Size(228, 20);
             this.tbSurnames.TabIndex = 8;
-            // 
-            // tbAge
-            // 
-            this.tbAge.Location = new System.Drawing.Point(133, 113);
-            this.tbAge.Name = "tbAge";
-            this.tbAge.Size = new System.Drawing.Size(228, 20);
-            this.tbAge.TabIndex = 9;
-            // 
-            // tbSex
-            // 
-            this.tbSex.Location = new System.Drawing.Point(133, 155);
-            this.tbSex.Name = "tbSex";
-            this.tbSex.Size = new System.Drawing.Size(228, 20);
-            this.tbSex.TabIndex = 10;
             // 
             // tbCod
             // 
@@ -209,11 +195,26 @@
             this.clbVegFrt.Sorted = true;
             this.clbVegFrt.TabIndex = 47;
             // 
+            // tbSex
+            // 
+            this.tbSex.Location = new System.Drawing.Point(133, 155);
+            this.tbSex.Name = "tbSex";
+            this.tbSex.Size = new System.Drawing.Size(228, 20);
+            this.tbSex.TabIndex = 10;
+            // 
+            // dtpAge
+            // 
+            this.dtpAge.Location = new System.Drawing.Point(133, 116);
+            this.dtpAge.Name = "dtpAge";
+            this.dtpAge.Size = new System.Drawing.Size(227, 20);
+            this.dtpAge.TabIndex = 48;
+            // 
             // FormAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 385);
+            this.Controls.Add(this.dtpAge);
             this.Controls.Add(this.clbVegFrt);
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.lbAllergy);
@@ -222,7 +223,6 @@
             this.Controls.Add(this.lbObservations);
             this.Controls.Add(this.tbCod);
             this.Controls.Add(this.tbSex);
-            this.Controls.Add(this.tbAge);
             this.Controls.Add(this.tbSurnames);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.lbAge);
@@ -248,8 +248,6 @@
         private System.Windows.Forms.Label lbAge;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbSurnames;
-        private System.Windows.Forms.TextBox tbAge;
-        private System.Windows.Forms.TextBox tbSex;
         private System.Windows.Forms.TextBox tbCod;
         private System.Windows.Forms.Label lbObservations;
         private System.Windows.Forms.TextBox tbObservation;
@@ -257,5 +255,7 @@
         private System.Windows.Forms.Label lbAllergy;
         private System.Windows.Forms.Button btOK;
         private System.Windows.Forms.CheckedListBox clbVegFrt;
+        private System.Windows.Forms.TextBox tbSex;
+        private System.Windows.Forms.DateTimePicker dtpAge;
     }
 }

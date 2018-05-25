@@ -79,9 +79,8 @@ namespace ProyectoFinal
             }
             ModifyChild child = new ModifyChild();
             Child modifiedChild = new Child(Convert.ToInt32(tbCod.Text),
-                tbName.Text,tbSurnames.Text,Convert.ToChar(tbSex.Text), 
-                Convert.ToInt32(tbAge.Text),tbObservation.Text,
-                allergies);
+                tbName.Text,tbSurnames.Text,Convert.ToChar(tbSex.Text),
+                tbObservation.Text,allergies);
             child.SetModifiedChild(modifiedChild,child.GetIndex());
             this.Close();
         }

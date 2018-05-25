@@ -45,20 +45,21 @@ namespace ProyectoFinal
                     addCo = true;
                 }
             }
-            if((tbAge.Text == "" ) | (tbName.Text == "") | 
-                (tbSurnames.Text == "") | (tbSex.Text == ""))
+            if((tbName.Text == "") | (tbSurnames.Text == "") 
+                | (tbSex.Text == ""))
             {
                 Warning w = new Warning();
                 w.Show();
             }
             else
             {
+                /*
                 AddChild newChild = new AddChild();
                 newChild.SetListWithNewChild(newChild.SetNewChild(
                     tbName.Text, tbSurnames.Text, tbObservation.Text,
-                    Convert.ToInt32(tbAge.Text),
                     allergies, Convert.ToChar(tbSex.Text)));
                 this.Close();
+                */
             }
         }
     }

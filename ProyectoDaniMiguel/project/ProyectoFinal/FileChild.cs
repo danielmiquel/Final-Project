@@ -20,10 +20,11 @@ namespace ProyectoFinal
 
                 foreach (Child i in listChildren)
                 {
-                    file.WriteLine(i.GetCod() + "|" + i.GetName() + "|"
-                        + i.GetSurname() + "|" + i.GetSex() + "|" +
-                        i.GetAge() + "|" + i.GetObservations()
-                        + "|" + i.GetAllergies());
+                    file.WriteLine(i.GetCod() + "|" + i.GetName() 
+                        + "|"+ i.GetSurname() + "|" + i.GetSex() 
+                        + "|"+i.GetBirthday().day+","+i.GetBirthday().month+","
+                        +i.GetBirthday().year 
+                        + "|" + i.GetObservations()+ "|" + i.GetAllergies());
                 }
                 file.Close();
 
@@ -42,6 +43,7 @@ namespace ProyectoFinal
             {
                 StreamReader file = File.OpenText("lisOfChildren.txt");
                 string[] data= new string[7];
+                string[] birthday = new string[3];
                 string line;
                 Child child;
 
@@ -52,8 +54,11 @@ namespace ProyectoFinal
                     {
                         data = line.Split('|');
                         child = new Child(Convert.ToInt32(data[0]), data[1], 
-                            data[2],Convert.ToChar(data[3]), 
-                            Convert.ToInt32(data[4]), data[5], data[6]);
+                            data[2],Convert.ToChar(data[3]),data[5], data[6]);
+                        birthday = data[4].Split(',');
+                        child.SetBirthdayInt(Convert.ToInt32(data[0]),
+                            Convert.ToInt32(data[1]),
+                            Convert.ToInt32(data[2]));
                         list.Add(child);
                     }
                 } while (line != null);
