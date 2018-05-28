@@ -20,7 +20,7 @@ namespace ProyectoFinal
         public int minute;
     }
 
-    class InformationOfDay
+    public class InformationOfDay
     {
         protected Day daySave;
         protected int cod;
@@ -29,18 +29,18 @@ namespace ProyectoFinal
         protected int eatAmoutS;
         protected string messageForHome;
         protected string messageForSchool;
-        protected bool depositionsMor;
-        protected bool depositionsAft;
-        protected bool sleepMor;
-        protected bool sleepAft;
+        protected int depositionsMor;
+        protected int depositionsAft;
+        protected int sleepMor;
+        protected int sleepAft;
         protected TimeSleep timeSleepMor;
         protected TimeSleep timeSleepAft;
-        protected string meal;
+        protected Meal meal;
         
         public InformationOfDay(int cod, int eatAmoutB, int eatAmoutL,
-            int eatAmoutS, string messageForHome, string messageForSchool, 
-            bool depositionsMor, bool depositionsAft, bool sleepMor, 
-            bool sleepAft, string meal)
+            int eatAmoutS, string messageForHome, string messageForSchool,
+            int depositionsMor, int depositionsAft, int sleepMor,
+            int sleepAft, Meal meal)
         {
             this.cod = cod;
             this.eatAmoutB = eatAmoutB;
@@ -60,7 +60,7 @@ namespace ProyectoFinal
             return cod;
         }
 
-        public string GetMeal()
+        public Meal GetMeal()
         {
             return meal;
         }
@@ -95,22 +95,22 @@ namespace ProyectoFinal
             return messageForSchool;
         }
 
-        public bool GetDepositionsMor()
+        public int GetDepositionsMor()
         {
             return depositionsMor;
         }
 
-        public bool GetDepositionsAft()
+        public int GetDepositionsAft()
         {
             return depositionsMor;
         }
 
-        public bool GetSleepMor()
+        public int GetSleepMor()
         {
             return sleepMor;
         }
 
-        public bool GetSleepAft()
+        public int GetSleepAft()
         {
             return sleepAft;
         }
@@ -130,7 +130,7 @@ namespace ProyectoFinal
             cod = i;
         }
 
-        public void SetMeal(string t)
+        public void SetMeal(Meal t)
         {
             meal = t;
         }
@@ -165,22 +165,22 @@ namespace ProyectoFinal
             messageForSchool = t;
         }
 
-        public void SetDepositionsMor(bool t)
+        public void SetDepositionsMor(int t)
         {
             depositionsMor = t;
         }
 
-        public void SetDepositionsAft(bool t)
+        public void SetDepositionsAft(int t)
         {
             depositionsMor = t;
         }
 
-        public void SetSleepMor(bool t)
+        public void SetSleepMor(int t)
         {
             sleepMor = t;
         }
 
-        public void SetSleepAft(bool t)
+        public void SetSleepAft(int t)
         {
             sleepAft = t;
         }

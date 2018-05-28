@@ -17,6 +17,11 @@ namespace ProyectoFinal
             listInformationAllDays = f.GetList();
         }
 
-        
+        public void SetInformation(InformationOfDay d)
+        {
+            listInformationAllDays.Add(d);
+            f.SetList(listInformationAllDays);
+            f.Save();
+        }
     }
 }

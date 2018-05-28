@@ -1,7 +1,7 @@
 ﻿
 namespace ProyectoFinal
 {
-    abstract class Files
+    public abstract class Files
     {
         public abstract void Save();
 

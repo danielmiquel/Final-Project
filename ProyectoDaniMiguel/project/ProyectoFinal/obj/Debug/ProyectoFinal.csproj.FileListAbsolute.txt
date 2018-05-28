@@ -42,3 +42,6 @@ C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFin
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.Warning.resources
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.ShowChild.resources
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.HistoricalChild.resources
+C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.WarningDataWhite.resources
+C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.WarningInvalidDate.resources
+C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.WarningInvalidSex.resources

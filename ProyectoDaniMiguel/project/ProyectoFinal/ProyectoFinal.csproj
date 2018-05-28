@@ -118,6 +118,24 @@
     <Compile Include="WarningChildNotSelect.Designer.cs">
       <DependentUpon>WarningChildNotSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="WarningDataWhite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningDataWhite.Designer.cs">
+      <DependentUpon>WarningDataWhite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarningInvalidDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningInvalidDate.Designer.cs">
+      <DependentUpon>WarningInvalidDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarningInvalidSex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningInvalidSex.Designer.cs">
+      <DependentUpon>WarningInvalidSex.cs</DependentUpon>
+    </Compile>
     <Compile Include="WarningSelectOnlyOne.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +178,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WarningChildNotSelect.resx">
       <DependentUpon>WarningChildNotSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarningDataWhite.resx">
+      <DependentUpon>WarningDataWhite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarningInvalidDate.resx">
+      <DependentUpon>WarningInvalidDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarningInvalidSex.resx">
+      <DependentUpon>WarningInvalidSex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WarningSelectOnlyOne.resx">
       <DependentUpon>WarningSelectOnlyOne.cs</DependentUpon>

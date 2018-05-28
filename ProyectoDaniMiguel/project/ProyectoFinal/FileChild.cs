@@ -13,26 +13,27 @@ namespace ProyectoFinal
         {
             try
             {
-                if(!File.Exists("lisOfChildren.txt"))
+                if (!File.Exists("listOfChildren.txt"))
                     Console.WriteLine("Eror,file not found");
 
-                StreamWriter file = File.CreateText("lisOfChildren.txt");
+                StreamWriter file = File.CreateText("listOfChildren.txt");
 
                 foreach (Child i in listChildren)
                 {
-                    file.WriteLine(i.GetCod() + "|" + i.GetName() 
-                        + "|"+ i.GetSurname() + "|" + i.GetSex() 
-                        + "|"+i.GetBirthday().day+","+i.GetBirthday().month+","
-                        +i.GetBirthday().year 
-                        + "|" + i.GetObservations()+ "|" + i.GetAllergies());
+                    file.WriteLine(i.GetCod() + "|" + i.GetName()
+                        + "|" + i.GetSurname() + "|" + i.GetSex()
+                        + "|" + i.GetBirthday().day + "," + i.GetBirthday().month + ","
+                        + i.GetBirthday().year
+                        + "|" + i.GetObservations() + "|" + i.GetAllergies());
                 }
                 file.Close();
 
-            }catch(IOException e)
-            {
-                Console.WriteLine("Eror: "+e.Message);
             }
-        
+            catch (IOException e)
+            {
+                Console.WriteLine("Eror: " + e.Message);
+            }
+
         }
 
         public override void Load()
@@ -41,8 +42,8 @@ namespace ProyectoFinal
 
             try
             {
-                StreamReader file = File.OpenText("lisOfChildren.txt");
-                string[] data= new string[7];
+                StreamReader file = File.OpenText("listOfChildren.txt");
+                string[] data = new string[7];
                 string[] birthday = new string[3];
                 string line;
                 Child child;
@@ -53,21 +54,21 @@ namespace ProyectoFinal
                     if (line != null)
                     {
                         data = line.Split('|');
-                        child = new Child(Convert.ToInt32(data[0]), data[1], 
-                            data[2],Convert.ToChar(data[3]),data[5], data[6]);
+                        child = new Child(Convert.ToInt32(data[0]), data[1],
+                            data[2], Convert.ToChar(data[3]), data[5], data[6]);
                         birthday = data[4].Split(',');
-                        child.SetBirthdayInt(Convert.ToInt32(data[0]),
-                            Convert.ToInt32(data[1]),
-                            Convert.ToInt32(data[2]));
+                        child.SetBirthdayInt(Convert.ToInt32(birthday[0]),
+                            Convert.ToInt32(birthday[1]),
+                            Convert.ToInt32(birthday[2]));
                         list.Add(child);
                     }
                 } while (line != null);
                 file.Close();
-            
+
             }
-            catch(IOException e)
+            catch (IOException e)
             {
-                Console.WriteLine("Eror: "+e.Message);
+                Console.WriteLine("Eror: " + e.Message);
             }
 
             listChildren = list;

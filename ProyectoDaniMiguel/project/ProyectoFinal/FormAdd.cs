@@ -45,22 +45,64 @@ namespace ProyectoFinal
                     addCo = true;
                 }
             }
-            if((tbName.Text == "") | (tbSurnames.Text == "") 
+            if ((tbName.Text == "") | (tbSurnames.Text == "")
                 | (tbSex.Text == ""))
             {
-                Warning w = new Warning();
+                WarningDataWhite w = new WarningDataWhite();
+                w.Show();
+            }
+            if (tbSex.Text.ToLower().ToString() != "f" &&
+                tbSex.Text.ToLower().ToString() != "m")
+            {
+                WarningInvalidSex w = new WarningInvalidSex();
                 w.Show();
             }
             else
             {
-                /*
-                AddChild newChild = new AddChild();
-                newChild.SetListWithNewChild(newChild.SetNewChild(
-                    tbName.Text, tbSurnames.Text, tbObservation.Text,
-                    allergies, Convert.ToChar(tbSex.Text)));
-                this.Close();
-                */
+                Day birthday = new Day();
+                DateTime now = DateTime.Today;
+                bool goodDate = false;
+
+                if (dtpAge.Value.Year == now.Date.Year)
+                {
+                    if (dtpAge.Value.Month == now.Date.Month)
+                    {
+                        if (dtpAge.Value.Day < now.Date.Day)
+                        {
+                            goodDate = true;
+                        }
+                    }
+                    else if (dtpAge.Value.Month < now.Date.Month)
+                    {
+                        goodDate = true;
+                    }
+                }
+                else if (dtpAge.Value.Year < now.Date.Year)
+                    goodDate = true;
+
+                if (goodDate)
+                {
+                    birthday.day = dtpAge.Value.Day;
+                    birthday.month = dtpAge.Value.Month;
+                    birthday.year = dtpAge.Value.Year;
+                    AddChild newChild = new AddChild();
+                    newChild.SetListWithNewChild(newChild.SetNewChild(
+                        tbName.Text.ToUpper(), tbSurnames.Text.ToUpper(),
+                        tbObservation.Text, allergies,
+                        Convert.ToChar(tbSex.Text.ToUpper()), birthday));
+                    this.Close();
+                }
+                else
+                {
+                    WarningInvalidDate w = new WarningInvalidDate();
+                    w.Show();
+                }
             }
+        }
+
+        private void dtpAge_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

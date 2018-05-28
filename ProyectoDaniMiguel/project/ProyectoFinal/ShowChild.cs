@@ -33,11 +33,13 @@ namespace ProyectoFinal
             tbObservations.Text = listChildren.GetChildOfList(index).GetObservations();
             tbAllergies.Text = listChildren.GetChildOfList(index).GetAllergies();
             tbAge.Text = listChildren.GetChildOfList(index).GetAge().ToString();
-            
+            lbTypeAge.Text = listChildren.GetChildOfList(index).GetTypeAge();
+
         }
 
         private void btOk_Click(object sender, EventArgs e)
         {
+            ListInformationAllDays list = new ListInformationAllDays();
             this.Close();
         }
 

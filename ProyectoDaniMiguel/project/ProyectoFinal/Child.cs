@@ -2,16 +2,10 @@
 
 namespace ProyectoFinal
 {
-    public struct Birthday
-    {
-        public int day;
-        public int month;
-        public int year;
-    }
-
     public class Child
     {
-        protected Birthday birth;
+        protected Day birth;
+        protected string typeAge;
         protected int age;
         protected string name;
         protected string surname;
@@ -31,7 +25,7 @@ namespace ProyectoFinal
             this.allergies = allergies;
         }
 
-        public Birthday GetBirthday()
+        public Day GetBirthday()
         {
             return birth;
         }
@@ -41,17 +35,28 @@ namespace ProyectoFinal
             return age;
         }
 
-        public void SetAge()
+        public void SetAge(Day t)
         {
-            DateTime now = new DateTime();
-            age = now.Year - birth.year;
-            if (now.Month > birth.month && now.Day > birth.day)
-                age++;
+            DateTime now = DateTime.Now;
+            age = now.Year - t.year;
+            typeAge = "Years";
+            if (age == 0)
+            {
+                age = (12 - t.month) + now.Month;
+                typeAge = "Months";
+            }
+                
         }
 
-        public void SetBirthdayInt(Birthday d)
+        public void SetBirthday(Day d)
         {
             birth = d;
+            SetAge(birth);
+        }
+
+        public string GetTypeAge()
+        {
+            return typeAge;
         }
 
         public void SetBirthdayInt(int day, int month, int year)
@@ -59,6 +64,7 @@ namespace ProyectoFinal
             birth.day = day;
             birth.month = month;
             birth.year = year;
+            SetAge(birth);
         }
 
         public int GetCod()

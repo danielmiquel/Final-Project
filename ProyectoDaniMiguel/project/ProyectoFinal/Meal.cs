@@ -1,11 +1,23 @@
-﻿namespace ProyectoFinal
+﻿using System;
+
+namespace ProyectoFinal
 {
-    class Meal
+    public class Meal
     {
         protected string foodType;
         protected string dish;
         protected string foodstuff;
         protected string allergies;
+        protected DateTime dateOfUse;
+
+        public Meal(string foodType, string dish, string foodstuff, string allergies, DateTime dateOfUse)
+        {
+            this.foodType = foodType;
+            this.dish = dish;
+            this.foodstuff = foodstuff;
+            this.allergies = allergies;
+            this.dateOfUse = dateOfUse;
+        }
 
         public Meal(string foodType,string dish,string foodstuff,string allergies)
         {
@@ -14,6 +26,8 @@
             this.foodstuff = foodstuff;
             this.allergies = allergies;
         }
+
+        public Meal() { }
 
         public string GetDish()
         {
@@ -55,6 +69,16 @@
             foodType = newFoodType;
         }
 
+        public DateTime GetDateOfUse()
+        {
+            return dateOfUse;
+        }
+
+        public void SetDateOfUse(DateTime d)
+        {
+            dateOfUse = d;
+        }
+
         public string[] GetArrayAllergies()
         {
             string[] allergies = GetAllergies().Split(',');
@@ -65,6 +89,19 @@
         {
             return "Dish: "+dish+"   Foodstruff: "
                 +foodstuff+"   Allergies: "+allergies;
+        }
+
+        public string GetFoorForSaveUseOfData()
+        {
+            return foodType + "," + foodstuff + ","
+                + dish + "," + allergies + "," + dateOfUse.Day
+                + "," + dateOfUse.Month + "," + dateOfUse.Year;
+        }
+
+        public string GetFoorForSave()
+        {
+            return foodType + "," + foodstuff + ","
+                + dish + "," + allergies + "," + dateOfUse.Day;
         }
     }
 }

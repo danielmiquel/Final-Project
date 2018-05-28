@@ -88,6 +88,7 @@
             this.lbMessageForSchool = new System.Windows.Forms.Label();
             this.btDiet = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbTypeAge = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbDate
@@ -148,8 +149,9 @@
             this.tbAge.Location = new System.Drawing.Point(97, 146);
             this.tbAge.Name = "tbAge";
             this.tbAge.ReadOnly = true;
-            this.tbAge.Size = new System.Drawing.Size(265, 20);
+            this.tbAge.Size = new System.Drawing.Size(60, 20);
             this.tbAge.TabIndex = 9;
+            this.tbAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSurnames
             // 
@@ -203,7 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAge.AutoSize = true;
             this.lbAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAge.Location = new System.Drawing.Point(51, 153);
+            this.lbAge.Location = new System.Drawing.Point(50, 147);
             this.lbAge.Name = "lbAge";
             this.lbAge.Size = new System.Drawing.Size(33, 17);
             this.lbAge.TabIndex = 14;
@@ -769,12 +771,24 @@
             this.comboBox1.TabIndex = 70;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // lbTypeAge
+            // 
+            this.lbTypeAge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTypeAge.AutoSize = true;
+            this.lbTypeAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTypeAge.Location = new System.Drawing.Point(163, 147);
+            this.lbTypeAge.Name = "lbTypeAge";
+            this.lbTypeAge.Size = new System.Drawing.Size(0, 17);
+            this.lbTypeAge.TabIndex = 71;
+            // 
             // ShowChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btOk;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.lbTypeAge);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btDiet);
             this.Controls.Add(this.lbMessageForSchool);
@@ -908,5 +922,6 @@
         private System.Windows.Forms.Label lbMessageForSchool;
         private System.Windows.Forms.Button btDiet;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbTypeAge;
     }
 }

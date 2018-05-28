@@ -14,11 +14,12 @@ namespace ProyectoFinal
         {
             try
             {
-                StreamWriter file = File.CreateText("lisInformationOfDay.txt");
+                StreamWriter file = File.AppendText("listInformationOfDay.txt");
                 
                 foreach (InformationOfDay i in listInfo)
                 {
-                    file.WriteLine(i.GetCod() + "|" + i.GetMeal() + "|" 
+                    file.WriteLine(i.GetCod() + "|" 
+                        + i.GetMeal().GetFoorForSave() + "|" 
                         + i.GetDay().day+","+i.GetDay().month+","
                         + i.GetDay().year + "|"+ i.GetEatAmoutB() +"|" 
                         + i.GetEatAmoutL()+ "|" + i.GetEatAmoutS() + "|" 
@@ -49,6 +50,7 @@ namespace ProyectoFinal
             {
                 StreamReader file = File.OpenText("lisInformationOfDay.txt");
                 string[] data = new string[18];
+                string[] meals = new string[7];
                 string line;
                 InformationOfDay info;
                 ListOfChildren listInfo = new ListOfChildren();
@@ -58,13 +60,19 @@ namespace ProyectoFinal
                     line = file.ReadLine();
                     if (line != null)
                     {
+                        data = line.Split('|');
+                        meals = data[1].Split(',');
+                        DateTime time = new DateTime(Convert.ToInt32(data[6]),
+                            Convert.ToInt32(data[5]),
+                            Convert.ToInt32(data[4]));
+                        Meal m = new Meal(meals[0], meals[1], meals[2], meals[3], time);
                         info = new InformationOfDay(Convert.ToInt32(data[0]),
                             Convert.ToInt32(data[5]),Convert.ToInt32(data[6]),
                             Convert.ToInt32(data[7]),data[16],data[17],
-                            Convert.ToBoolean(data[8]),
-                            Convert.ToBoolean(data[9]), 
-                            Convert.ToBoolean(data[10]), 
-                            Convert.ToBoolean(data[13]),data[1]);
+                            Convert.ToInt32(data[8]),
+                            Convert.ToInt32(data[9]), 
+                            Convert.ToInt32(data[10]), 
+                            Convert.ToInt32(data[13]),m);
                         info.AddTimeSleepMor(Convert.ToInt32(data[11]),
                             Convert.ToInt32(data[12]));
                         info.AddTimeSleepAft(Convert.ToInt32(data[14]),

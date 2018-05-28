@@ -13,7 +13,7 @@ namespace ProyectoFinal
             int cod = l.GetList().Count + 1;
             Child newChild = new Child(cod,name,surname,sex,
                 observations,allergy);
-            //newChild.SetBirthday(birthay);
+            newChild.SetBirthday(birthay);
             return newChild;
         }
 
