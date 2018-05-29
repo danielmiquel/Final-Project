@@ -13,10 +13,11 @@ namespace ProyectoFinal
         {
             try
             {
+                StreamWriter file;
                 if (!File.Exists("listOfChildren.txt"))
-                    Console.WriteLine("Eror,file not found");
-
-                StreamWriter file = File.CreateText("listOfChildren.txt");
+                     file = File.CreateText("listOfChildren.txt");
+                else
+                    file = File.AppendText("listOfChildren.txt");
 
                 foreach (Child i in listChildren)
                 {
@@ -38,40 +39,50 @@ namespace ProyectoFinal
 
         public override void Load()
         {
-            List<Child> list = new List<Child>();
+            
 
             try
             {
-                StreamReader file = File.OpenText("listOfChildren.txt");
-                string[] data = new string[7];
-                string[] birthday = new string[3];
-                string line;
-                Child child;
-
-                do
+                if (File.Exists("listOfChildren.txt"))
                 {
-                    line = file.ReadLine();
-                    if (line != null)
-                    {
-                        data = line.Split('|');
-                        child = new Child(Convert.ToInt32(data[0]), data[1],
-                            data[2], Convert.ToChar(data[3]), data[5], data[6]);
-                        birthday = data[4].Split(',');
-                        child.SetBirthdayInt(Convert.ToInt32(birthday[0]),
-                            Convert.ToInt32(birthday[1]),
-                            Convert.ToInt32(birthday[2]));
-                        list.Add(child);
-                    }
-                } while (line != null);
-                file.Close();
+                    List<Child> list = new List<Child>();
+                    StreamReader file = File.OpenText("listOfChildren.txt");
+                    string[] data = new string[7];
+                    string[] birthday = new string[3];
+                    string line;
+                    Child child;
 
+                    do
+                    {
+                        line = file.ReadLine();
+                        if (line != null)
+                        {
+                            data = line.Split('|');
+                            child = new Child(Convert.ToInt32(data[0]), data[1],
+                                data[2], Convert.ToChar(data[3]), data[5], data[6]);
+                            birthday = data[4].Split(',');
+                            child.SetBirthdayInt(Convert.ToInt32(birthday[0]),
+                                Convert.ToInt32(birthday[1]),
+                                Convert.ToInt32(birthday[2]));
+                            list.Add(child);
+                        }
+                    } while (line != null);
+                    file.Close();
+                    listChildren = list;
+                }
+                else
+                {
+                    listChildren = null;
+                }
             }
             catch (IOException e)
             {
-                Console.WriteLine("Eror: " + e.Message);
+                Console.WriteLine("Error: " + e.Message);
             }
-
-            listChildren = list;
+            catch(Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
         }
 
         public List<Child> GetList()

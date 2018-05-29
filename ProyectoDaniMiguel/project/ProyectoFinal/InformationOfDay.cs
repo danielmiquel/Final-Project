@@ -33,14 +33,16 @@ namespace ProyectoFinal
         protected int depositionsAft;
         protected int sleepMor;
         protected int sleepAft;
-        protected TimeSleep timeSleepMor;
-        protected TimeSleep timeSleepAft;
-        protected Meal meal;
+        protected TimeSleep timeSleepMorUntil;
+        protected TimeSleep timeSleepMorSince;
+        protected TimeSleep timeSleepAftUntil;
+        protected TimeSleep timeSleepAftSince;
+        protected string meal;
         
         public InformationOfDay(int cod, int eatAmoutB, int eatAmoutL,
             int eatAmoutS, string messageForHome, string messageForSchool,
             int depositionsMor, int depositionsAft, int sleepMor,
-            int sleepAft, Meal meal)
+            int sleepAft)
         {
             this.cod = cod;
             this.eatAmoutB = eatAmoutB;
@@ -52,7 +54,6 @@ namespace ProyectoFinal
             this.depositionsAft = depositionsAft;
             this.sleepMor = sleepMor;
             this.sleepAft = sleepAft;
-            this.meal = meal;
         }
 
         public int GetCod()
@@ -60,7 +61,7 @@ namespace ProyectoFinal
             return cod;
         }
 
-        public Meal GetMeal()
+        public string GetMeal()
         {
             return meal;
         }
@@ -68,6 +69,11 @@ namespace ProyectoFinal
         public Day GetDay()
         {
             return daySave;
+        }
+
+        public string GetDayForShow()
+        {
+            return daySave.day+"/"+daySave.month+"/"+daySave.year;
         }
 
         public int GetEatAmoutB()
@@ -115,14 +121,24 @@ namespace ProyectoFinal
             return sleepAft;
         }
 
-        public TimeSleep GetTimeSleepMor()
+        public TimeSleep GetTimeSleepMorSince()
         {
-            return timeSleepMor;
+            return timeSleepMorSince;
         }
 
-        public TimeSleep GetTimeSleepAft()
+        public TimeSleep GetTimeSleepAftSince()
         {
-            return timeSleepAft;
+            return timeSleepAftSince;
+        }
+
+        public TimeSleep GetTimeSleepMorUntil()
+        {
+            return timeSleepMorUntil;
+        }
+
+        public TimeSleep GetTimeSleepAftUntil()
+        {
+            return timeSleepAftUntil;
         }
 
         public void SetCod(int i)
@@ -130,7 +146,7 @@ namespace ProyectoFinal
             cod = i;
         }
 
-        public void SetMeal(Meal t)
+        public void SetMeal(string t)
         {
             meal = t;
         }
@@ -185,26 +201,40 @@ namespace ProyectoFinal
             sleepAft = t;
         }
 
-        public void SetTimeSleepMor(TimeSleep t)
+        public void SetTimeSleepMorUntil(TimeSleep t)
         {
-            timeSleepMor = t;
+            timeSleepMorUntil = t;
         }
 
-        public void SetTimeSleepAft(TimeSleep t)
+        public void SetTimeSleepAftUntil(TimeSleep t)
         {
-           timeSleepAft = t;
-        }
-        
-        public void AddTimeSleepAft(int h, int m)
-        {
-            timeSleepAft.hour = h;
-            timeSleepAft.minute = m;
+            timeSleepAftUntil = t;
         }
 
-        public void AddTimeSleepMor(int h, int m)
+        public void SetTimeSleepMorSince(TimeSleep t)
         {
-            timeSleepMor.hour = h;
-            timeSleepMor.minute = m;
+            timeSleepMorSince = t;
+        }
+
+        public void SetTimeSleepAftSince(TimeSleep t)
+        {
+            timeSleepAftSince = t;
+        }
+
+        public void AddTimeSleepAft(int h1, int m1,int h2,int m2)
+        {
+            timeSleepAftUntil.hour = h2;
+            timeSleepAftUntil.minute = m2;
+            timeSleepAftSince.hour = h1;
+            timeSleepAftSince.minute = m1;
+        }
+
+        public void AddTimeSleepMor(int h1, int m1, int h2, int m2)
+        {
+            timeSleepMorSince.hour = h1;
+            timeSleepMorSince.minute = m1;
+            timeSleepMorUntil.hour = h2;
+            timeSleepMorUntil.minute = m2;
         }
 
         public void AddDaySave(int day,int month,int year)

@@ -101,7 +101,7 @@ namespace ProyectoFinal
         public string GetFoorForSave()
         {
             return foodType + "," + foodstuff + ","
-                + dish + "," + allergies + "," + dateOfUse.Day;
+                + dish + "," + allergies;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal
 {
-    class ListInformationAllDays
+    public class ListInformationAllDays
     {
         protected List<InformationOfDay> listInformationAllDays;
         protected FileInformationOfDay f = new FileInformationOfDay();
@@ -22,6 +22,33 @@ namespace ProyectoFinal
             listInformationAllDays.Add(d);
             f.SetList(listInformationAllDays);
             f.Save();
+        }
+
+        public List<InformationOfDay> GetInformationOfAChild(int cod)
+        {
+            List<InformationOfDay> listOfAChild = new List<InformationOfDay>();
+            foreach (InformationOfDay i in listInformationAllDays)
+            {
+                if (i.GetCod() == cod)
+                {
+                    listOfAChild.Add(i);
+                }
+            }
+
+            return listOfAChild;
+        }
+
+        public InformationOfDay GetInformationOfAChildFromDate(DateTime d, int cod)
+        {
+            foreach (InformationOfDay i in GetInformationOfAChild(cod))
+            {
+                if (i.GetDay().Equals(d))
+                {
+                    InformationOfDay info = i;
+                    return info;
+                }
+            }
+            return null;
         }
     }
 }

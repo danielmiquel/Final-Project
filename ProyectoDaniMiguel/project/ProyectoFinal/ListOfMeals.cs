@@ -3,7 +3,7 @@
 namespace ProyectoFinal
 {
     //This class get the list of meals that FileMeals load
-    class ListOfMeals
+    public class ListOfMeals
     {
         private List<Meal> listMeals;
         protected List<Meal> listLunch = new List<Meal>();

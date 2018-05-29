@@ -17,22 +17,25 @@ namespace ProyectoFinal
         {
             ListOfChildren listChildren = new ListOfChildren();
 
-            foreach(Child  i in listChildren.GetList())
+            if(listChildren.GetList() != null)
             {
-                if (i.GetSex() == 'F')
-                    totalWomen++;
-                else if (i.GetSex() == 'M')
-                    totalMens++;
-            }
+                foreach (Child i in listChildren.GetList())
+                {
+                    if (i.GetSex() == 'F')
+                        totalWomen++;
+                    else if (i.GetSex() == 'M')
+                        totalMens++;
+                }
 
-            foreach (string i in listChildren.ListForShow())
-            {
-                clbChildren.Items.Add(i);
-            }
+                foreach (string i in listChildren.ListForShow())
+                {
+                    clbChildren.Items.Add(i);
+                }
 
-            tbTotalChildren.Text = clbChildren.Items.Count.ToString();
-            tbTotalFemale.Text = totalWomen.ToString();
-            tbTotalMens.Text = totalMens.ToString();
+                tbTotalChildren.Text = clbChildren.Items.Count.ToString();
+                tbTotalFemale.Text = totalWomen.ToString();
+                tbTotalMens.Text = totalMens.ToString();
+            }
         }
 
         private void btAdd_Click(object sender, EventArgs e)

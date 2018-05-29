@@ -5,12 +5,13 @@ using System.Collections.Generic;
 namespace ProyectoFinal
 {
     //Class to select meals according to the time of day
-    class FoodSelection
+    public class FoodSelection
     {
         protected int index;
         protected ListOfChildren listC = new ListOfChildren();
         protected ListOfMeals listM = new ListOfMeals();
         protected Random rnd = new Random();
+        protected string mealSave = "";
         
         public FoodSelection() { }
 
@@ -57,7 +58,7 @@ namespace ProyectoFinal
             num1 = num2;
 
             Meal meal = l[num2];
-
+            
             string food = "Dish: " + meal.GetDish() + "   Foodstuff: " 
                 + meal.GetFoodstuff() + "   Allergies: " + meal.GetAllergies();
             return food;
