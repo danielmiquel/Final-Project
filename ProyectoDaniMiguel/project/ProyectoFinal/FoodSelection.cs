@@ -8,12 +8,16 @@ namespace ProyectoFinal
     public class FoodSelection
     {
         protected int index;
-        protected ListOfChildren listC = new ListOfChildren();
-        protected ListOfMeals listM = new ListOfMeals();
+        protected ListOfChildren listC;
+        protected ListOfMeals listM;
         protected Random rnd = new Random();
         protected string mealSave = "";
         
-        public FoodSelection() { }
+        public FoodSelection(ListOfChildren lc,ListOfMeals lm)
+        {
+            listC = lc;
+            listM = lm;
+        }
 
         //Functions that take food for every moment of the day
         public string GetBreakfast()

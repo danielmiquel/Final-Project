@@ -10,9 +10,12 @@ namespace ProyectoFinal
     {
         public  int index;
         public List<Child> listChildren;
+        protected ListOfChildren list;
 
-        public ModifyChild()
+        public ModifyChild(ListOfChildren l)
         {
+            listChildren = l.GetList();
+            list = l;
         }
 
         public ListOfChildren ModList(ListOfChildren listChild)
@@ -33,28 +36,27 @@ namespace ProyectoFinal
         }
 
         //Return the current list
+        /*
         public List<Child> GetListChildren()
         {
             ListOfChildren list = new ListOfChildren();
             return list.GetList();
         }
+        */
 
         //Return the select child  for modify
         public Child GetSelectChild(int i)
         {
-            listChildren = GetListChildren();
             return listChildren[i];
         }
 
         //Insert the modified child in list and save
         public void SetModifiedChild(Child c,int i)
         {
-            listChildren = GetListChildren();
             listChildren.RemoveAt(i);
             listChildren.Insert(i, c);
-            ListOfChildren save = new ListOfChildren();
-            save.SetList(listChildren);
-            save.SaveListOfChildren();
+            list.SetList(listChildren);
+            list.SaveListOfChildren();
         }
     }
 }

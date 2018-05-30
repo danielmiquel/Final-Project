@@ -9,18 +9,22 @@ namespace ProyectoFinal
         protected string lunch;
         protected string snack;
         protected int index;
+        protected ListOfChildren listC;
+        protected ListOfMeals listM;
         
-        public Diet(int i)
+        public Diet(int i,ListOfChildren lc,ListOfMeals lm)
         {
             InitializeComponent();
             index = i;
+            listC = lc;
+            listM = lm;
         }
 
         private void Diet_Load(object sender, EventArgs e)
         {
             if (breakfast == null && lunch == null && snack == null)
             {
-                FoodSelection food = new FoodSelection();
+                FoodSelection food = new FoodSelection(listC,listM);
                 tbBreak.Text = food.GetBreakfast();
                 tbLunch.Text = food.GetLunch();
                 tbSnack.Text = food.GetSnack();
@@ -59,7 +63,7 @@ namespace ProyectoFinal
         //Function that changes the food to show
         private void btChange_Click(object sender, EventArgs e)
         {
-            FoodSelection food = new FoodSelection();
+            FoodSelection food = new FoodSelection(listC, listM);
             tbBreak.Text = food.GetBreakfast();
             tbLunch.Text = food.GetLunch();
             tbSnack.Text = food.GetSnack();

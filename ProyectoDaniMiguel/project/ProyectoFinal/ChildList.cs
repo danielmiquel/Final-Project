@@ -7,6 +7,8 @@ namespace ProyectoFinal
     {
         protected int totalWomen;
         protected int totalMens;
+        protected ListOfChildren listChildren = new ListOfChildren();
+        protected ListOfMeals listMeals = new ListOfMeals();
 
         public ChildList()
         {
@@ -15,7 +17,7 @@ namespace ProyectoFinal
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            ListOfChildren listChildren = new ListOfChildren();
+            
 
             if(listChildren.GetList() != null)
             {
@@ -41,7 +43,7 @@ namespace ProyectoFinal
         private void btAdd_Click(object sender, EventArgs e)
         {
             FormAdd fAdd = new FormAdd(Convert.ToInt32
-                (clbChildren.Items.Count));
+                (clbChildren.Items.Count),listChildren);
             fAdd.Show();
         }
 
@@ -53,7 +55,8 @@ namespace ProyectoFinal
             {
                 if (clbChildren.CheckedItems.Count == 1)
                 {
-                    FormEdit fEdit = new FormEdit(clbChildren.SelectedIndex);
+                    FormEdit fEdit = new FormEdit(clbChildren.SelectedIndex,
+                        listChildren);
                     fEdit.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)
@@ -86,7 +89,8 @@ namespace ProyectoFinal
                 if (clbChildren.CheckedItems.Count == 1)
                 {
                     DietSpecificForChild fDietAll = 
-                        new DietSpecificForChild(clbChildren.SelectedIndex);
+                        new DietSpecificForChild(clbChildren.SelectedIndex,
+                        listChildren,listMeals);
                     fDietAll.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)
@@ -113,7 +117,8 @@ namespace ProyectoFinal
             {
                 if (clbChildren.CheckedItems.Count > 0)
                 {
-                    RemoveChild rChild = new RemoveChild(clbChildren.SelectedIndex);
+                    RemoveChild rChild = new RemoveChild(
+                        clbChildren.SelectedIndex,listChildren);
                     clbChildren.Items.RemoveAt(clbChildren.SelectedIndex);
                 }
                 else
@@ -132,7 +137,6 @@ namespace ProyectoFinal
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            ListOfChildren listChildren = new ListOfChildren();
             clbChildren.Items.Clear();
             tbTotalChildren.Clear();
             tbTotalFemale.Clear();
@@ -164,7 +168,8 @@ namespace ProyectoFinal
             {
                 if (clbChildren.CheckedItems.Count == 1)
                 {
-                    Diet fDiet = new Diet(clbChildren.SelectedIndex);
+                    Diet fDiet = new Diet(clbChildren.SelectedIndex,
+                        listChildren,listMeals);
                     fDiet.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)
@@ -191,7 +196,8 @@ namespace ProyectoFinal
             {
                 if (clbChildren.CheckedItems.Count == 1)
                 {
-                    ShowChild sForm = new ShowChild(clbChildren.SelectedIndex);
+                    ShowChild sForm = new ShowChild(clbChildren.SelectedIndex,
+                        listChildren,listMeals);
                     sForm.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)

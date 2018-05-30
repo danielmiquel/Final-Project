@@ -13,11 +13,13 @@ namespace ProyectoFinal
     public partial class FormAdd : Form
     {
         protected int index;
+        protected ListOfChildren saveList;
 
-        public FormAdd(int i)
+        public FormAdd(int i,ListOfChildren s)
         {
             InitializeComponent();
             index = i;
+            saveList = s;
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -89,7 +91,8 @@ namespace ProyectoFinal
                     newChild.SetListWithNewChild(newChild.SetNewChild(
                         tbName.Text.ToUpper(), tbSurnames.Text.ToUpper(),
                         tbObservation.Text, allergies,
-                        Convert.ToChar(tbSex.Text.ToUpper()), birthday));
+                        Convert.ToChar(tbSex.Text.ToUpper()), birthday,
+                        saveList.GetList().Count+1),saveList);
                     this.Close();
                 }
                 else

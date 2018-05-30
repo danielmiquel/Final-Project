@@ -38,6 +38,7 @@ namespace ProyectoFinal
         protected TimeSleep timeSleepAftUntil;
         protected TimeSleep timeSleepAftSince;
         protected string meal;
+        protected string[] mealsArr = new string[3];
         
         public InformationOfDay(int cod, int eatAmoutB, int eatAmoutL,
             int eatAmoutS, string messageForHome, string messageForSchool,
@@ -242,6 +243,18 @@ namespace ProyectoFinal
             daySave.day = day;
             daySave.month = month;
             daySave.year = year;
+        }
+
+        public void SetArrayMeals(string m1,string m2,string m3)
+        {
+            mealsArr[0] = m1;
+            mealsArr[1] = m2;
+            mealsArr[2] = m3;
+        }
+
+        public string[] GetArrayMeals()
+        {
+            return mealsArr;
         }
     }
 }

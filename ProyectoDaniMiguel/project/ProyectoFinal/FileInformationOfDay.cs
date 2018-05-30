@@ -14,7 +14,7 @@ namespace ProyectoFinal
         {
             try
             {
-                StreamWriter file = File.AppendText("listInformationOfDay.txt");
+                StreamWriter file = File.CreateText("listInformationOfDay.txt");
                 
                 foreach (InformationOfDay i in listInfo)
                 {
@@ -70,17 +70,19 @@ namespace ProyectoFinal
                     do
                     {
                         line = file.ReadLine();
-                        if (line != null)
+                        if (line != null && line.Length > 1)
                         {
                             data = line.Split('|');
                             date = data[2].Split(',');
                             timeSleepMor = data[9].Split(',');
                             timeSleepMor = data[11].Split(',');
-                            //meals = data[1].Split(',');
+                            /*
+                            meals = data[1].Split(',');
                             DateTime time = new DateTime(Convert.ToInt32(data[6]),
                                 Convert.ToInt32(data[5]),
                                 Convert.ToInt32(data[4]));
-                            //string m = new Meal(meals[0], meals[1], meals[2], meals[3], time);
+                            string m = new Meal(meals[0], meals[1], meals[2], meals[3], time);
+                            */
                             info = new InformationOfDay(Convert.ToInt32(data[0]),
                                 Convert.ToInt32(data[3]), Convert.ToInt32(data[4]),
                                 Convert.ToInt32(data[5]), data[12], data[13],
@@ -97,7 +99,11 @@ namespace ProyectoFinal
                                 Convert.ToInt32(timeSleepAft[2]),
                                 Convert.ToInt32(timeSleepAft[3]));
                             info.AddDaySave(Convert.ToInt32(date[0]),
-                                Convert.ToInt32(data[1]), Convert.ToInt32(data[2]));
+                                Convert.ToInt32(date[1]), Convert.ToInt32(date[2]));
+                            /*
+                            Warning w = new Warning(date[0],date`[1],date[2]);
+                            w.Show();
+                            */
                             info.SetMeal(data[1]);
                             list.Add(info);
                         }

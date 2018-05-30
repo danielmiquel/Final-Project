@@ -13,11 +13,13 @@ namespace ProyectoFinal
         {
             try
             {
-                StreamWriter file;
+                StreamWriter file = File.CreateText("listOfChildren.txt");
+                /*
                 if (!File.Exists("listOfChildren.txt"))
                      file = File.CreateText("listOfChildren.txt");
                 else
-                    file = File.AppendText("listOfChildren.txt");
+                    file 
+                */
 
                 foreach (Child i in listChildren)
                 {

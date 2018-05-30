@@ -13,16 +13,19 @@ namespace ProyectoFinal
     public partial class FormEdit : Form
     {
         private int index;
-        public FormEdit(int c)
+        protected ListOfChildren editList;
+
+        public FormEdit(int c, ListOfChildren l)
         {
             InitializeComponent();
             index = c;
+            editList = l;
         }
 
         private void FormEdit_Load(object sender, EventArgs e)
         {
             
-            ModifyChild child = new ModifyChild();
+            ModifyChild child = new ModifyChild(editList);
             Child modifyChild = child.GetSelectChild(index);
             string[] allergies = modifyChild.GetArrayAllergies();
 
@@ -77,11 +80,11 @@ namespace ProyectoFinal
                     addCo = true;
                 }
             }
-            ModifyChild child = new ModifyChild();
+            ModifyChild child = new ModifyChild(editList);
             Child modifiedChild = new Child(Convert.ToInt32(tbCod.Text),
                 tbName.Text,tbSurnames.Text,Convert.ToChar(tbSex.Text),
                 tbObservation.Text,allergies);
-            child.SetModifiedChild(modifiedChild,child.GetIndex());
+            child.SetModifiedChild(modifiedChild,index);
             this.Close();
         }
     }

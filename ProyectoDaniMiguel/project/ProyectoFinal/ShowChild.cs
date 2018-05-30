@@ -13,25 +13,34 @@ namespace ProyectoFinal
     public partial class ShowChild : Form
     {
         protected int index;
-        protected FoodSelection meal = new FoodSelection();
+        protected FoodSelection meal;
         protected ListInformationAllDays list = new ListInformationAllDays();
         protected DateTime time = DateTime.Now;
+        protected ListOfChildren listChildren;
+        protected ListOfMeals listMeals;
+        protected List<InformationOfDay> listOfChild;
+        protected string[] meals = new string[3];
 
-        public ShowChild(int i)
+        public ShowChild(int i, ListOfChildren lc, ListOfMeals lm)
         {
-            
             InitializeComponent();
             index = i;
-
+            listChildren = lc;
+            listMeals = lm;
+            meal = new FoodSelection(lc,lm);
+            listOfChild = list.GetInformationOfAChild(index + 1);
         }
 
         private void ShowChild_Load(object sender, EventArgs e)
         {
-            ListOfChildren listChildren = new ListOfChildren();
-            
-            foreach(InformationOfDay j in list.GetInformationOfAChild(index))
+            Day today = new Day();
+            today.day = time.Day;
+            today.month = time.Month;
+            today.year = time.Year;
+
+            foreach (InformationOfDay j in list.GetInformationOfAChild(index + 1))
             {
-                comboBox1.Items.Add(j.GetDayForShow());
+                cbDaysInformation.Items.Add(j.GetDayForShow());
             }
 
             tbName.Text = listChildren.GetChildOfList(index).GetName();
@@ -43,6 +52,12 @@ namespace ProyectoFinal
             tbAge.Text = listChildren.GetChildOfList(index).GetAge().ToString();
             lbTypeAge.Text = listChildren.GetChildOfList(index).GetTypeAge();
 
+            /*
+            meals[0] = meal.GetBreakfast();
+            meals[1] = meal.GetLunch();
+            meals[2] = meal.GetSnack();
+            */
+            
             tbFoodBreakfast.Text = meal.GetBreakfast();
             tbFoodLunch.Text = meal.GetLunch();
             tbFoodSnack.Text = meal.GetSnack();
@@ -55,12 +70,78 @@ namespace ProyectoFinal
             dtpSinceSleepAft.CustomFormat = "HH : mm";
             dtpUntilSleepAft.Format = DateTimePickerFormat.Custom;
             dtpUntilSleepAft.CustomFormat = "HH : mm";
-            comboBox1.Text = time.Day + "/" + time.Month + "/" + time.Year;
+            cbDaysInformation.Text = time.Day + "/" + time.Month + "/" + time.Year;
+
+            InformationOfDay information = list.GetInformationOfAChildFromDate(
+                today, listChildren.GetChildOfList(index).GetCod());
+            
+            if (information != null)
+            {
+                if (information.GetEatAmoutB() == 1)
+                    cbEatBreakAll.CheckState = CheckState.Checked;
+                else if (information.GetEatAmoutB() == 2)
+                    cbEatBreakHalf.CheckState = CheckState.Checked;
+                else if (information.GetEatAmoutB() == 3)
+                    cbEatBreakLittle.CheckState = CheckState.Checked;
+
+                if (information.GetEatAmoutL() == 1)
+                    cbEatLunchAll.CheckState = CheckState.Checked;
+                else if (information.GetEatAmoutL() == 2)
+                    cbEatLunchHalf.CheckState = CheckState.Checked;
+                else if (information.GetEatAmoutL() == 3)
+                    cbEatLunchLittle.CheckState = CheckState.Checked;
+
+                if (information.GetEatAmoutS() == 1)
+                    cbEatSnackAll.CheckState = CheckState.Checked;
+                else if (information.GetEatAmoutS() == 2)
+                    cbEatSnackHalf.CheckState = CheckState.Checked;
+                else if (information.GetEatAmoutS() == 3)
+                    cbEatSnackLittle.CheckState = CheckState.Checked;
+
+                if (information.GetDepositionsMor() == 1)
+                    cbDepositionsMorYes.CheckState = CheckState.Checked;
+                else if (information.GetDepositionsMor() == 2)
+                    cbDepositionsMorNo.CheckState = CheckState.Checked;
+
+                if (information.GetDepositionsAft() == 1)
+                    cbDepositionsAftYes.CheckState = CheckState.Checked;
+                else if (information.GetDepositionsAft() == 2)
+                    cbDepositionsAftNo.CheckState = CheckState.Checked;
+
+                tbMessageForHome.Text = information.GetMessageForHome();
+                tbMessageForSchool.Text = information.GetMessageForSchool();
+                
+                /*
+                if(information.GetTimeSleepMorSince().hour != 0 && information.GetTimeSleepMorSince().minute != 0)
+                {
+                    dtpSinceSleepMor.Value= Convert.ToDateTime(information.GetTimeSleepMorSince());
+                }
+
+                if (information.GetTimeSleepMorUntil().hour != 0 && information.GetTimeSleepMorUntil().minute != 0)
+                {
+                    dtpUntilSleepMor.Value = Convert.ToDateTime(information.GetTimeSleepMorUntil());
+                }
+
+                if (information.GetTimeSleepAftSince().hour != 0 && information.GetTimeSleepAftSince().minute != 0)
+                {
+                    dtpSinceSleepAft.Value = Convert.ToDateTime(information.GetTimeSleepAftSince());
+                }
+
+                if (information.GetTimeSleepAftUntil().hour != 0 && information.GetTimeSleepAftUntil().minute != 0)
+                {
+                    dtpUntilSleepAft.Value = Convert.ToDateTime(information.GetTimeSleepAftUntil());
+                }
+                */
+
+            }
         }
 
         private void btOk_Click(object sender, EventArgs e)
         {
-            ListInformationAllDays list = new ListInformationAllDays();
+            Day today = new Day();
+            today.day = time.Day;
+            today.month = time.Month;
+            today.year = time.Year;
 
             int eatB = cbEatBreakAll.Checked ? 1 : cbEatBreakHalf.Checked ? 2
                 : cbEatBreakLittle.Checked ? 3 : 0;
@@ -83,25 +164,43 @@ namespace ProyectoFinal
             TimeSleep timAft2 = new TimeSleep();
             Day t;
 
-            timMor1.hour = dtpSinceSleepMor.Value.Hour;
-            timMor1.minute = dtpSinceSleepMor.Value.Minute;
-            timMor2.hour = dtpUntilSleepMor.Value.Hour;
-            timMor2.minute = dtpUntilSleepMor.Value.Minute;
-            information.AddTimeSleepMor(timMor1.hour, timMor1.minute, timMor2.hour, timMor2.minute);
+            timMor1.hour = dtpSinceSleepMor.Checked ? 
+                dtpSinceSleepMor.Value.Hour : 0;
+            timMor1.minute = dtpSinceSleepMor.Checked ? 
+                dtpSinceSleepMor.Value.Minute : 0;
+            timMor2.hour = dtpUntilSleepMor.Checked ?
+                dtpUntilSleepMor.Value.Hour : 0;
+            timMor2.minute = dtpUntilSleepMor.Checked ? 
+                dtpUntilSleepMor.Value.Minute : 0;
+            information.AddTimeSleepMor(timMor1.hour, 
+                timMor1.minute, timMor2.hour, timMor2.minute);
 
-            timAft1.hour = dtpSinceSleepAft.Value.Hour;
-            timAft1.minute = dtpSinceSleepAft.Value.Minute;
-            timAft2.hour = dtpUntilSleepAft.Value.Hour;
-            timAft2.minute = dtpUntilSleepAft.Value.Minute;
-            information.AddTimeSleepAft(timAft1.hour, timAft1.minute, timAft2.hour, timAft2.minute);
+            timAft1.hour = dtpSinceSleepAft.Checked? 
+                dtpSinceSleepAft.Value.Hour : 0;
+            timAft1.minute = dtpSinceSleepAft.Checked ? 
+                dtpSinceSleepAft.Value.Minute : 0; 
+            timAft2.hour = dtpUntilSleepAft.Checked ? 
+                dtpSinceSleepAft.Value.Hour : 0;
+            timAft2.minute = dtpUntilSleepAft.Checked ? 
+                dtpSinceSleepAft.Value.Minute : 0;
+            information.AddTimeSleepAft(timAft1.hour, 
+                timAft1.minute, timAft2.hour, timAft2.minute);
 
             t.day = time.Day;
             t.month = time.Month;
             t.year = time.Year;
             information.SetDay(t);
-            information.SetMeal(meal.GetBreakfast() + "," 
-                + meal.GetLunch() + "," + meal.GetSnack());
-            list.SetInformation(information);
+            information.SetMeal(meal.GetBreakfast() + "?" 
+                + meal.GetLunch() + "?" + meal.GetSnack());
+            
+            InformationOfDay info = list.GetInformationOfAChildFromDate(
+                today, listChildren.GetChildOfList(index).GetCod());
+
+            if (info == null)
+                list.SetInformation(information);
+            else
+                list.SetEditInformation(information);
+
             this.Close();
         }
 
@@ -121,20 +220,70 @@ namespace ProyectoFinal
         private void btDiet_Click(object sender, EventArgs e)
         {
             DietSpecificForChild fDietAll =
-                        new DietSpecificForChild(index);
+                        new DietSpecificForChild(index,listChildren,listMeals);
             fDietAll.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex == 1)
+            if (cbDaysInformation.SelectedIndex > 0)
             {
-                HistoricalChild h = new HistoricalChild();
+                
+                HistoricalChild h = new HistoricalChild(
+                   list.GetInformationOfAChildFromDate(
+                       listOfChild[cbDaysInformation.SelectedIndex].GetDay(),
+                       index + 1),
+                   listChildren.GetChildOfList(index));
                 h.Show();
             }
         }
 
         private void lbInfoBeak_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatBreakLittle_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatBreakHalf_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatBreakAll_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatLunchLittle_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatLunchHalf_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatLunchAll_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatSnackAll_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatSnackHalf_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEatSnackLittle_CheckedChanged(object sender, EventArgs e)
         {
 
         }

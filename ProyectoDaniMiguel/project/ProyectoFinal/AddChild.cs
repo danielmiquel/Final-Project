@@ -7,10 +7,8 @@ namespace ProyectoFinal
     {
         //Create new child for insert in list
         public Child SetNewChild(string name, string surname,
-            string observations, string allergy,char sex,Day birthay)
+            string observations, string allergy,char sex,Day birthay,int cod)
         {
-            ListOfChildren l = new ListOfChildren();
-            int cod = l.GetList().Count + 1;
             Child newChild = new Child(cod,name,surname,sex,
                 observations,allergy);
             newChild.SetBirthday(birthay);
@@ -18,13 +16,13 @@ namespace ProyectoFinal
         }
 
         //insert new child in list and save this
-        public void SetListWithNewChild(Child c)
+        public void SetListWithNewChild(Child c,ListOfChildren list)
         {
-            ListOfChildren save = new ListOfChildren();
-            List<Child> children = save.GetList();
+            List<Child> children = list.GetList();
+
             children.Add(c);
-            save.SetList(children);
-            save.SaveListOfChildren();
+            list.SetList(children);
+            list.SaveListOfChildren();
         }
     }
 }

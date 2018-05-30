@@ -8,11 +8,11 @@ namespace ProyectoFinal
 {
     class RemoveChild
     {
-        public RemoveChild(int index)
+        public RemoveChild(int index,ListOfChildren list)
         {
-            ListOfChildren list = new ListOfChildren();
             list.listChildren.RemoveAt(index);
             List<Child> children = list.GetList();
+
             foreach (Child i in children)
             {
                 if(i.GetCod() > index + 1)
@@ -20,6 +20,7 @@ namespace ProyectoFinal
                     i.SetCod(i.GetCod() - 1);
                 }
             }
+
             list.SaveListOfChildren();
         }
     }

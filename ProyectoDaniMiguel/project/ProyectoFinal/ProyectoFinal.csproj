@@ -105,7 +105,6 @@
     <Compile Include="ShowChild.Designer.cs">
       <DependentUpon>ShowChild.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShowInformationOfDay.cs" />
     <Compile Include="Warning.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -74,7 +74,7 @@
             this.lbMessgeForHome = new System.Windows.Forms.Label();
             this.lbMessageForSchool = new System.Windows.Forms.Label();
             this.btDiet = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbDaysInformation = new System.Windows.Forms.ComboBox();
             this.lbTypeAge = new System.Windows.Forms.Label();
             this.dtpUntilSleepMor = new System.Windows.Forms.DateTimePicker();
             this.dtpSinceSleepAft = new System.Windows.Forms.DateTimePicker();
@@ -612,14 +612,14 @@
             this.btDiet.UseVisualStyleBackColor = true;
             this.btDiet.Click += new System.EventHandler(this.btDiet_Click);
             // 
-            // comboBox1
+            // cbDaysInformation
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(156, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 21);
-            this.comboBox1.TabIndex = 70;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbDaysInformation.FormattingEnabled = true;
+            this.cbDaysInformation.Location = new System.Drawing.Point(156, 16);
+            this.cbDaysInformation.Name = "cbDaysInformation";
+            this.cbDaysInformation.Size = new System.Drawing.Size(206, 21);
+            this.cbDaysInformation.TabIndex = 70;
+            this.cbDaysInformation.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lbTypeAge
             // 
@@ -637,8 +637,9 @@
             this.dtpUntilSleepMor.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpUntilSleepMor.Location = new System.Drawing.Point(873, 235);
             this.dtpUntilSleepMor.Name = "dtpUntilSleepMor";
+            this.dtpUntilSleepMor.ShowCheckBox = true;
             this.dtpUntilSleepMor.ShowUpDown = true;
-            this.dtpUntilSleepMor.Size = new System.Drawing.Size(68, 20);
+            this.dtpUntilSleepMor.Size = new System.Drawing.Size(83, 20);
             this.dtpUntilSleepMor.TabIndex = 80;
             // 
             // dtpSinceSleepAft
@@ -646,8 +647,9 @@
             this.dtpSinceSleepAft.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpSinceSleepAft.Location = new System.Drawing.Point(873, 295);
             this.dtpSinceSleepAft.Name = "dtpSinceSleepAft";
+            this.dtpSinceSleepAft.ShowCheckBox = true;
             this.dtpSinceSleepAft.ShowUpDown = true;
-            this.dtpSinceSleepAft.Size = new System.Drawing.Size(68, 20);
+            this.dtpSinceSleepAft.Size = new System.Drawing.Size(83, 20);
             this.dtpSinceSleepAft.TabIndex = 79;
             // 
             // dtpUntilSleepAft
@@ -655,8 +657,9 @@
             this.dtpUntilSleepAft.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpUntilSleepAft.Location = new System.Drawing.Point(873, 321);
             this.dtpUntilSleepAft.Name = "dtpUntilSleepAft";
+            this.dtpUntilSleepAft.ShowCheckBox = true;
             this.dtpUntilSleepAft.ShowUpDown = true;
-            this.dtpUntilSleepAft.Size = new System.Drawing.Size(68, 20);
+            this.dtpUntilSleepAft.Size = new System.Drawing.Size(83, 20);
             this.dtpUntilSleepAft.TabIndex = 78;
             // 
             // dtpSinceSleepMor
@@ -664,8 +667,9 @@
             this.dtpSinceSleepMor.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpSinceSleepMor.Location = new System.Drawing.Point(873, 209);
             this.dtpSinceSleepMor.Name = "dtpSinceSleepMor";
+            this.dtpSinceSleepMor.ShowCheckBox = true;
             this.dtpSinceSleepMor.ShowUpDown = true;
-            this.dtpSinceSleepMor.Size = new System.Drawing.Size(68, 20);
+            this.dtpSinceSleepMor.Size = new System.Drawing.Size(83, 20);
             this.dtpSinceSleepMor.TabIndex = 77;
             // 
             // cbEatSnackAll
@@ -679,6 +683,7 @@
             this.cbEatSnackAll.TabIndex = 37;
             this.cbEatSnackAll.Text = "All";
             this.cbEatSnackAll.UseVisualStyleBackColor = true;
+            this.cbEatSnackAll.CheckedChanged += new System.EventHandler(this.cbEatSnackAll_CheckedChanged);
             // 
             // cbEatSnackHalf
             // 
@@ -691,6 +696,7 @@
             this.cbEatSnackHalf.TabIndex = 38;
             this.cbEatSnackHalf.Text = "Half";
             this.cbEatSnackHalf.UseVisualStyleBackColor = true;
+            this.cbEatSnackHalf.CheckedChanged += new System.EventHandler(this.cbEatSnackHalf_CheckedChanged);
             // 
             // cbEatSnackLittle
             // 
@@ -703,6 +709,7 @@
             this.cbEatSnackLittle.TabIndex = 39;
             this.cbEatSnackLittle.Text = "Little";
             this.cbEatSnackLittle.UseVisualStyleBackColor = true;
+            this.cbEatSnackLittle.CheckedChanged += new System.EventHandler(this.cbEatSnackLittle_CheckedChanged);
             // 
             // cbEatLunchAll
             // 
@@ -715,6 +722,7 @@
             this.cbEatLunchAll.TabIndex = 34;
             this.cbEatLunchAll.Text = "All";
             this.cbEatLunchAll.UseVisualStyleBackColor = true;
+            this.cbEatLunchAll.CheckedChanged += new System.EventHandler(this.cbEatLunchAll_CheckedChanged);
             // 
             // cbEatLunchHalf
             // 
@@ -727,6 +735,7 @@
             this.cbEatLunchHalf.TabIndex = 35;
             this.cbEatLunchHalf.Text = "Half";
             this.cbEatLunchHalf.UseVisualStyleBackColor = true;
+            this.cbEatLunchHalf.CheckedChanged += new System.EventHandler(this.cbEatLunchHalf_CheckedChanged);
             // 
             // cbEatLunchLittle
             // 
@@ -739,6 +748,7 @@
             this.cbEatLunchLittle.TabIndex = 36;
             this.cbEatLunchLittle.Text = "Little";
             this.cbEatLunchLittle.UseVisualStyleBackColor = true;
+            this.cbEatLunchLittle.CheckedChanged += new System.EventHandler(this.cbEatLunchLittle_CheckedChanged);
             // 
             // cbEatBreakAll
             // 
@@ -751,6 +761,7 @@
             this.cbEatBreakAll.TabIndex = 20;
             this.cbEatBreakAll.Text = "All";
             this.cbEatBreakAll.UseVisualStyleBackColor = true;
+            this.cbEatBreakAll.CheckedChanged += new System.EventHandler(this.cbEatBreakAll_CheckedChanged);
             // 
             // cbEatBreakHalf
             // 
@@ -763,6 +774,7 @@
             this.cbEatBreakHalf.TabIndex = 21;
             this.cbEatBreakHalf.Text = "Half";
             this.cbEatBreakHalf.UseVisualStyleBackColor = true;
+            this.cbEatBreakHalf.CheckedChanged += new System.EventHandler(this.cbEatBreakHalf_CheckedChanged);
             // 
             // cbEatBreakLittle
             // 
@@ -775,6 +787,7 @@
             this.cbEatBreakLittle.TabIndex = 22;
             this.cbEatBreakLittle.Text = "Little";
             this.cbEatBreakLittle.UseVisualStyleBackColor = true;
+            this.cbEatBreakLittle.CheckedChanged += new System.EventHandler(this.cbEatBreakLittle_CheckedChanged);
             // 
             // ShowChild
             // 
@@ -787,7 +800,7 @@
             this.Controls.Add(this.dtpUntilSleepAft);
             this.Controls.Add(this.dtpSinceSleepMor);
             this.Controls.Add(this.lbTypeAge);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbDaysInformation);
             this.Controls.Add(this.btDiet);
             this.Controls.Add(this.lbMessageForSchool);
             this.Controls.Add(this.lbMessgeForHome);
@@ -902,7 +915,7 @@
         private System.Windows.Forms.Label lbMessgeForHome;
         private System.Windows.Forms.Label lbMessageForSchool;
         private System.Windows.Forms.Button btDiet;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbDaysInformation;
         private System.Windows.Forms.Label lbTypeAge;
         private System.Windows.Forms.DateTimePicker dtpUntilSleepMor;
         private System.Windows.Forms.DateTimePicker dtpSinceSleepAft;

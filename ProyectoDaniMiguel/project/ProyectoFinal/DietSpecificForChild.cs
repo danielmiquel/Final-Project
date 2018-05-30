@@ -16,11 +16,15 @@ namespace ProyectoFinal
         protected string lunch;
         protected string snack;
         protected int index;
+        protected ListOfChildren listC;
+        protected ListOfMeals listM;
 
-        public DietSpecificForChild(int i)
+        public DietSpecificForChild(int i, ListOfChildren lc, ListOfMeals lm)
         {
             InitializeComponent();
             index = i;
+            listC = lc;
+            listM = lm;
         }
 
         /*Function that shows the specific food for a child 
@@ -32,7 +36,7 @@ namespace ProyectoFinal
         {
             if (breakfast == null && lunch == null && snack == null)
             {
-                FoodSelection food = new FoodSelection();
+                FoodSelection food = new FoodSelection(listC,listM);
                 ListOfChildren child = new ListOfChildren();
                 ListOfMeals m = new ListOfMeals();
                 Child c = child.GetChildOfList(index);
@@ -59,11 +63,10 @@ namespace ProyectoFinal
 
         private void btChange_Click(object sender, EventArgs e)
         {
-            ListOfMeals m = new ListOfMeals();
-            FoodSelection food = new FoodSelection();
-            tbBreak.Text = food.SelectFoodForChild(m.GetBreakfastFood(), index);
-            tbLunch.Text = food.SelectFoodForChild(m.GetLunchFood(), index);
-            tbSnack.Text = food.SelectFoodForChild(m.GetSnackFood(), index);
+            FoodSelection food = new FoodSelection(listC, listM);
+            tbBreak.Text = food.SelectFoodForChild(listM.GetBreakfastFood(), index);
+            tbLunch.Text = food.SelectFoodForChild(listM.GetLunchFood(), index);
+            tbSnack.Text = food.SelectFoodForChild(listM.GetSnackFood(), index);
             breakfast = food.GetBreakfast();
             lunch = food.GetLunch();
             snack = food.GetSnack();
