@@ -12,9 +12,12 @@ namespace ProyectoFinal
 {
     public partial class WarningInvalidDate : Form
     {
-        public WarningInvalidDate()
+        protected string l;
+
+        public WarningInvalidDate(string message)
         {
             InitializeComponent();
+            l = message;
         }
 
         private void btOk_Click(object sender, EventArgs e)
@@ -25,6 +28,11 @@ namespace ProyectoFinal
         private void lbWarningInvalidDate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void WarningInvalidDate_Load(object sender, EventArgs e)
+        {
+            lbWarning.Text = l;
         }
     }
 }

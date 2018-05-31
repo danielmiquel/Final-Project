@@ -45,3 +45,4 @@ C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFin
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.WarningDataWhite.resources
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.WarningInvalidDate.resources
 C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.WarningInvalidSex.resources
+C:\Users\Daniel\Desktop\RepositorioGitHub\ProyectoDaniMiguel\project\ProyectoFinal\obj\Debug\ProyectoFinal.SelecLanguage.resources

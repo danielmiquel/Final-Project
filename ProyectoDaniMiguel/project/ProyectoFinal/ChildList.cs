@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProyectoFinal
@@ -9,17 +10,17 @@ namespace ProyectoFinal
         protected int totalMens;
         protected ListOfChildren listChildren = new ListOfChildren();
         protected ListOfMeals listMeals = new ListOfMeals();
+        protected Dictionary<string, string> language;
 
-        public ChildList()
+        public ChildList(Dictionary<string, string> l)
         {
             InitializeComponent();
+            language = l;
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            
-
-            if(listChildren.GetList() != null)
+            if (listChildren.GetList() != null)
             {
                 foreach (Child i in listChildren.GetList())
                 {
@@ -34,6 +35,15 @@ namespace ProyectoFinal
                     clbChildren.Items.Add(i);
                 }
 
+                btRefresh.Text = language["Refr"];
+                btAdd.Text = language["AddC"];
+                btAllergiesDiet.Text = language["DietA"];
+                btDelete.Text = language["DelC"];
+                btEdit.Text = language["EditC"];
+                btShow.Text = language["ShowC"];
+                lbTotalChildren.Text = language["TotC"];
+                lbTotalFemale.Text = language["TotW"];
+                lbTotalMens.Text = language["TotM"];
                 tbTotalChildren.Text = clbChildren.Items.Count.ToString();
                 tbTotalFemale.Text = totalWomen.ToString();
                 tbTotalMens.Text = totalMens.ToString();
@@ -43,7 +53,7 @@ namespace ProyectoFinal
         private void btAdd_Click(object sender, EventArgs e)
         {
             FormAdd fAdd = new FormAdd(Convert.ToInt32
-                (clbChildren.Items.Count),listChildren);
+                (clbChildren.Items.Count),listChildren,language);
             fAdd.Show();
         }
 
@@ -56,23 +66,23 @@ namespace ProyectoFinal
                 if (clbChildren.CheckedItems.Count == 1)
                 {
                     FormEdit fEdit = new FormEdit(clbChildren.SelectedIndex,
-                        listChildren);
+                        listChildren,language);
                     fEdit.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)
                 {
-                    WarningNotSelct warningNot = new WarningNotSelct();
+                    WarningNotSelct warningNot = new WarningNotSelct(language["NotSelec"]);
                     warningNot.Show();
                 }
                 else
                 {
-                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne();
+                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne(language["Only1Ch"]);
                     warningOnyl.Show();
                 }
             }
             catch (Exception)
             {
-                Warning warning = new Warning();
+                Warning warning = new Warning(language["WFail"]);
                 warning.Show();
             }
         }
@@ -90,23 +100,23 @@ namespace ProyectoFinal
                 {
                     DietSpecificForChild fDietAll = 
                         new DietSpecificForChild(clbChildren.SelectedIndex,
-                        listChildren,listMeals);
+                        listChildren,listMeals, language);
                     fDietAll.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)
                 {
-                    WarningNotSelct warningNot = new WarningNotSelct();
+                    WarningNotSelct warningNot = new WarningNotSelct(language["NotSelc"]);
                     warningNot.Show();
                 }
                 else
                 {
-                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne();
+                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne(language["Only1Ch"]);
                     warningOnyl.Show();
                 }
             }
             catch (Exception)
             {
-                Warning warning = new Warning();
+                Warning warning = new Warning(language["WFail"]);
                 warning.Show();
             }
         }
@@ -123,13 +133,13 @@ namespace ProyectoFinal
                 }
                 else
                 {
-                    WarningNotSelct warningNot = new WarningNotSelct();
+                    WarningNotSelct warningNot = new WarningNotSelct(language["NotSelc"]);
                     warningNot.Show();
                 }
             }
             catch (Exception)
             {
-                Warning warning = new Warning();
+                Warning warning = new Warning(language["WFail"]);
                 warning.Show();
             }
             
@@ -169,23 +179,23 @@ namespace ProyectoFinal
                 if (clbChildren.CheckedItems.Count == 1)
                 {
                     Diet fDiet = new Diet(clbChildren.SelectedIndex,
-                        listChildren,listMeals);
+                        listChildren,listMeals, language);
                     fDiet.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)
                 {
-                    WarningNotSelct warningNot = new WarningNotSelct();
+                    WarningNotSelct warningNot = new WarningNotSelct(language["NotSelc"]);
                     warningNot.Show();
                 }
                 else
                 {
-                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne();
+                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne(language["Only1Ch"]);
                     warningOnyl.Show();
                 }
             }
             catch (Exception)
             {
-                Warning warning = new Warning();
+                Warning warning = new Warning(language["WFail"]);
                 warning.Show();
             }
         }
@@ -197,23 +207,23 @@ namespace ProyectoFinal
                 if (clbChildren.CheckedItems.Count == 1)
                 {
                     ShowChild sForm = new ShowChild(clbChildren.SelectedIndex,
-                        listChildren,listMeals);
+                        listChildren,listMeals, language);
                     sForm.Show();
                 }
                 else if (clbChildren.CheckedItems.Count == 0)
                 {
-                    WarningNotSelct warningNot = new WarningNotSelct();
+                    WarningNotSelct warningNot = new WarningNotSelct(language["NotSelc"]);
                     warningNot.Show();
                 }
                 else
                 {
-                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne();
+                    WarningSelectOnlyOne warningOnyl = new WarningSelectOnlyOne(language["Only1Ch"]);
                     warningOnyl.Show();
                 }
             }
             catch (Exception)
             {
-                Warning warning = new Warning();
+                Warning warning = new Warning(language["WFail"]);
                 warning.Show();
             }
         }

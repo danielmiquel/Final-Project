@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btOk = new System.Windows.Forms.Button();
-            this.lbWarningInvalidDate = new System.Windows.Forms.Label();
+            this.lbWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btOk
@@ -42,29 +42,31 @@
             this.btOk.UseVisualStyleBackColor = true;
             this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
-            // lbWarningInvalidDate
+            // lbWarning
             // 
-            this.lbWarningInvalidDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbWarningInvalidDate.AutoSize = true;
-            this.lbWarningInvalidDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWarningInvalidDate.Location = new System.Drawing.Point(82, 35);
-            this.lbWarningInvalidDate.Name = "lbWarningInvalidDate";
-            this.lbWarningInvalidDate.Size = new System.Drawing.Size(155, 20);
-            this.lbWarningInvalidDate.TabIndex = 2;
-            this.lbWarningInvalidDate.Text = "Warning, invalid date";
-            this.lbWarningInvalidDate.Click += new System.EventHandler(this.lbWarningInvalidDate_Click);
+            this.lbWarning.AutoSize = true;
+            this.lbWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWarning.Location = new System.Drawing.Point(82, 35);
+            this.lbWarning.Name = "lbWarning";
+            this.lbWarning.Size = new System.Drawing.Size(155, 20);
+            this.lbWarning.TabIndex = 2;
+            this.lbWarning.Text = "Warning, invalid date";
+            this.lbWarning.Click += new System.EventHandler(this.lbWarningInvalidDate_Click);
             // 
             // WarningInvalidDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(319, 128);
             this.Controls.Add(this.btOk);
-            this.Controls.Add(this.lbWarningInvalidDate);
+            this.Controls.Add(this.lbWarning);
             this.Name = "WarningInvalidDate";
-            this.Text = "WarningInvalidDate";
+            this.Text = "Warning";
+            this.Load += new System.EventHandler(this.WarningInvalidDate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,6 +75,6 @@
         #endregion
 
         private System.Windows.Forms.Button btOk;
-        private System.Windows.Forms.Label lbWarningInvalidDate;
+        private System.Windows.Forms.Label lbWarning;
     }
 }

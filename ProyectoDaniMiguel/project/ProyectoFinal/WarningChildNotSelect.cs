@@ -12,14 +12,16 @@ namespace ProyectoFinal
 {
     public partial class WarningNotSelct : Form
     {
-        public WarningNotSelct()
+        protected string message;
+        public WarningNotSelct(string l)
         {
             InitializeComponent();
+            message = l;
         }
 
         private void WarningChildNotSelect_Load(object sender, EventArgs e)
         {
-
+            lbWarning.Text = message;
         }
 
         private void btOk_Click(object sender, EventArgs e)

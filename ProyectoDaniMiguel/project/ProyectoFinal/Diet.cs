@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProyectoFinal
@@ -11,17 +12,24 @@ namespace ProyectoFinal
         protected int index;
         protected ListOfChildren listC;
         protected ListOfMeals listM;
-        
-        public Diet(int i,ListOfChildren lc,ListOfMeals lm)
+        protected Dictionary<string, string> language;
+
+        public Diet(int i,ListOfChildren lc,ListOfMeals lm, Dictionary<string, string> d)
         {
             InitializeComponent();
             index = i;
             listC = lc;
             listM = lm;
+            language = d;
         }
 
         private void Diet_Load(object sender, EventArgs e)
         {
+            lbB.Text = language["Bre"];
+            lbL.Text = language["Lunch"];
+            lbS.Text = language["Sanck"];
+            btChange.Text = language["Chan"];
+
             if (breakfast == null && lunch == null && snack == null)
             {
                 FoodSelection food = new FoodSelection(listC,listM);
@@ -64,12 +72,39 @@ namespace ProyectoFinal
         private void btChange_Click(object sender, EventArgs e)
         {
             FoodSelection food = new FoodSelection(listC, listM);
-            tbBreak.Text = food.GetBreakfast();
-            tbLunch.Text = food.GetLunch();
-            tbSnack.Text = food.GetSnack();
-            breakfast = food.GetBreakfast();
-            lunch = food.GetLunch();
-            snack = food.GetSnack();
+
+            string b = breakfast, l = lunch, s = snack;
+
+            if (cbBreakfast.Checked)
+            {
+                while (b == breakfast)
+                {
+                    b = food.GetBreakfast();
+                }
+                tbBreak.Text = b;
+            }
+
+            if (cbLunch.Checked)
+            {
+                while (l == lunch)
+                {
+                    l = food.GetLunch();
+                }
+                tbLunch.Text = l;
+            }
+
+            if (cbSnack.Checked)
+            {
+                while (s == snack)
+                {
+                    s = food.GetSnack();
+                }
+                tbSnack.Text = l;
+            }
+
+            breakfast = b;
+            lunch = l;
+            snack = s;
         }
     }
 }

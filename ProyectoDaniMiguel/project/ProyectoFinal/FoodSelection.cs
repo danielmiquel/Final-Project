@@ -71,34 +71,38 @@ namespace ProyectoFinal
         //Function that chooses a meal according to a child's allergies
         public string SelectFoodForChild(List<Meal> m,int i)
         {
-            Child c = listC.GetChildOfList(i);
-            int cont = 0;
-            bool found;
-            string[] allergiesC = c.GetArrayAllergies();
-            List<string> listAlC = new List<string>();
+            Child child = listC.GetChildOfList(i);
+            bool found; 
 
-            foreach (string t in allergiesC)
+            if (child.GetAllergies() == "")
             {
-                listAlC.Add(t);
+                return FoodForShow(m);
             }
 
-            do
-            {
-                found = false;
-                string[] allergiesM = m[cont].GetArrayAllergies();
-                for(int j = 0; j < allergiesM.Length && !found; j++)
-                {
-                    if (listAlC.Contains(allergiesM[j]))
-                        found = true;
-                }
-                if(found)
-                    cont++;
-
-            } while (cont < m.Count && found);
-            if (cont >= m.Count)
-                return "Not food";
             else
-                return m[cont].GetFood();
+            {
+                string[] arrAllergiesChild = child.GetArrayAllergies();
+                string[] arrAllergiesMeals = new string[m.Count];
+                for (int j = 0; j < m.Count; j++)
+                {
+                    arrAllergiesMeals[j] = m[j].GetAllergies();
+                }
+
+                for (int j = 0; j < m.Count; j++)
+                {
+                    found = false;
+
+                    for (int h = 0; h < arrAllergiesChild.Length && !found; h++)
+                    {
+                        if (arrAllergiesMeals[j].Contains(arrAllergiesChild[h]))
+                            found = true;
+                        if ((h == arrAllergiesChild.Length - 1) && (!found))
+                            return m[j].GetFood();
+                    }
+                }
+
+                return "";
+            }
         }
     }
 }

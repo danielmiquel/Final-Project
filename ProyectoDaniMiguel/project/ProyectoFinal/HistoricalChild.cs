@@ -14,17 +14,32 @@ namespace ProyectoFinal
     {
         protected InformationOfDay infoChild;
         protected Child child;
+        protected Dictionary<string, string> language;
 
-        public HistoricalChild(InformationOfDay i,Child c)
+        public HistoricalChild(InformationOfDay i,Child c, Dictionary<string, string> d)
         {
             InitializeComponent();
             infoChild = i;
             child = c;
+            language = d;
         }
 
         private void HistoricalChild_Load(object sender, EventArgs e)
         {
             string[] mealsArr = infoChild.GetMeal().Split('?');
+
+            lbAge.Text = language["Age"];
+            lbName.Text = language["Name"];
+            lbSurnames.Text = language["Sur"];
+            lbSex.Text = language["Sex"];
+            lbCod.Text = language["Cod"];
+            lbObservations.Text = language["Obs"];
+            lbAllergies.Text = language["Aller"];
+            lbMessageForSchool.Text = language["MesS"];
+            lbMessgeForHome.Text = language["MesH"];
+            lbInfoBeak.Text = language["IEBr"];
+            lbInfLunch.Text = language["IELu"];
+            lbInfSnack.Text = language["IESn"];
 
             tbSex.Text = child.GetSex().ToString();
             tbAge.Text = child.GetAge().ToString();

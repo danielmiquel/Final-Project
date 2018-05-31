@@ -20,8 +20,9 @@ namespace ProyectoFinal
         protected ListOfMeals listMeals;
         protected List<InformationOfDay> listOfChild;
         protected string[] meals = new string[3];
+        protected Dictionary<string, string> language;
 
-        public ShowChild(int i, ListOfChildren lc, ListOfMeals lm)
+        public ShowChild(int i, ListOfChildren lc, ListOfMeals lm, Dictionary<string, string> d)
         {
             InitializeComponent();
             index = i;
@@ -29,20 +30,40 @@ namespace ProyectoFinal
             listMeals = lm;
             meal = new FoodSelection(lc,lm);
             listOfChild = list.GetInformationOfAChild(index + 1);
+            language = d;
         }
 
         private void ShowChild_Load(object sender, EventArgs e)
         {
+
+            Day birth = listChildren.GetChildOfList(index).GetBirthday();
             Day today = new Day();
+
+            lbAge.Text = language["Age"];
+            lbName.Text = language["Name"];
+            lbSurnames.Text = language["Sur"];
+            lbSex.Text = language["Sex"];
+            lbCod.Text = language["Cod"];
+            lbObservations.Text = language["Obs"];
+            lbAllergies.Text = language["Aller"];
+            lbMessageForSchool.Text = language["MesS"];
+            lbMessgeForHome.Text = language["MesH"];
+            lbInfoBeak.Text = language["IEBr"];
+            lbInfLunch.Text = language["IELu"];
+            lbInfSnack.Text = language["IESn"];
+            btDiet.Text = language["Diet"];
+
+
             today.day = time.Day;
             today.month = time.Month;
             today.year = time.Year;
-
+            
             foreach (InformationOfDay j in list.GetInformationOfAChild(index + 1))
             {
                 cbDaysInformation.Items.Add(j.GetDayForShow());
             }
 
+            tbBirthday.Text = birth.day + "/" + birth.month + "/" + birth.year;
             tbName.Text = listChildren.GetChildOfList(index).GetName();
             tbSurnames.Text = listChildren.GetChildOfList(index).GetSurname();
             tbSex.Text = listChildren.GetChildOfList(index).GetSex().ToString();
@@ -97,17 +118,39 @@ namespace ProyectoFinal
                     cbEatSnackHalf.CheckState = CheckState.Checked;
                 else if (information.GetEatAmoutS() == 3)
                     cbEatSnackLittle.CheckState = CheckState.Checked;
+                
+                switch (information.GetDepositionsMor())
+                {
+                    case 1:
+                        cbDepositionsMorYes.CheckState = CheckState.Checked;
+                        break;
+                    case 2:
+                        cbDepositionsMorNo.CheckState = CheckState.Checked;
+                        break;
+                    default:
+                        break;
+                }
 
+                switch (information.GetDepositionsAft())
+                {
+                    case 1: cbDepositionsAftYes.CheckState = CheckState.Checked;
+                        break;
+                    case 2: cbDepositionsAftNo.CheckState = CheckState.Checked;
+                        break;
+                    default:
+                        break;
+                }
+
+                /*
                 if (information.GetDepositionsMor() == 1)
                     cbDepositionsMorYes.CheckState = CheckState.Checked;
                 else if (information.GetDepositionsMor() == 2)
                     cbDepositionsMorNo.CheckState = CheckState.Checked;
-
                 if (information.GetDepositionsAft() == 1)
                     cbDepositionsAftYes.CheckState = CheckState.Checked;
                 else if (information.GetDepositionsAft() == 2)
                     cbDepositionsAftNo.CheckState = CheckState.Checked;
-
+                */
                 tbMessageForHome.Text = information.GetMessageForHome();
                 tbMessageForSchool.Text = information.GetMessageForSchool();
                 
@@ -164,40 +207,41 @@ namespace ProyectoFinal
             TimeSleep timAft2 = new TimeSleep();
             Day t;
 
-            timMor1.hour = dtpSinceSleepMor.Checked ? 
+            timMor1.hour = dtpSinceSleepMor.Checked ?
                 dtpSinceSleepMor.Value.Hour : 0;
-            timMor1.minute = dtpSinceSleepMor.Checked ? 
+            timMor1.minute = dtpSinceSleepMor.Checked ?
                 dtpSinceSleepMor.Value.Minute : 0;
             timMor2.hour = dtpUntilSleepMor.Checked ?
                 dtpUntilSleepMor.Value.Hour : 0;
-            timMor2.minute = dtpUntilSleepMor.Checked ? 
+            timMor2.minute = dtpUntilSleepMor.Checked ?
                 dtpUntilSleepMor.Value.Minute : 0;
-            information.AddTimeSleepMor(timMor1.hour, 
+            information.AddTimeSleepMor(timMor1.hour,
                 timMor1.minute, timMor2.hour, timMor2.minute);
 
-            timAft1.hour = dtpSinceSleepAft.Checked? 
+            timAft1.hour = dtpSinceSleepAft.Checked ?
                 dtpSinceSleepAft.Value.Hour : 0;
-            timAft1.minute = dtpSinceSleepAft.Checked ? 
-                dtpSinceSleepAft.Value.Minute : 0; 
-            timAft2.hour = dtpUntilSleepAft.Checked ? 
-                dtpSinceSleepAft.Value.Hour : 0;
-            timAft2.minute = dtpUntilSleepAft.Checked ? 
+            timAft1.minute = dtpSinceSleepAft.Checked ?
                 dtpSinceSleepAft.Value.Minute : 0;
-            information.AddTimeSleepAft(timAft1.hour, 
+            timAft2.hour = dtpUntilSleepAft.Checked ?
+                dtpSinceSleepAft.Value.Hour : 0;
+            timAft2.minute = dtpUntilSleepAft.Checked ?
+                dtpSinceSleepAft.Value.Minute : 0;
+            information.AddTimeSleepAft(timAft1.hour,
                 timAft1.minute, timAft2.hour, timAft2.minute);
 
             t.day = time.Day;
             t.month = time.Month;
             t.year = time.Year;
             information.SetDay(t);
-            information.SetMeal(meal.GetBreakfast() + "?" 
+            information.SetMeal(meal.GetBreakfast() + "?"
                 + meal.GetLunch() + "?" + meal.GetSnack());
-            
+
             InformationOfDay info = list.GetInformationOfAChildFromDate(
                 today, listChildren.GetChildOfList(index).GetCod());
-
+            
             if (info == null)
                 list.SetInformation(information);
+            
             else
                 list.SetEditInformation(information);
 
@@ -220,7 +264,7 @@ namespace ProyectoFinal
         private void btDiet_Click(object sender, EventArgs e)
         {
             DietSpecificForChild fDietAll =
-                        new DietSpecificForChild(index,listChildren,listMeals);
+                        new DietSpecificForChild(index,listChildren,listMeals,language);
             fDietAll.Show();
         }
 
@@ -233,7 +277,7 @@ namespace ProyectoFinal
                    list.GetInformationOfAChildFromDate(
                        listOfChild[cbDaysInformation.SelectedIndex].GetDay(),
                        index + 1),
-                   listChildren.GetChildOfList(index));
+                   listChildren.GetChildOfList(index),language);
                 h.Show();
             }
         }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbDate = new System.Windows.Forms.Label();
             this.tbAllergies = new System.Windows.Forms.TextBox();
             this.tbObservations = new System.Windows.Forms.TextBox();
             this.tbCod = new System.Windows.Forms.TextBox();
@@ -89,18 +88,8 @@
             this.cbEatBreakAll = new System.Windows.Forms.CheckBox();
             this.cbEatBreakHalf = new System.Windows.Forms.CheckBox();
             this.cbEatBreakLittle = new System.Windows.Forms.CheckBox();
+            this.tbBirthday = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // lbDate
-            // 
-            this.lbDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(45, 19);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(112, 13);
-            this.lbDate.TabIndex = 0;
-            this.lbDate.Text = "//TO DO: Date of day";
             // 
             // tbAllergies
             // 
@@ -634,6 +623,7 @@
             // 
             // dtpUntilSleepMor
             // 
+            this.dtpUntilSleepMor.Checked = false;
             this.dtpUntilSleepMor.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpUntilSleepMor.Location = new System.Drawing.Point(873, 235);
             this.dtpUntilSleepMor.Name = "dtpUntilSleepMor";
@@ -644,6 +634,7 @@
             // 
             // dtpSinceSleepAft
             // 
+            this.dtpSinceSleepAft.Checked = false;
             this.dtpSinceSleepAft.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpSinceSleepAft.Location = new System.Drawing.Point(873, 295);
             this.dtpSinceSleepAft.Name = "dtpSinceSleepAft";
@@ -654,6 +645,7 @@
             // 
             // dtpUntilSleepAft
             // 
+            this.dtpUntilSleepAft.Checked = false;
             this.dtpUntilSleepAft.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpUntilSleepAft.Location = new System.Drawing.Point(873, 321);
             this.dtpUntilSleepAft.Name = "dtpUntilSleepAft";
@@ -664,6 +656,7 @@
             // 
             // dtpSinceSleepMor
             // 
+            this.dtpSinceSleepMor.Checked = false;
             this.dtpSinceSleepMor.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpSinceSleepMor.Location = new System.Drawing.Point(873, 209);
             this.dtpSinceSleepMor.Name = "dtpSinceSleepMor";
@@ -789,12 +782,23 @@
             this.cbEatBreakLittle.UseVisualStyleBackColor = true;
             this.cbEatBreakLittle.CheckedChanged += new System.EventHandler(this.cbEatBreakLittle_CheckedChanged);
             // 
+            // tbBirthday
+            // 
+            this.tbBirthday.Location = new System.Drawing.Point(253, 144);
+            this.tbBirthday.Name = "tbBirthday";
+            this.tbBirthday.ReadOnly = true;
+            this.tbBirthday.Size = new System.Drawing.Size(109, 20);
+            this.tbBirthday.TabIndex = 81;
+            this.tbBirthday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // ShowChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btOk;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.tbBirthday);
             this.Controls.Add(this.dtpUntilSleepMor);
             this.Controls.Add(this.dtpSinceSleepAft);
             this.Controls.Add(this.dtpUntilSleepAft);
@@ -855,12 +859,11 @@
             this.Controls.Add(this.tbObservations);
             this.Controls.Add(this.tbAllergies);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.lbDate);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ShowChild";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShowChild";
+            this.Text = "BLIST - Information About The Day";
             this.Load += new System.EventHandler(this.ShowChild_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -868,8 +871,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.TextBox tbAllergies;
         private System.Windows.Forms.TextBox tbObservations;
         private System.Windows.Forms.TextBox tbCod;
@@ -930,5 +931,6 @@
         private System.Windows.Forms.CheckBox cbEatBreakAll;
         private System.Windows.Forms.CheckBox cbEatBreakHalf;
         private System.Windows.Forms.CheckBox cbEatBreakLittle;
+        private System.Windows.Forms.TextBox tbBirthday;
     }
 }

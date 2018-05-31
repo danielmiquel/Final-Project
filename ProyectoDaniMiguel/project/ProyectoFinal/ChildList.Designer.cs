@@ -42,70 +42,71 @@
             this.tbTotalFemale = new System.Windows.Forms.TextBox();
             this.lbTotalMens = new System.Windows.Forms.Label();
             this.tbTotalMens = new System.Windows.Forms.TextBox();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(503, 78);
+            this.btAdd.Location = new System.Drawing.Point(533, 82);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(75, 23);
+            this.btAdd.Size = new System.Drawing.Size(200, 23);
             this.btAdd.TabIndex = 0;
-            this.btAdd.Text = "Add";
+            this.btAdd.Text = "Add Child";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(628, 78);
+            this.btEdit.Location = new System.Drawing.Point(533, 164);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.Size = new System.Drawing.Size(200, 23);
             this.btEdit.TabIndex = 1;
-            this.btEdit.Text = "Edit";
+            this.btEdit.Text = "Edit Child";
             this.btEdit.UseVisualStyleBackColor = true;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(503, 177);
+            this.btDelete.Location = new System.Drawing.Point(533, 239);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(75, 23);
+            this.btDelete.Size = new System.Drawing.Size(200, 23);
             this.btDelete.TabIndex = 2;
-            this.btDelete.Text = "Delete";
+            this.btDelete.Text = "Delete Child";
             this.btDelete.UseVisualStyleBackColor = true;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // clbChildren
             // 
             this.clbChildren.FormattingEnabled = true;
-            this.clbChildren.Location = new System.Drawing.Point(140, 78);
+            this.clbChildren.Location = new System.Drawing.Point(175, 82);
             this.clbChildren.Name = "clbChildren";
-            this.clbChildren.Size = new System.Drawing.Size(288, 304);
+            this.clbChildren.Size = new System.Drawing.Size(288, 544);
             this.clbChildren.TabIndex = 3;
             this.clbChildren.SelectedIndexChanged += new System.EventHandler(this.clbChildren_SelectedIndexChanged);
             // 
             // btShow
             // 
-            this.btShow.Location = new System.Drawing.Point(628, 177);
+            this.btShow.Location = new System.Drawing.Point(533, 322);
             this.btShow.Name = "btShow";
-            this.btShow.Size = new System.Drawing.Size(75, 23);
+            this.btShow.Size = new System.Drawing.Size(200, 23);
             this.btShow.TabIndex = 4;
-            this.btShow.Text = "Show";
+            this.btShow.Text = "Show Child";
             this.btShow.UseVisualStyleBackColor = true;
             this.btShow.Click += new System.EventHandler(this.btShow_Click);
             // 
             // btNormalDiet
             // 
-            this.btNormalDiet.Location = new System.Drawing.Point(503, 258);
+            this.btNormalDiet.Location = new System.Drawing.Point(533, 409);
             this.btNormalDiet.Name = "btNormalDiet";
             this.btNormalDiet.Size = new System.Drawing.Size(200, 23);
             this.btNormalDiet.TabIndex = 5;
-            this.btNormalDiet.Text = "Diet";
+            this.btNormalDiet.Text = "General Diet";
             this.btNormalDiet.UseVisualStyleBackColor = true;
             this.btNormalDiet.Click += new System.EventHandler(this.btNormalDiet_Click);
             // 
             // btAllergiesDiet
             // 
-            this.btAllergiesDiet.Location = new System.Drawing.Point(503, 341);
+            this.btAllergiesDiet.Location = new System.Drawing.Point(533, 492);
             this.btAllergiesDiet.Name = "btAllergiesDiet";
             this.btAllergiesDiet.Size = new System.Drawing.Size(200, 23);
             this.btAllergiesDiet.TabIndex = 6;
@@ -115,7 +116,7 @@
             // 
             // btRefresh
             // 
-            this.btRefresh.Location = new System.Drawing.Point(12, 12);
+            this.btRefresh.Location = new System.Drawing.Point(41, 82);
             this.btRefresh.Name = "btRefresh";
             this.btRefresh.Size = new System.Drawing.Size(75, 23);
             this.btRefresh.TabIndex = 7;
@@ -125,7 +126,7 @@
             // 
             // tbTotalChildren
             // 
-            this.tbTotalChildren.Location = new System.Drawing.Point(80, 114);
+            this.tbTotalChildren.Location = new System.Drawing.Point(106, 167);
             this.tbTotalChildren.Name = "tbTotalChildren";
             this.tbTotalChildren.ReadOnly = true;
             this.tbTotalChildren.Size = new System.Drawing.Size(45, 20);
@@ -137,7 +138,7 @@
             this.lbTotalChildren.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalChildren.AutoSize = true;
-            this.lbTotalChildren.Location = new System.Drawing.Point(2, 117);
+            this.lbTotalChildren.Location = new System.Drawing.Point(12, 170);
             this.lbTotalChildren.Name = "lbTotalChildren";
             this.lbTotalChildren.Size = new System.Drawing.Size(72, 13);
             this.lbTotalChildren.TabIndex = 30;
@@ -148,7 +149,7 @@
             this.lbTotalFemale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalFemale.AutoSize = true;
-            this.lbTotalFemale.Location = new System.Drawing.Point(2, 182);
+            this.lbTotalFemale.Location = new System.Drawing.Point(12, 235);
             this.lbTotalFemale.Name = "lbTotalFemale";
             this.lbTotalFemale.Size = new System.Drawing.Size(71, 13);
             this.lbTotalFemale.TabIndex = 32;
@@ -156,7 +157,7 @@
             // 
             // tbTotalFemale
             // 
-            this.tbTotalFemale.Location = new System.Drawing.Point(80, 179);
+            this.tbTotalFemale.Location = new System.Drawing.Point(106, 232);
             this.tbTotalFemale.Name = "tbTotalFemale";
             this.tbTotalFemale.ReadOnly = true;
             this.tbTotalFemale.Size = new System.Drawing.Size(45, 20);
@@ -168,7 +169,7 @@
             this.lbTotalMens.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalMens.AutoSize = true;
-            this.lbTotalMens.Location = new System.Drawing.Point(2, 245);
+            this.lbTotalMens.Location = new System.Drawing.Point(12, 298);
             this.lbTotalMens.Name = "lbTotalMens";
             this.lbTotalMens.Size = new System.Drawing.Size(60, 13);
             this.lbTotalMens.TabIndex = 34;
@@ -176,18 +177,31 @@
             // 
             // tbTotalMens
             // 
-            this.tbTotalMens.Location = new System.Drawing.Point(80, 242);
+            this.tbTotalMens.Location = new System.Drawing.Point(106, 295);
             this.tbTotalMens.Name = "tbTotalMens";
             this.tbTotalMens.ReadOnly = true;
             this.tbTotalMens.Size = new System.Drawing.Size(45, 20);
             this.tbTotalMens.TabIndex = 33;
             this.tbTotalMens.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Bradley Hand ITC", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.lbTitle.ForeColor = System.Drawing.Color.Blue;
+            this.lbTitle.Location = new System.Drawing.Point(342, 7);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(121, 43);
+            this.lbTitle.TabIndex = 35;
+            this.lbTitle.Text = "BLIST";
+            // 
             // ChildList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 402);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.lbTotalMens);
             this.Controls.Add(this.tbTotalMens);
             this.Controls.Add(this.lbTotalFemale);
@@ -202,6 +216,7 @@
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.btAdd);
+            this.MaximumSize = new System.Drawing.Size(800, 900);
             this.Name = "ChildList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form3";
@@ -227,5 +242,6 @@
         private System.Windows.Forms.TextBox tbTotalFemale;
         private System.Windows.Forms.Label lbTotalMens;
         private System.Windows.Forms.TextBox tbTotalMens;
+        private System.Windows.Forms.Label lbTitle;
     }
 }

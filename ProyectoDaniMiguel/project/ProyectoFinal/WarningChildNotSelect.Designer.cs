@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbWarning = new System.Windows.Forms.Label();
             this.btOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbWarning
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "You have not selected any children";
+            this.lbWarning.AutoSize = true;
+            this.lbWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWarning.Location = new System.Drawing.Point(48, 21);
+            this.lbWarning.Name = "lbWarning";
+            this.lbWarning.Size = new System.Drawing.Size(255, 20);
+            this.lbWarning.TabIndex = 0;
+            this.lbWarning.Text = "You have not selected any children";
             // 
             // btOk
             // 
@@ -55,11 +56,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(343, 108);
             this.Controls.Add(this.btOk);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbWarning);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "WarningNotSelct";
-            this.Text = "WarningChildNotSelect";
+            this.Text = "Warning";
             this.Load += new System.EventHandler(this.WarningChildNotSelect_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -68,7 +72,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbWarning;
         private System.Windows.Forms.Button btOk;
     }
 }

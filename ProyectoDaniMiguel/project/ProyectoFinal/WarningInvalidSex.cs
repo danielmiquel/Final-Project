@@ -12,14 +12,22 @@ namespace ProyectoFinal
 {
     public partial class WarningInvalidSex : Form
     {
-        public WarningInvalidSex()
+        protected string l;
+
+        public WarningInvalidSex(string message)
         {
             InitializeComponent();
+            l = message;
         }
 
         private void btOk_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void WarningInvalidSex_Load(object sender, EventArgs e)
+        {
+            lbWarning.Text = l;
         }
     }
 }

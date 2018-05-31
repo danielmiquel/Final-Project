@@ -18,6 +18,15 @@ namespace ProyectoFinal
             list = l;
         }
 
+        public Child SetEditChild(string name, string surname,
+            string observations, string allergy, char sex, Day birthay, int cod)
+        {
+            Child newChild = new Child(cod, name, surname, sex,
+                observations, allergy);
+            newChild.SetBirthday(birthay);
+            return newChild;
+        }
+
         public ListOfChildren ModList(ListOfChildren listChild)
         {
             return listChild;

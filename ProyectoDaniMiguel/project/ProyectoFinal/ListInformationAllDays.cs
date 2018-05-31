@@ -20,7 +20,6 @@ namespace ProyectoFinal
         public void SetInformation(InformationOfDay d)
         {
             listInformationAllDays.Add(d);
-            //listInformationAllDays.Sort(CompareInformation);
             listInformationAllDays.Sort(CompareInformationByDay);
             f.SetList(listInformationAllDays);
             f.Save();
@@ -53,12 +52,15 @@ namespace ProyectoFinal
 
         public void SetEditInformation(InformationOfDay i)
         {
-            foreach (InformationOfDay t in listInformationAllDays)
+            bool found = false;
+            for(int j = 0; j < listInformationAllDays.Count && !found; j++)
             {
-                if((i.GetCod() == t.GetCod()) && (t.GetDay().Equals(i.GetDay())))
+                if ((i.GetCod() == listInformationAllDays[j].GetCod()) && 
+                    (listInformationAllDays[j].GetDay().Equals(i.GetDay())))
                 {
-                    listInformationAllDays.Remove(t);
+                    listInformationAllDays.Remove(listInformationAllDays[j]);
                     SetInformation(i);
+                    found = true;
                 }
             }
         }

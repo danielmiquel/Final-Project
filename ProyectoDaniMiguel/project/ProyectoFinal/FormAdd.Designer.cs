@@ -32,7 +32,7 @@
             this.lbCod = new System.Windows.Forms.Label();
             this.lbSurname = new System.Windows.Forms.Label();
             this.lbSex = new System.Windows.Forms.Label();
-            this.lbAge = new System.Windows.Forms.Label();
+            this.lbBirthday = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbSurnames = new System.Windows.Forms.TextBox();
             this.tbCod = new System.Windows.Forms.TextBox();
@@ -82,14 +82,14 @@
             this.lbSex.TabIndex = 3;
             this.lbSex.Text = "Sex";
             // 
-            // lbAge
+            // lbBirthday
             // 
-            this.lbAge.AutoSize = true;
-            this.lbAge.Location = new System.Drawing.Point(100, 116);
-            this.lbAge.Name = "lbAge";
-            this.lbAge.Size = new System.Drawing.Size(26, 13);
-            this.lbAge.TabIndex = 4;
-            this.lbAge.Text = "Age";
+            this.lbBirthday.AutoSize = true;
+            this.lbBirthday.Location = new System.Drawing.Point(82, 122);
+            this.lbBirthday.Name = "lbBirthday";
+            this.lbBirthday.Size = new System.Drawing.Size(45, 13);
+            this.lbBirthday.TabIndex = 4;
+            this.lbBirthday.Text = "Birthday";
             // 
             // tbName
             // 
@@ -213,6 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(799, 385);
             this.Controls.Add(this.dtpAge);
             this.Controls.Add(this.clbVegFrt);
@@ -225,14 +226,14 @@
             this.Controls.Add(this.tbSex);
             this.Controls.Add(this.tbSurnames);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.lbAge);
+            this.Controls.Add(this.lbBirthday);
             this.Controls.Add(this.lbSex);
             this.Controls.Add(this.lbSurname);
             this.Controls.Add(this.lbCod);
             this.Controls.Add(this.lbName);
             this.MaximizeBox = false;
             this.Name = "FormAdd";
-            this.Text = "Add Child";
+            this.Text = "BLIST - Add Child";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,7 +246,7 @@
         private System.Windows.Forms.Label lbCod;
         private System.Windows.Forms.Label lbSurname;
         private System.Windows.Forms.Label lbSex;
-        private System.Windows.Forms.Label lbAge;
+        private System.Windows.Forms.Label lbBirthday;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbSurnames;
         private System.Windows.Forms.TextBox tbCod;

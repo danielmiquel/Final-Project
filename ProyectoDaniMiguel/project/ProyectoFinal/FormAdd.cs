@@ -14,16 +14,26 @@ namespace ProyectoFinal
     {
         protected int index;
         protected ListOfChildren saveList;
+        protected Dictionary<string, string> language;
 
-        public FormAdd(int i,ListOfChildren s)
+        public FormAdd(int i,ListOfChildren s, Dictionary<string, string> d)
         {
             InitializeComponent();
             index = i;
             saveList = s;
+            language = d;
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            lbName.Text = language["Name"];
+            lbSurname.Text = language["Sur"];
+            lbSex.Text = language["Sex"];
+            lbCod.Text = language["Cod"];
+            lbObservations.Text = language["Obs"];
+            lbInform.Text = language["Info"];
+            lbAllergy.Text = language["Aller"];
+            lbBirthday.Text = language["Birt"];
             tbCod.Text = Convert.ToString(index + 1);
         }
 
@@ -50,13 +60,13 @@ namespace ProyectoFinal
             if ((tbName.Text == "") | (tbSurnames.Text == "")
                 | (tbSex.Text == ""))
             {
-                WarningDataWhite w = new WarningDataWhite();
+                WarningDataWhite w = new WarningDataWhite(language["WFilesWhite"]);
                 w.Show();
             }
             if (tbSex.Text.ToLower().ToString() != "f" &&
                 tbSex.Text.ToLower().ToString() != "m")
             {
-                WarningInvalidSex w = new WarningInvalidSex();
+                WarningInvalidSex w = new WarningInvalidSex(language["WInvSex"]);
                 w.Show();
             }
             else
@@ -97,7 +107,7 @@ namespace ProyectoFinal
                 }
                 else
                 {
-                    WarningInvalidDate w = new WarningInvalidDate();
+                    WarningInvalidDate w = new WarningInvalidDate(language["InvDate"]);
                     w.Show();
                 }
             }

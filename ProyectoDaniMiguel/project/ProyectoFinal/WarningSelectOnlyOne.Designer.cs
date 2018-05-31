@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btOk = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btOk
@@ -42,24 +42,26 @@
             this.btOk.UseVisualStyleBackColor = true;
             this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
-            // label1
+            // lbWarning
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "You only can select one child at the same time";
+            this.lbWarning.AutoSize = true;
+            this.lbWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWarning.Location = new System.Drawing.Point(12, 23);
+            this.lbWarning.Name = "lbWarning";
+            this.lbWarning.Size = new System.Drawing.Size(300, 17);
+            this.lbWarning.TabIndex = 1;
+            this.lbWarning.Text = "You only can select one child at the same time";
             // 
             // WarningSelectOnlyOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(319, 97);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbWarning);
             this.Controls.Add(this.btOk);
             this.Name = "WarningSelectOnlyOne";
-            this.Text = "WarningSelectOnlyOne";
+            this.Text = "Warning";
             this.Load += new System.EventHandler(this.WarningSelectOnlyOne_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -69,6 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Button btOk;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbWarning;
     }
 }

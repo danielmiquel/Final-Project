@@ -38,6 +38,35 @@ namespace ProyectoFinal
         public void SetAge(Day t)
         {
             DateTime now = DateTime.Now;
+
+            if(t.year == now.Year)
+            {
+                age = (now.Month - t.month) - 1;
+                if (now.Day >= t.day)
+                    age++;
+                typeAge = "Months";
+            }
+            else
+            {
+                if(now.Year - t.year == 1)
+                {
+                    age = (12 - t.month) + now.Month;
+                    typeAge = "Months";
+                    if(age >= 12)
+                    {
+                        age = 1;
+                        typeAge = "Years";
+                    }
+                }
+                else
+                {
+                    age = now.Year - t.year;
+                    if (now.Month == t.month && now.Day == t.day)
+                        age++;
+                    typeAge = "Years";
+                }
+            }
+            /*
             age = now.Year - t.year;
             typeAge = "Years";
             if (age == 0)
@@ -45,7 +74,7 @@ namespace ProyectoFinal
                 age = (12 - t.month) + now.Month;
                 typeAge = "Months";
             }
-                
+             */   
         }
 
         public void SetBirthday(Day d)

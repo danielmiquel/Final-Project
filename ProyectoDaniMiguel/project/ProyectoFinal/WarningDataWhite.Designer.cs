@@ -56,11 +56,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(475, 116);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.lbWarning);
             this.Name = "WarningDataWhite";
-            this.Text = "WarningDataWhite";
+            this.Text = "Warning";
+            this.Load += new System.EventHandler(this.WarningDataWhite_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

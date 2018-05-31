@@ -18,32 +18,35 @@ namespace ProyectoFinal
         protected int index;
         protected ListOfChildren listC;
         protected ListOfMeals listM;
+        protected Dictionary<string, string> language;
 
-        public DietSpecificForChild(int i, ListOfChildren lc, ListOfMeals lm)
+        public DietSpecificForChild(int i, ListOfChildren lc, ListOfMeals lm, Dictionary<string, string> d)
         {
             InitializeComponent();
             index = i;
             listC = lc;
             listM = lm;
+            language = d;
         }
 
         /*Function that shows the specific food for a child 
          * if the food of the day can not eat it.
-         * 
-         * TO DO: Show the selected child
          * */
         private void DietSpecificForChild_Load(object sender, EventArgs e)
         {
+            lbB.Text = language["Bre"];
+            lbL.Text = language["Lunch"];
+            lbS.Text = language["Sanck"];
+            btChange.Text = language["Chan"];
+
             if (breakfast == null && lunch == null && snack == null)
             {
-                FoodSelection food = new FoodSelection(listC,listM);
-                ListOfChildren child = new ListOfChildren();
-                ListOfMeals m = new ListOfMeals();
-                Child c = child.GetChildOfList(index);
+                FoodSelection food = new FoodSelection(listC, listM);
+                Child c = listC.GetChildOfList(index);
                 lbInfoChild.Text = c.GetCod().ToString() + "--" + c.GetName() + " " + c.GetSurname();
-                tbBreak.Text = food.SelectFoodForChild(m.GetBreakfastFood(), index);
-                tbLunch.Text = food.SelectFoodForChild(m.GetLunchFood(), index);
-                tbSnack.Text = food.SelectFoodForChild(m.GetSnackFood(), index);
+                tbBreak.Text = food.SelectFoodForChild(listM.GetBreakfastFood(), index);
+                tbLunch.Text = food.SelectFoodForChild(listM.GetLunchFood(), index);
+                tbSnack.Text = food.SelectFoodForChild(listM.GetSnackFood(), index);
                 breakfast = food.GetBreakfast();
                 lunch = food.GetLunch();
                 snack = food.GetSnack();
@@ -64,12 +67,38 @@ namespace ProyectoFinal
         private void btChange_Click(object sender, EventArgs e)
         {
             FoodSelection food = new FoodSelection(listC, listM);
-            tbBreak.Text = food.SelectFoodForChild(listM.GetBreakfastFood(), index);
-            tbLunch.Text = food.SelectFoodForChild(listM.GetLunchFood(), index);
-            tbSnack.Text = food.SelectFoodForChild(listM.GetSnackFood(), index);
-            breakfast = food.GetBreakfast();
-            lunch = food.GetLunch();
-            snack = food.GetSnack();
+
+            string b = breakfast, l = lunch,s = snack;
+            if (cbBreakfast.Checked)
+            {
+                while(b == breakfast)
+                {
+                    b = food.SelectFoodForChild(listM.GetBreakfastFood(), index);
+                }
+                tbBreak.Text = b;
+            }
+                
+            if (cbLunch.Checked)
+            {
+                while (l == lunch)
+                {
+                    l = food.SelectFoodForChild(listM.GetLunchFood(), index);
+                }
+                tbLunch.Text = l;
+            }
+
+            if (cbSnack.Checked)
+            {
+                while (l == snack)
+                {
+                    s = food.SelectFoodForChild(listM.GetSnackFood(), index);
+                }
+                tbSnack.Text = l;
+            }
+
+            breakfast = b;
+            lunch = l;
+            snack = s;
         }
     }
 }

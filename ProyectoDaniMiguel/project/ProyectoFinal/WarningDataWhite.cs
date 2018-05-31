@@ -12,14 +12,22 @@ namespace ProyectoFinal
 {
     public partial class WarningDataWhite : Form
     {
-        public WarningDataWhite()
+        protected string message;
+
+        public WarningDataWhite(string l)
         {
             InitializeComponent();
+            message = l;
         }
 
         private void btOk_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void WarningDataWhite_Load(object sender, EventArgs e)
+        {
+            lbWarning.Text = message;
         }
     }
 }

@@ -566,11 +566,11 @@
             this.lbDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(52, 29);
+            this.lbDate.Location = new System.Drawing.Point(134, 29);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(112, 13);
+            this.lbDate.Size = new System.Drawing.Size(30, 13);
             this.lbDate.TabIndex = 70;
-            this.lbDate.Text = "//TO DO: Date of day";
+            this.lbDate.Text = "Date";
             // 
             // cbDaysInformation
             // 
@@ -849,7 +849,7 @@
             this.Controls.Add(this.lbDate);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "HistoricalChild";
-            this.Text = "HistoricalChild";
+            this.Text = "BLIST - Information About The Day";
             this.Load += new System.EventHandler(this.HistoricalChild_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,14 +12,17 @@ namespace ProyectoFinal
 {
     public partial class Warning : Form
     {
-        public Warning()
+        protected string message;
+
+        public Warning(string l)
         {
             InitializeComponent();
+            message = l;
         }
 
         private void Warning_Load(object sender, EventArgs e)
         {
-
+            lbWarning.Text = message;
         }
 
         private void btOk_Click(object sender, EventArgs e)
