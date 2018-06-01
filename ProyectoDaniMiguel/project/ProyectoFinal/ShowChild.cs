@@ -35,7 +35,7 @@ namespace ProyectoFinal
 
         private void ShowChild_Load(object sender, EventArgs e)
         {
-
+            this.Text = "BLIST - " + language["ShowC"];
             Day birth = listChildren.GetChildOfList(index).GetBirthday();
             Day today = new Day();
 
@@ -52,7 +52,32 @@ namespace ProyectoFinal
             lbInfLunch.Text = language["IELu"];
             lbInfSnack.Text = language["IESn"];
             btDiet.Text = language["Diet"];
-
+            cbEatBreakAll.Text = language["All"];
+            cbEatBreakHalf.Text = language["Half"];
+            cbEatBreakLittle.Text = language["Little"];
+            cbEatLunchAll.Text = language["All"];
+            cbEatLunchHalf.Text = language["Half"];
+            cbEatLunchLittle.Text = language["Little"];
+            cbEatSnackAll.Text = language["All"];
+            cbEatSnackHalf.Text = language["Half"];
+            cbEatSnackLittle.Text = language["Little"];
+            lbDepositions.Text = language["Depo"];
+            lbDepositionsMor.Text = language["Morn"];
+            lbDepositionsAft.Text = language["Aft"];
+            lbSleepMor.Text = language["Morn"];
+            lbSleepAft.Text = language["Aft"];
+            lbSleep.Text = language["Sleep"];
+            cbDepositionsMorYes.Text = language["Y"];
+            cbDepositionsAftYes.Text = language["Y"];
+            cbSleepMorGood.Text = language["Good"];
+            cbSleepMorBad.Text = language["Bad"];
+            cbSleepAftGood.Text = language["Good"];
+            cbSleepAftBad.Text = language["Bad"];
+            lbSinceMor.Text = language["Since"];
+            lbSinceAft.Text = language["Since"];
+            lbUntilMor.Text = language["Until"];
+            lbUntilAft.Text = language["Until"];
+            btPrintA.Text = language["PrintAll"];
 
             today.day = time.Day;
             today.month = time.Month;
@@ -68,16 +93,12 @@ namespace ProyectoFinal
             tbSurnames.Text = listChildren.GetChildOfList(index).GetSurname();
             tbSex.Text = listChildren.GetChildOfList(index).GetSex().ToString();
             tbCod.Text = listChildren.GetChildOfList(index).GetCod().ToString();
-            tbObservations.Text = listChildren.GetChildOfList(index).GetObservations();
-            tbAllergies.Text = listChildren.GetChildOfList(index).GetAllergies();
+            tbObservations.Text = 
+                listChildren.GetChildOfList(index).GetObservations();
+            tbAllergies.Text = 
+                listChildren.GetChildOfList(index).GetAllergies();
             tbAge.Text = listChildren.GetChildOfList(index).GetAge().ToString();
             lbTypeAge.Text = listChildren.GetChildOfList(index).GetTypeAge();
-
-            /*
-            meals[0] = meal.GetBreakfast();
-            meals[1] = meal.GetLunch();
-            meals[2] = meal.GetSnack();
-            */
             
             tbFoodBreakfast.Text = meal.GetBreakfast();
             tbFoodLunch.Text = meal.GetLunch();
@@ -93,7 +114,7 @@ namespace ProyectoFinal
             dtpUntilSleepAft.CustomFormat = "HH : mm";
             cbDaysInformation.Text = time.Day + "/" + time.Month + "/" + time.Year;
 
-            InformationOfDay information = list.GetInformationOfAChildFromDate(
+            InformationOfDay information=list.GetInformationOfAChildFromDate(
                 today, listChildren.GetChildOfList(index).GetCod());
             
             if (information != null)
@@ -141,47 +162,40 @@ namespace ProyectoFinal
                         break;
                 }
 
-                /*
-                if (information.GetDepositionsMor() == 1)
-                    cbDepositionsMorYes.CheckState = CheckState.Checked;
-                else if (information.GetDepositionsMor() == 2)
-                    cbDepositionsMorNo.CheckState = CheckState.Checked;
-                if (information.GetDepositionsAft() == 1)
-                    cbDepositionsAftYes.CheckState = CheckState.Checked;
-                else if (information.GetDepositionsAft() == 2)
-                    cbDepositionsAftNo.CheckState = CheckState.Checked;
-                */
+                switch (information.GetSleepMor())
+                {
+                    case 1:
+                        cbSleepMorGood.CheckState = CheckState.Checked;
+                        break;
+                    case 2:
+                        cbSleepMorBad.CheckState = CheckState.Checked;
+                        break;
+                    default:
+                        break;
+                }
+
+                switch (information.GetSleepAft())
+                {
+                    case 1:
+                        cbSleepAftGood.CheckState = CheckState.Checked;
+                        break;
+                    case 2:
+                        cbSleepAftBad.CheckState = CheckState.Checked;
+                        break;
+                    default:
+                        break;
+                }
+
+
                 tbMessageForHome.Text = information.GetMessageForHome();
                 tbMessageForSchool.Text = information.GetMessageForSchool();
-                
-                /*
-                if(information.GetTimeSleepMorSince().hour != 0 && information.GetTimeSleepMorSince().minute != 0)
-                {
-                    dtpSinceSleepMor.Value= Convert.ToDateTime(information.GetTimeSleepMorSince());
-                }
-
-                if (information.GetTimeSleepMorUntil().hour != 0 && information.GetTimeSleepMorUntil().minute != 0)
-                {
-                    dtpUntilSleepMor.Value = Convert.ToDateTime(information.GetTimeSleepMorUntil());
-                }
-
-                if (information.GetTimeSleepAftSince().hour != 0 && information.GetTimeSleepAftSince().minute != 0)
-                {
-                    dtpSinceSleepAft.Value = Convert.ToDateTime(information.GetTimeSleepAftSince());
-                }
-
-                if (information.GetTimeSleepAftUntil().hour != 0 && information.GetTimeSleepAftUntil().minute != 0)
-                {
-                    dtpUntilSleepAft.Value = Convert.ToDateTime(information.GetTimeSleepAftUntil());
-                }
-                */
-
             }
         }
 
         private void btOk_Click(object sender, EventArgs e)
         {
             Day today = new Day();
+
             today.day = time.Day;
             today.month = time.Month;
             today.year = time.Year;
@@ -265,6 +279,7 @@ namespace ProyectoFinal
         {
             DietSpecificForChild fDietAll =
                         new DietSpecificForChild(index,listChildren,listMeals,language);
+
             fDietAll.Show();
         }
 
@@ -278,6 +293,7 @@ namespace ProyectoFinal
                        listOfChild[cbDaysInformation.SelectedIndex].GetDay(),
                        index + 1),
                    listChildren.GetChildOfList(index),language);
+
                 h.Show();
             }
         }
@@ -330,6 +346,12 @@ namespace ProyectoFinal
         private void cbEatSnackLittle_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btPrintA_Click(object sender, EventArgs e)
+        {
+            PdfSave pdf = new PdfSave(listOfChild, listChildren.GetChildOfList(index),language);
+            pdf.CreateAndSavePDFDay();
         }
     }
 }

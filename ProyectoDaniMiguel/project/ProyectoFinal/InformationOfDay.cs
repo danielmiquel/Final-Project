@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProyectoFinal
+﻿namespace ProyectoFinal
 {
     //Class for work with the progres of children the all days
     public struct Day

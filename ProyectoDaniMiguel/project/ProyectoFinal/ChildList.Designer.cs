@@ -77,6 +77,7 @@
             // 
             // clbChildren
             // 
+            this.clbChildren.CheckOnClick = true;
             this.clbChildren.FormattingEnabled = true;
             this.clbChildren.Location = new System.Drawing.Point(175, 82);
             this.clbChildren.Name = "clbChildren";
@@ -200,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(784, 661);
+            this.ClientSize = new System.Drawing.Size(784, 687);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.lbTotalMens);
             this.Controls.Add(this.tbTotalMens);
@@ -217,9 +218,10 @@
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.btAdd);
             this.MaximumSize = new System.Drawing.Size(800, 900);
+            this.MinimumSize = new System.Drawing.Size(800, 726);
             this.Name = "ChildList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "BLIST - Index";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -231,7 +233,6 @@
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btEdit;
         private System.Windows.Forms.Button btDelete;
-        private System.Windows.Forms.CheckedListBox clbChildren;
         private System.Windows.Forms.Button btShow;
         private System.Windows.Forms.Button btNormalDiet;
         private System.Windows.Forms.Button btAllergiesDiet;
@@ -243,5 +244,6 @@
         private System.Windows.Forms.Label lbTotalMens;
         private System.Windows.Forms.TextBox tbTotalMens;
         private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.CheckedListBox clbChildren;
     }
 }

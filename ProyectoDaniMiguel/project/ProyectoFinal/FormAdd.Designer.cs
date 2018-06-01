@@ -49,65 +49,70 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(91, 46);
+            this.lbName.Location = new System.Drawing.Point(102, 54);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(35, 13);
             this.lbName.TabIndex = 0;
             this.lbName.Text = "Name";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbCod
             // 
             this.lbCod.AutoSize = true;
-            this.lbCod.Location = new System.Drawing.Point(100, 196);
+            this.lbCod.Location = new System.Drawing.Point(235, 162);
             this.lbCod.Name = "lbCod";
             this.lbCod.Size = new System.Drawing.Size(26, 13);
             this.lbCod.TabIndex = 1;
             this.lbCod.Text = "Cod";
+            this.lbCod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbSurname
             // 
             this.lbSurname.AutoSize = true;
-            this.lbSurname.Location = new System.Drawing.Point(72, 80);
+            this.lbSurname.Location = new System.Drawing.Point(334, 54);
             this.lbSurname.Name = "lbSurname";
             this.lbSurname.Size = new System.Drawing.Size(54, 13);
             this.lbSurname.TabIndex = 2;
             this.lbSurname.Text = "Surnames";
+            this.lbSurname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbSex
             // 
             this.lbSex.AutoSize = true;
-            this.lbSex.Location = new System.Drawing.Point(101, 158);
+            this.lbSex.Location = new System.Drawing.Point(349, 111);
             this.lbSex.Name = "lbSex";
             this.lbSex.Size = new System.Drawing.Size(25, 13);
             this.lbSex.TabIndex = 3;
             this.lbSex.Text = "Sex";
+            this.lbSex.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbBirthday
             // 
             this.lbBirthday.AutoSize = true;
-            this.lbBirthday.Location = new System.Drawing.Point(82, 122);
+            this.lbBirthday.Location = new System.Drawing.Point(92, 108);
             this.lbBirthday.Name = "lbBirthday";
             this.lbBirthday.Size = new System.Drawing.Size(45, 13);
             this.lbBirthday.TabIndex = 4;
             this.lbBirthday.Text = "Birthday";
+            this.lbBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(133, 46);
+            this.tbName.Location = new System.Drawing.Point(12, 70);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(228, 20);
             this.tbName.TabIndex = 7;
             // 
             // tbSurnames
             // 
-            this.tbSurnames.Location = new System.Drawing.Point(133, 77);
+            this.tbSurnames.Location = new System.Drawing.Point(257, 70);
             this.tbSurnames.Name = "tbSurnames";
             this.tbSurnames.Size = new System.Drawing.Size(228, 20);
             this.tbSurnames.TabIndex = 8;
             // 
             // tbCod
             // 
-            this.tbCod.Location = new System.Drawing.Point(133, 191);
+            this.tbCod.Location = new System.Drawing.Point(146, 178);
             this.tbCod.Name = "tbCod";
             this.tbCod.ReadOnly = true;
             this.tbCod.Size = new System.Drawing.Size(228, 20);
@@ -116,15 +121,16 @@
             // lbObservations
             // 
             this.lbObservations.AutoSize = true;
-            this.lbObservations.Location = new System.Drawing.Point(57, 248);
+            this.lbObservations.Location = new System.Drawing.Point(220, 215);
             this.lbObservations.Name = "lbObservations";
             this.lbObservations.Size = new System.Drawing.Size(69, 13);
             this.lbObservations.TabIndex = 12;
             this.lbObservations.Text = "Observations";
+            this.lbObservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbObservation
             // 
-            this.tbObservation.Location = new System.Drawing.Point(132, 245);
+            this.tbObservation.Location = new System.Drawing.Point(146, 231);
             this.tbObservation.Multiline = true;
             this.tbObservation.Name = "tbObservation";
             this.tbObservation.Size = new System.Drawing.Size(228, 111);
@@ -142,7 +148,7 @@
             // lbAllergy
             // 
             this.lbAllergy.AutoSize = true;
-            this.lbAllergy.Location = new System.Drawing.Point(564, 13);
+            this.lbAllergy.Location = new System.Drawing.Point(605, 13);
             this.lbAllergy.Name = "lbAllergy";
             this.lbAllergy.Size = new System.Drawing.Size(38, 13);
             this.lbAllergy.TabIndex = 37;
@@ -150,7 +156,7 @@
             // 
             // btOK
             // 
-            this.btOK.Location = new System.Drawing.Point(542, 307);
+            this.btOK.Location = new System.Drawing.Point(583, 307);
             this.btOK.Name = "btOK";
             this.btOK.Size = new System.Drawing.Size(75, 23);
             this.btOK.TabIndex = 38;
@@ -161,6 +167,7 @@
             // clbVegFrt
             // 
             this.clbVegFrt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clbVegFrt.CheckOnClick = true;
             this.clbVegFrt.FormattingEnabled = true;
             this.clbVegFrt.HorizontalScrollbar = true;
             this.clbVegFrt.Items.AddRange(new object[] {
@@ -188,7 +195,7 @@
             "Watermelon",
             "Wheat",
             "Zucchini"});
-            this.clbVegFrt.Location = new System.Drawing.Point(491, 46);
+            this.clbVegFrt.Location = new System.Drawing.Point(517, 46);
             this.clbVegFrt.MultiColumn = true;
             this.clbVegFrt.Name = "clbVegFrt";
             this.clbVegFrt.Size = new System.Drawing.Size(211, 229);
@@ -197,14 +204,14 @@
             // 
             // tbSex
             // 
-            this.tbSex.Location = new System.Drawing.Point(133, 155);
+            this.tbSex.Location = new System.Drawing.Point(257, 127);
             this.tbSex.Name = "tbSex";
             this.tbSex.Size = new System.Drawing.Size(228, 20);
             this.tbSex.TabIndex = 10;
             // 
             // dtpAge
             // 
-            this.dtpAge.Location = new System.Drawing.Point(133, 116);
+            this.dtpAge.Location = new System.Drawing.Point(12, 124);
             this.dtpAge.Name = "dtpAge";
             this.dtpAge.Size = new System.Drawing.Size(227, 20);
             this.dtpAge.TabIndex = 48;
@@ -214,7 +221,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(799, 385);
+            this.ClientSize = new System.Drawing.Size(784, 381);
             this.Controls.Add(this.dtpAge);
             this.Controls.Add(this.clbVegFrt);
             this.Controls.Add(this.btOK);
@@ -232,7 +239,10 @@
             this.Controls.Add(this.lbCod);
             this.Controls.Add(this.lbName);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 420);
+            this.MinimumSize = new System.Drawing.Size(800, 420);
             this.Name = "FormAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BLIST - Add Child";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);

@@ -57,15 +57,23 @@ namespace ProyectoFinal
             return list;
         }
 
+        //Returns the number of boys and girls and the total of these
+        public void SetNumDiferentChildren(List<Child> l,
+            ref int n1, ref int n2, ref int n3)
+        {
+            foreach (Child i in l)
+            {
+                if (i.GetSex() == 'F')
+                    n2++;
+                else if (i.GetSex() == 'M')
+                    n3++;
+                n1++;
+            }
+        }
+
         public Child GetChildOfList(int n)
         {
             return listChildren[n];
         }
-        /*
-        public Child GetChildOfListByCod(int n)
-        {
-            return listChildren;
-        }
-        */
     }
 }

@@ -34,7 +34,7 @@
             // 
             // btOk
             // 
-            this.btOk.Location = new System.Drawing.Point(114, 62);
+            this.btOk.Location = new System.Drawing.Point(166, 63);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(75, 23);
             this.btOk.TabIndex = 0;
@@ -45,10 +45,10 @@
             // lbWarning
             // 
             this.lbWarning.AutoSize = true;
-            this.lbWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWarning.Location = new System.Drawing.Point(12, 23);
+            this.lbWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWarning.Location = new System.Drawing.Point(41, 23);
             this.lbWarning.Name = "lbWarning";
-            this.lbWarning.Size = new System.Drawing.Size(300, 17);
+            this.lbWarning.Size = new System.Drawing.Size(335, 20);
             this.lbWarning.TabIndex = 1;
             this.lbWarning.Text = "You only can select one child at the same time";
             // 
@@ -57,7 +57,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(319, 97);
+            this.ClientSize = new System.Drawing.Size(421, 106);
             this.Controls.Add(this.lbWarning);
             this.Controls.Add(this.btOk);
             this.Name = "WarningSelectOnlyOne";

@@ -13,14 +13,8 @@ namespace ProyectoFinal
         {
             try
             {
-                StreamWriter file = File.CreateText("listOfChildren.txt");
-                /*
-                if (!File.Exists("listOfChildren.txt"))
-                     file = File.CreateText("listOfChildren.txt");
-                else
-                    file 
-                */
 
+                StreamWriter file = File.CreateText("listOfChildren.txt");
                 foreach (Child i in listChildren)
                 {
                     file.WriteLine(i.GetCod() + "|" + i.GetName()
@@ -41,8 +35,6 @@ namespace ProyectoFinal
 
         public override void Load()
         {
-            
-
             try
             {
                 if (File.Exists("listOfChildren.txt"))
@@ -74,7 +66,7 @@ namespace ProyectoFinal
                 }
                 else
                 {
-                    listChildren = null;
+                    listChildren = new List<Child>();
                 }
             }
             catch (IOException e)

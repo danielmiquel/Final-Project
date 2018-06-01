@@ -2,7 +2,7 @@ breakfast|apple,pine|fruit puree|Apple,Pine
 breakfast|milk|milk|Lactose,Apple
 breakfast|cereals,milk|creals with milk|Lactose
 lunch|carrots,tomato|raw carrots with tomato in cubes|Carrots,Tomato
-lunch|chicken|cooked chicken|Ckicken
+lunch|chicken|cooked chicken|Chicken
 lunch|hake|grilled hake|Fish
 snack|yogurt|whole yogurt|Lactose
 snack|orange|orange cut into eights or cubes|Orange

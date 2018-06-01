@@ -34,7 +34,7 @@
             // 
             // btOk
             // 
-            this.btOk.Location = new System.Drawing.Point(194, 70);
+            this.btOk.Location = new System.Drawing.Point(236, 70);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(75, 23);
             this.btOk.TabIndex = 3;
@@ -46,7 +46,7 @@
             // 
             this.lbWarning.AutoSize = true;
             this.lbWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWarning.Location = new System.Drawing.Point(12, 24);
+            this.lbWarning.Location = new System.Drawing.Point(54, 24);
             this.lbWarning.Name = "lbWarning";
             this.lbWarning.Size = new System.Drawing.Size(457, 20);
             this.lbWarning.TabIndex = 2;
@@ -57,9 +57,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(475, 116);
+            this.ClientSize = new System.Drawing.Size(562, 116);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.lbWarning);
+            this.MaximizeBox = false;
             this.Name = "WarningDataWhite";
             this.Text = "Warning";
             this.Load += new System.EventHandler(this.WarningDataWhite_Load);

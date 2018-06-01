@@ -26,6 +26,7 @@ namespace ProyectoFinal
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            this.Text = "BLIST - " + language["AddC"];
             lbName.Text = language["Name"];
             lbSurname.Text = language["Sur"];
             lbSex.Text = language["Sex"];
@@ -103,11 +104,12 @@ namespace ProyectoFinal
                         tbObservation.Text, allergies,
                         Convert.ToChar(tbSex.Text.ToUpper()), birthday,
                         saveList.GetList().Count+1),saveList);
+                    
                     this.Close();
                 }
                 else
                 {
-                    WarningInvalidDate w = new WarningInvalidDate(language["InvDate"]);
+                    WarningInvalidDate w = new WarningInvalidDate(language["WInvDate"]);
                     w.Show();
                 }
             }

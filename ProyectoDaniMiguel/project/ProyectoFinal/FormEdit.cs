@@ -27,6 +27,7 @@ namespace ProyectoFinal
 
         private void FormEdit_Load(object sender, EventArgs e)
         {
+            this.Text = "BLIST - " + language["EditC"];
             lbAge.Text = language["Age"];
             lbName.Text = language["Name"];
             lbSurname.Text = language["Sur"];
@@ -163,8 +164,9 @@ namespace ProyectoFinal
                     ModifyChild child = new ModifyChild(editList);
                     
                     child.SetModifiedChild(child.SetEditChild(
-                        tbName.Text, tbSurnames.Text, tbObservation.Text, 
-                        allergies, Convert.ToChar(tbSex.Text),
+                        tbName.Text.ToUpper(), tbSurnames.Text.ToUpper(),
+                        tbObservation.Text, allergies, 
+                        Convert.ToChar(tbSex.Text.ToUpper()),
                         birthday, Convert.ToInt32(tbCod.Text)), index);
                     this.Close();
                 }

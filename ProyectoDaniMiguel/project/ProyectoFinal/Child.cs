@@ -35,22 +35,30 @@ namespace ProyectoFinal
             return age;
         }
 
+        //Calculates the age from the date of birth
         public void SetAge(Day t)
         {
             DateTime now = DateTime.Now;
 
             if(t.year == now.Year)
             {
-                age = (now.Month - t.month) - 1;
-                if (now.Day >= t.day)
-                    age++;
+                if (now.Month != t.month)
+                {
+                    age = (now.Month - t.month) - 1;
+                    if (now.Day >= t.day)
+                        age++;
+                }
+                else
+                    age = 0;
                 typeAge = "Months";
             }
             else
             {
                 if(now.Year - t.year == 1)
                 {
-                    age = (12 - t.month) + now.Month;
+                    age = (12 - t.month) + now.Month - 1;
+                    if (now.Day >= t.day)
+                        age++;
                     typeAge = "Months";
                     if(age >= 12)
                     {
@@ -65,16 +73,7 @@ namespace ProyectoFinal
                         age++;
                     typeAge = "Years";
                 }
-            }
-            /*
-            age = now.Year - t.year;
-            typeAge = "Years";
-            if (age == 0)
-            {
-                age = (12 - t.month) + now.Month;
-                typeAge = "Months";
-            }
-             */   
+            } 
         }
 
         public void SetBirthday(Day d)

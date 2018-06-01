@@ -89,13 +89,14 @@
             this.cbEatBreakHalf = new System.Windows.Forms.CheckBox();
             this.cbEatBreakLittle = new System.Windows.Forms.CheckBox();
             this.tbBirthday = new System.Windows.Forms.TextBox();
+            this.btPrintA = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbAllergies
             // 
             this.tbAllergies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAllergies.Location = new System.Drawing.Point(97, 334);
+            this.tbAllergies.Location = new System.Drawing.Point(111, 334);
             this.tbAllergies.Name = "tbAllergies";
             this.tbAllergies.ReadOnly = true;
             this.tbAllergies.Size = new System.Drawing.Size(265, 20);
@@ -105,7 +106,7 @@
             // 
             this.tbObservations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbObservations.Location = new System.Drawing.Point(97, 283);
+            this.tbObservations.Location = new System.Drawing.Point(111, 283);
             this.tbObservations.Name = "tbObservations";
             this.tbObservations.ReadOnly = true;
             this.tbObservations.Size = new System.Drawing.Size(265, 20);
@@ -115,7 +116,7 @@
             // 
             this.tbCod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCod.Location = new System.Drawing.Point(97, 237);
+            this.tbCod.Location = new System.Drawing.Point(111, 237);
             this.tbCod.Name = "tbCod";
             this.tbCod.ReadOnly = true;
             this.tbCod.Size = new System.Drawing.Size(265, 20);
@@ -125,7 +126,7 @@
             // 
             this.tbSex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSex.Location = new System.Drawing.Point(97, 193);
+            this.tbSex.Location = new System.Drawing.Point(111, 193);
             this.tbSex.Name = "tbSex";
             this.tbSex.ReadOnly = true;
             this.tbSex.Size = new System.Drawing.Size(265, 20);
@@ -135,7 +136,7 @@
             // 
             this.tbAge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAge.Location = new System.Drawing.Point(97, 146);
+            this.tbAge.Location = new System.Drawing.Point(111, 146);
             this.tbAge.Name = "tbAge";
             this.tbAge.ReadOnly = true;
             this.tbAge.Size = new System.Drawing.Size(60, 20);
@@ -146,7 +147,7 @@
             // 
             this.tbSurnames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSurnames.Location = new System.Drawing.Point(97, 96);
+            this.tbSurnames.Location = new System.Drawing.Point(111, 96);
             this.tbSurnames.Name = "tbSurnames";
             this.tbSurnames.ReadOnly = true;
             this.tbSurnames.Size = new System.Drawing.Size(265, 20);
@@ -242,7 +243,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfoBeak.AutoSize = true;
             this.lbInfoBeak.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfoBeak.Location = new System.Drawing.Point(481, 20);
+            this.lbInfoBeak.Location = new System.Drawing.Point(505, 21);
             this.lbInfoBeak.Name = "lbInfoBeak";
             this.lbInfoBeak.Size = new System.Drawing.Size(149, 17);
             this.lbInfoBeak.TabIndex = 29;
@@ -255,7 +256,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfLunch.AutoSize = true;
             this.lbInfLunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfLunch.Location = new System.Drawing.Point(496, 137);
+            this.lbInfLunch.Location = new System.Drawing.Point(520, 137);
             this.lbInfLunch.Name = "lbInfLunch";
             this.lbInfLunch.Size = new System.Drawing.Size(124, 17);
             this.lbInfLunch.TabIndex = 30;
@@ -267,7 +268,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfSnack.AutoSize = true;
             this.lbInfSnack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfSnack.Location = new System.Drawing.Point(496, 264);
+            this.lbInfSnack.Location = new System.Drawing.Point(520, 264);
             this.lbInfSnack.Name = "lbInfSnack";
             this.lbInfSnack.Size = new System.Drawing.Size(127, 17);
             this.lbInfSnack.TabIndex = 31;
@@ -278,9 +279,9 @@
             this.btOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btOk.Location = new System.Drawing.Point(897, 461);
+            this.btOk.Location = new System.Drawing.Point(897, 430);
             this.btOk.Name = "btOk";
-            this.btOk.Size = new System.Drawing.Size(75, 23);
+            this.btOk.Size = new System.Drawing.Size(81, 23);
             this.btOk.TabIndex = 32;
             this.btOk.Text = "Ok";
             this.btOk.UseVisualStyleBackColor = true;
@@ -299,7 +300,7 @@
             // 
             this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbName.Location = new System.Drawing.Point(97, 52);
+            this.tbName.Location = new System.Drawing.Point(111, 52);
             this.tbName.Name = "tbName";
             this.tbName.ReadOnly = true;
             this.tbName.Size = new System.Drawing.Size(265, 20);
@@ -309,7 +310,7 @@
             // 
             this.tbFoodBreakfast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFoodBreakfast.Location = new System.Drawing.Point(382, 75);
+            this.tbFoodBreakfast.Location = new System.Drawing.Point(406, 75);
             this.tbFoodBreakfast.Name = "tbFoodBreakfast";
             this.tbFoodBreakfast.ReadOnly = true;
             this.tbFoodBreakfast.Size = new System.Drawing.Size(350, 20);
@@ -319,7 +320,7 @@
             // 
             this.tbFoodLunch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFoodLunch.Location = new System.Drawing.Point(382, 193);
+            this.tbFoodLunch.Location = new System.Drawing.Point(406, 193);
             this.tbFoodLunch.Name = "tbFoodLunch";
             this.tbFoodLunch.ReadOnly = true;
             this.tbFoodLunch.Size = new System.Drawing.Size(350, 20);
@@ -329,7 +330,7 @@
             // 
             this.tbFoodSnack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFoodSnack.Location = new System.Drawing.Point(382, 330);
+            this.tbFoodSnack.Location = new System.Drawing.Point(406, 330);
             this.tbFoodSnack.Name = "tbFoodSnack";
             this.tbFoodSnack.ReadOnly = true;
             this.tbFoodSnack.Size = new System.Drawing.Size(350, 20);
@@ -593,9 +594,9 @@
             // 
             this.btDiet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btDiet.Location = new System.Drawing.Point(897, 552);
+            this.btDiet.Location = new System.Drawing.Point(897, 593);
             this.btDiet.Name = "btDiet";
-            this.btDiet.Size = new System.Drawing.Size(75, 23);
+            this.btDiet.Size = new System.Drawing.Size(81, 23);
             this.btDiet.TabIndex = 69;
             this.btDiet.Text = "Diet";
             this.btDiet.UseVisualStyleBackColor = true;
@@ -603,8 +604,9 @@
             // 
             // cbDaysInformation
             // 
+            this.cbDaysInformation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbDaysInformation.FormattingEnabled = true;
-            this.cbDaysInformation.Location = new System.Drawing.Point(156, 16);
+            this.cbDaysInformation.Location = new System.Drawing.Point(170, 16);
             this.cbDaysInformation.Name = "cbDaysInformation";
             this.cbDaysInformation.Size = new System.Drawing.Size(206, 21);
             this.cbDaysInformation.TabIndex = 70;
@@ -616,7 +618,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTypeAge.AutoSize = true;
             this.lbTypeAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTypeAge.Location = new System.Drawing.Point(163, 147);
+            this.lbTypeAge.Location = new System.Drawing.Point(177, 147);
             this.lbTypeAge.Name = "lbTypeAge";
             this.lbTypeAge.Size = new System.Drawing.Size(0, 17);
             this.lbTypeAge.TabIndex = 71;
@@ -670,7 +672,7 @@
             this.cbEatSnackAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatSnackAll.AutoSize = true;
-            this.cbEatSnackAll.Location = new System.Drawing.Point(406, 307);
+            this.cbEatSnackAll.Location = new System.Drawing.Point(430, 307);
             this.cbEatSnackAll.Name = "cbEatSnackAll";
             this.cbEatSnackAll.Size = new System.Drawing.Size(37, 17);
             this.cbEatSnackAll.TabIndex = 37;
@@ -683,7 +685,7 @@
             this.cbEatSnackHalf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatSnackHalf.AutoSize = true;
-            this.cbEatSnackHalf.Location = new System.Drawing.Point(515, 307);
+            this.cbEatSnackHalf.Location = new System.Drawing.Point(539, 307);
             this.cbEatSnackHalf.Name = "cbEatSnackHalf";
             this.cbEatSnackHalf.Size = new System.Drawing.Size(45, 17);
             this.cbEatSnackHalf.TabIndex = 38;
@@ -696,7 +698,7 @@
             this.cbEatSnackLittle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatSnackLittle.AutoSize = true;
-            this.cbEatSnackLittle.Location = new System.Drawing.Point(625, 306);
+            this.cbEatSnackLittle.Location = new System.Drawing.Point(649, 306);
             this.cbEatSnackLittle.Name = "cbEatSnackLittle";
             this.cbEatSnackLittle.Size = new System.Drawing.Size(48, 17);
             this.cbEatSnackLittle.TabIndex = 39;
@@ -709,7 +711,7 @@
             this.cbEatLunchAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatLunchAll.AutoSize = true;
-            this.cbEatLunchAll.Location = new System.Drawing.Point(406, 170);
+            this.cbEatLunchAll.Location = new System.Drawing.Point(430, 170);
             this.cbEatLunchAll.Name = "cbEatLunchAll";
             this.cbEatLunchAll.Size = new System.Drawing.Size(37, 17);
             this.cbEatLunchAll.TabIndex = 34;
@@ -722,7 +724,7 @@
             this.cbEatLunchHalf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatLunchHalf.AutoSize = true;
-            this.cbEatLunchHalf.Location = new System.Drawing.Point(515, 170);
+            this.cbEatLunchHalf.Location = new System.Drawing.Point(539, 170);
             this.cbEatLunchHalf.Name = "cbEatLunchHalf";
             this.cbEatLunchHalf.Size = new System.Drawing.Size(45, 17);
             this.cbEatLunchHalf.TabIndex = 35;
@@ -735,7 +737,7 @@
             this.cbEatLunchLittle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatLunchLittle.AutoSize = true;
-            this.cbEatLunchLittle.Location = new System.Drawing.Point(625, 169);
+            this.cbEatLunchLittle.Location = new System.Drawing.Point(649, 169);
             this.cbEatLunchLittle.Name = "cbEatLunchLittle";
             this.cbEatLunchLittle.Size = new System.Drawing.Size(48, 17);
             this.cbEatLunchLittle.TabIndex = 36;
@@ -748,7 +750,7 @@
             this.cbEatBreakAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatBreakAll.AutoSize = true;
-            this.cbEatBreakAll.Location = new System.Drawing.Point(406, 52);
+            this.cbEatBreakAll.Location = new System.Drawing.Point(430, 53);
             this.cbEatBreakAll.Name = "cbEatBreakAll";
             this.cbEatBreakAll.Size = new System.Drawing.Size(37, 17);
             this.cbEatBreakAll.TabIndex = 20;
@@ -761,7 +763,7 @@
             this.cbEatBreakHalf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatBreakHalf.AutoSize = true;
-            this.cbEatBreakHalf.Location = new System.Drawing.Point(515, 52);
+            this.cbEatBreakHalf.Location = new System.Drawing.Point(539, 53);
             this.cbEatBreakHalf.Name = "cbEatBreakHalf";
             this.cbEatBreakHalf.Size = new System.Drawing.Size(45, 17);
             this.cbEatBreakHalf.TabIndex = 21;
@@ -774,7 +776,7 @@
             this.cbEatBreakLittle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatBreakLittle.AutoSize = true;
-            this.cbEatBreakLittle.Location = new System.Drawing.Point(625, 51);
+            this.cbEatBreakLittle.Location = new System.Drawing.Point(649, 52);
             this.cbEatBreakLittle.Name = "cbEatBreakLittle";
             this.cbEatBreakLittle.Size = new System.Drawing.Size(48, 17);
             this.cbEatBreakLittle.TabIndex = 22;
@@ -784,12 +786,22 @@
             // 
             // tbBirthday
             // 
-            this.tbBirthday.Location = new System.Drawing.Point(253, 144);
+            this.tbBirthday.Location = new System.Drawing.Point(267, 144);
             this.tbBirthday.Name = "tbBirthday";
             this.tbBirthday.ReadOnly = true;
             this.tbBirthday.Size = new System.Drawing.Size(109, 20);
             this.tbBirthday.TabIndex = 81;
             this.tbBirthday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btPrintA
+            // 
+            this.btPrintA.Location = new System.Drawing.Point(897, 514);
+            this.btPrintA.Name = "btPrintA";
+            this.btPrintA.Size = new System.Drawing.Size(81, 23);
+            this.btPrintA.TabIndex = 82;
+            this.btPrintA.Text = "To Print Days";
+            this.btPrintA.UseVisualStyleBackColor = true;
+            this.btPrintA.Click += new System.EventHandler(this.btPrintA_Click);
             // 
             // ShowChild
             // 
@@ -798,6 +810,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.CancelButton = this.btOk;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.btPrintA);
             this.Controls.Add(this.tbBirthday);
             this.Controls.Add(this.dtpUntilSleepMor);
             this.Controls.Add(this.dtpSinceSleepAft);
@@ -932,5 +945,6 @@
         private System.Windows.Forms.CheckBox cbEatBreakHalf;
         private System.Windows.Forms.CheckBox cbEatBreakLittle;
         private System.Windows.Forms.TextBox tbBirthday;
+        private System.Windows.Forms.Button btPrintA;
     }
 }

@@ -32,34 +32,41 @@ namespace ProyectoFinal
 
         public override void Load()
         {
-            List<Meal> list= new List<Meal>();
-
             try
             {
-                StreamReader file = File.OpenText("listOfMeals.txt");
-                string[] data = new string[4];
-                string line;
-                Meal meal;
-
-                do
+                if (File.Exists("listOfMeals.txt"))
                 {
-                    line = file.ReadLine();
-                    if (line != null)
-                    {
-                        data = line.Split('|');
-                        meal = new Meal(data[0],data[1],data[2],data[3]);
-                        list.Add(meal);
-                    }
-                } while (line != null);
-                file.Close();
+                    List<Meal> list = new List<Meal>();
+                    StreamReader file = File.OpenText("listOfMeals.txt");
+                    string[] data = new string[4];
+                    string line;
+                    Meal meal;
 
+                    do
+                    {
+                        line = file.ReadLine();
+                        if (line != null)
+                        {
+                            data = line.Split('|');
+                            meal = new Meal(data[0], data[1], data[2], data[3]);
+                            list.Add(meal);
+                        }
+                    } while (line != null);
+
+
+                    listMeals = list;
+                    file.Close();
+                }
+                else
+                {
+                    listMeals = new List<Meal>();
+                }
             }
             catch (IOException e)
             {
                 Console.WriteLine("Eror: " + e.Message);
             }
 
-            listMeals = list;
         }
 
         public List<Meal> GetList()

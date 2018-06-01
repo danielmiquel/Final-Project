@@ -6,37 +6,42 @@ namespace ProyectoFinal
 {
     public partial class ChildList : Form
     {
-        protected int totalWomen;
-        protected int totalMens;
         protected ListOfChildren listChildren = new ListOfChildren();
         protected ListOfMeals listMeals = new ListOfMeals();
-        protected Dictionary<string, string> language;
+        public Dictionary<string, string> language;
+        private int totChild = 0,totMen = 0,totWom = 0;
 
-        public ChildList(Dictionary<string, string> l)
+
+        public ChildList()
         {
             InitializeComponent();
-            language = l;
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            SelectLenguage sl = new SelectLenguage();
+            if(sl.ShowDialog() == DialogResult.OK)
+            {
+                language = sl.language;
+            }
+            else
+            {
+                this.Close();
+            }
+
             if (listChildren.GetList() != null)
             {
-                foreach (Child i in listChildren.GetList())
-                {
-                    if (i.GetSex() == 'F')
-                        totalWomen++;
-                    else if (i.GetSex() == 'M')
-                        totalMens++;
-                }
+                listChildren.SetNumDiferentChildren(listChildren.GetList(), 
+                    ref totChild, ref totWom,ref totMen);
 
                 foreach (string i in listChildren.ListForShow())
                 {
                     clbChildren.Items.Add(i);
                 }
-
+                
                 btRefresh.Text = language["Refr"];
                 btAdd.Text = language["AddC"];
+                btNormalDiet.Text = language["Diet"];
                 btAllergiesDiet.Text = language["DietA"];
                 btDelete.Text = language["DelC"];
                 btEdit.Text = language["EditC"];
@@ -44,9 +49,10 @@ namespace ProyectoFinal
                 lbTotalChildren.Text = language["TotC"];
                 lbTotalFemale.Text = language["TotW"];
                 lbTotalMens.Text = language["TotM"];
-                tbTotalChildren.Text = clbChildren.Items.Count.ToString();
-                tbTotalFemale.Text = totalWomen.ToString();
-                tbTotalMens.Text = totalMens.ToString();
+
+                tbTotalChildren.Text = totChild.ToString();
+                tbTotalFemale.Text = totWom.ToString();
+                tbTotalMens.Text = totMen.ToString();
             }
         }
 
@@ -63,13 +69,14 @@ namespace ProyectoFinal
         {
             try
             {
-                if (clbChildren.CheckedItems.Count == 1)
+                
+                if (clbChildren.CheckedIndices.Count == 1)
                 {
                     FormEdit fEdit = new FormEdit(clbChildren.SelectedIndex,
                         listChildren,language);
                     fEdit.Show();
                 }
-                else if (clbChildren.CheckedItems.Count == 0)
+                else if (clbChildren.CheckedIndices.Count == 0)
                 {
                     WarningNotSelct warningNot = new WarningNotSelct(language["NotSelec"]);
                     warningNot.Show();
@@ -92,6 +99,7 @@ namespace ProyectoFinal
             
         }
 
+        //Conditions for show a child diet without allergies
         private void btAllergiesDiet_Click(object sender, EventArgs e)
         {
             try
@@ -121,15 +129,21 @@ namespace ProyectoFinal
             }
         }
 
+        //Conditions for remove a child,if the condition is not met, 
+        //an alert message will be
         private void btDelete_Click(object sender, EventArgs e)
         {
             try
             {
                 if (clbChildren.CheckedItems.Count > 0)
                 {
-                    RemoveChild rChild = new RemoveChild(
-                        clbChildren.SelectedIndex,listChildren);
-                    clbChildren.Items.RemoveAt(clbChildren.SelectedIndex);
+                    ErasureConfirmation er = new ErasureConfirmation(language);
+                    if(er.ShowDialog() == DialogResult.OK)
+                    {
+                        RemoveChild rChild = new RemoveChild(
+                        clbChildren.SelectedIndex, listChildren);
+                        clbChildren.Items.RemoveAt(clbChildren.SelectedIndex);
+                    }
                 }
                 else
                 {
@@ -142,36 +156,33 @@ namespace ProyectoFinal
                 Warning warning = new Warning(language["WFail"]);
                 warning.Show();
             }
-            
         }
 
+        //To update the list that is displayed on the 
+        //screen when a fault is made
         private void btRefresh_Click(object sender, EventArgs e)
         {
             clbChildren.Items.Clear();
             tbTotalChildren.Clear();
             tbTotalFemale.Clear();
             tbTotalMens.Clear();
-            totalWomen = 0;
-            totalMens = 0;
+            totWom = 0;
+            totMen = 0;
 
-            foreach (Child i in listChildren.GetList())
-            {
-                if (i.GetSex() == 'F')
-                    totalWomen++;
-                else if (i.GetSex() == 'M')
-                    totalMens++;
-            }
+            listChildren.SetNumDiferentChildren(listChildren.GetList(),
+                    ref totChild, ref totWom, ref totMen);
 
             foreach (string i in listChildren.ListForShow())
             {
                 clbChildren.Items.Add(i);
             }
 
-            tbTotalChildren.Text = clbChildren.Items.Count.ToString();
-            tbTotalFemale.Text = totalWomen.ToString();
-            tbTotalMens.Text = totalMens.ToString();
+            tbTotalChildren.Text = totChild.ToString();
+            tbTotalFemale.Text = totWom.ToString();
+            tbTotalMens.Text = totMen.ToString();
         }
 
+        //Diet for all children haven't allergies
         private void btNormalDiet_Click(object sender, EventArgs e)
         {
             try
@@ -200,6 +211,8 @@ namespace ProyectoFinal
             }
         }
 
+        //See all the information of a selected child about what 
+        //he has done throughout the day since he is at school
         private void btShow_Click(object sender, EventArgs e)
         {       
             try

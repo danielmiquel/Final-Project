@@ -20,7 +20,8 @@ namespace ProyectoFinal
         public void SetInformation(InformationOfDay d)
         {
             listInformationAllDays.Add(d);
-            listInformationAllDays.Sort(CompareInformationByDay);
+            listInformationAllDays.Sort(CompareInformationByYear);
+            listInformationAllDays.Sort(CompareInformationByMonth);
             f.SetList(listInformationAllDays);
             f.Save();
         }
@@ -33,23 +34,25 @@ namespace ProyectoFinal
         
         public int CompareInformationByDay(InformationOfDay i1, InformationOfDay i2)
         {
-            CompareInformation(i1, i2);
-            CompareInformationByYear(i1, i2);
-            CompareInformationByMonth(i1, i2);
             return i2.GetDay().day -  i1.GetDay().day;
         }
 
         public int CompareInformationByMonth(InformationOfDay i1, InformationOfDay i2)
         {
-            return i2.GetDay().month - i1.GetDay().month;
+            if (i2.GetDay().month == i1.GetDay().month)
+                return CompareInformationByDay(i1, i2);
+            else
+                return i2.GetDay().month - i1.GetDay().month;
         }
 
         public int CompareInformationByYear(InformationOfDay i1, InformationOfDay i2)
         {
+            
             return i2.GetDay().year - i1.GetDay().year;
         }
-        
 
+        //Set the information of a child of a certain day, if that 
+        //information already exists, replace it with the new information
         public void SetEditInformation(InformationOfDay i)
         {
             bool found = false;
@@ -65,6 +68,7 @@ namespace ProyectoFinal
             }
         }
 
+        //Returns InformationOfChild of a certain child
         public List<InformationOfDay> GetInformationOfAChild(int cod)
         {
             List<InformationOfDay> listOfAChild = new List<InformationOfDay>();
@@ -79,6 +83,7 @@ namespace ProyectoFinal
             return listOfAChild;
         }
 
+        //Returns InformationOfChild of a certain date
         public InformationOfDay GetInformationOfAChildFromDate(Day d, int cod)
         {
             foreach (InformationOfDay i in GetInformationOfAChild(cod))

@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinal
 {
-    partial class SelecLanguage
+    partial class SelectLenguage
     {
         /// <summary>
         /// Required designer variable.
@@ -63,16 +63,21 @@
             this.lbTitle1.TabIndex = 2;
             this.lbTitle1.Text = "Select  Language / Seleciona Idioma";
             // 
-            // SelecLanguage
+            // SelectLenguage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.lbTitle1);
             this.Controls.Add(this.btCastellano);
             this.Controls.Add(this.btEnglish);
-            this.Name = "SelecLanguage";
-            this.Text = "SelecLanguage";
+            this.MaximumSize = new System.Drawing.Size(300, 300);
+            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.Name = "SelectLenguage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lenguage / Idioma";
+            this.Load += new System.EventHandler(this.SelectLenguage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

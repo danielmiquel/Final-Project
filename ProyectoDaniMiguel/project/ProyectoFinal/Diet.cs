@@ -25,9 +25,10 @@ namespace ProyectoFinal
 
         private void Diet_Load(object sender, EventArgs e)
         {
+            this.Text = "BLIST - " + language["Diet"];
             lbB.Text = language["Bre"];
             lbL.Text = language["Lunch"];
-            lbS.Text = language["Sanck"];
+            lbS.Text = language["Snack"];
             btChange.Text = language["Chan"];
 
             if (breakfast == null && lunch == null && snack == null)

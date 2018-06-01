@@ -354,7 +354,7 @@
             // 
             this.tbFoodSnack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFoodSnack.Location = new System.Drawing.Point(389, 340);
+            this.tbFoodSnack.Location = new System.Drawing.Point(409, 340);
             this.tbFoodSnack.Name = "tbFoodSnack";
             this.tbFoodSnack.ReadOnly = true;
             this.tbFoodSnack.Size = new System.Drawing.Size(350, 20);
@@ -364,7 +364,7 @@
             // 
             this.tbFoodLunch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFoodLunch.Location = new System.Drawing.Point(389, 203);
+            this.tbFoodLunch.Location = new System.Drawing.Point(409, 203);
             this.tbFoodLunch.Name = "tbFoodLunch";
             this.tbFoodLunch.ReadOnly = true;
             this.tbFoodLunch.Size = new System.Drawing.Size(350, 20);
@@ -374,7 +374,7 @@
             // 
             this.tbFoodBreakfast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFoodBreakfast.Location = new System.Drawing.Point(389, 85);
+            this.tbFoodBreakfast.Location = new System.Drawing.Point(409, 85);
             this.tbFoodBreakfast.Name = "tbFoodBreakfast";
             this.tbFoodBreakfast.ReadOnly = true;
             this.tbFoodBreakfast.Size = new System.Drawing.Size(350, 20);
@@ -399,7 +399,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfSnack.AutoSize = true;
             this.lbInfSnack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfSnack.Location = new System.Drawing.Point(503, 274);
+            this.lbInfSnack.Location = new System.Drawing.Point(523, 274);
             this.lbInfSnack.Name = "lbInfSnack";
             this.lbInfSnack.Size = new System.Drawing.Size(127, 17);
             this.lbInfSnack.TabIndex = 91;
@@ -411,7 +411,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfLunch.AutoSize = true;
             this.lbInfLunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfLunch.Location = new System.Drawing.Point(503, 147);
+            this.lbInfLunch.Location = new System.Drawing.Point(523, 147);
             this.lbInfLunch.Name = "lbInfLunch";
             this.lbInfLunch.Size = new System.Drawing.Size(124, 17);
             this.lbInfLunch.TabIndex = 90;
@@ -423,7 +423,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfoBeak.AutoSize = true;
             this.lbInfoBeak.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfoBeak.Location = new System.Drawing.Point(488, 30);
+            this.lbInfoBeak.Location = new System.Drawing.Point(508, 30);
             this.lbInfoBeak.Name = "lbInfoBeak";
             this.lbInfoBeak.Size = new System.Drawing.Size(149, 17);
             this.lbInfoBeak.TabIndex = 89;
@@ -435,11 +435,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAllergies.AutoSize = true;
             this.lbAllergies.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAllergies.Location = new System.Drawing.Point(29, 347);
+            this.lbAllergies.Location = new System.Drawing.Point(42, 345);
             this.lbAllergies.Name = "lbAllergies";
             this.lbAllergies.Size = new System.Drawing.Size(62, 17);
             this.lbAllergies.TabIndex = 84;
             this.lbAllergies.Text = "Allergies";
+            this.lbAllergies.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbName
             // 
@@ -447,11 +448,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(40, 65);
+            this.lbName.Location = new System.Drawing.Point(54, 63);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(45, 17);
             this.lbName.TabIndex = 83;
             this.lbName.Text = "Name";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbSurnames
             // 
@@ -459,11 +461,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSurnames.AutoSize = true;
             this.lbSurnames.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSurnames.Location = new System.Drawing.Point(21, 113);
+            this.lbSurnames.Location = new System.Drawing.Point(27, 111);
             this.lbSurnames.Name = "lbSurnames";
             this.lbSurnames.Size = new System.Drawing.Size(72, 17);
             this.lbSurnames.TabIndex = 82;
             this.lbSurnames.Text = "Surnames";
+            this.lbSurnames.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbSex
             // 
@@ -471,11 +474,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSex.AutoSize = true;
             this.lbSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSex.Location = new System.Drawing.Point(59, 206);
+            this.lbSex.Location = new System.Drawing.Point(65, 204);
             this.lbSex.Name = "lbSex";
             this.lbSex.Size = new System.Drawing.Size(31, 17);
             this.lbSex.TabIndex = 80;
             this.lbSex.Text = "Sex";
+            this.lbSex.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCod
             // 
@@ -483,11 +487,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCod.AutoSize = true;
             this.lbCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCod.Location = new System.Drawing.Point(58, 250);
+            this.lbCod.Location = new System.Drawing.Point(64, 248);
             this.lbCod.Name = "lbCod";
             this.lbCod.Size = new System.Drawing.Size(33, 17);
             this.lbCod.TabIndex = 79;
             this.lbCod.Text = "Cod";
+            this.lbCod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbObservations
             // 
@@ -495,17 +500,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbObservations.AutoSize = true;
             this.lbObservations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbObservations.Location = new System.Drawing.Point(6, 296);
+            this.lbObservations.Location = new System.Drawing.Point(12, 294);
             this.lbObservations.Name = "lbObservations";
             this.lbObservations.Size = new System.Drawing.Size(92, 17);
             this.lbObservations.TabIndex = 78;
             this.lbObservations.Text = "Observations";
+            this.lbObservations.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tbSurnames
             // 
             this.tbSurnames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSurnames.Location = new System.Drawing.Point(104, 106);
+            this.tbSurnames.Location = new System.Drawing.Point(127, 106);
             this.tbSurnames.Name = "tbSurnames";
             this.tbSurnames.ReadOnly = true;
             this.tbSurnames.Size = new System.Drawing.Size(265, 20);
@@ -515,7 +521,7 @@
             // 
             this.tbSex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSex.Location = new System.Drawing.Point(104, 203);
+            this.tbSex.Location = new System.Drawing.Point(127, 203);
             this.tbSex.Name = "tbSex";
             this.tbSex.ReadOnly = true;
             this.tbSex.Size = new System.Drawing.Size(265, 20);
@@ -525,7 +531,7 @@
             // 
             this.tbCod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCod.Location = new System.Drawing.Point(104, 247);
+            this.tbCod.Location = new System.Drawing.Point(127, 247);
             this.tbCod.Name = "tbCod";
             this.tbCod.ReadOnly = true;
             this.tbCod.Size = new System.Drawing.Size(265, 20);
@@ -535,7 +541,7 @@
             // 
             this.tbObservations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbObservations.Location = new System.Drawing.Point(104, 293);
+            this.tbObservations.Location = new System.Drawing.Point(127, 293);
             this.tbObservations.Name = "tbObservations";
             this.tbObservations.ReadOnly = true;
             this.tbObservations.Size = new System.Drawing.Size(265, 20);
@@ -545,7 +551,7 @@
             // 
             this.tbAllergies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAllergies.Location = new System.Drawing.Point(104, 344);
+            this.tbAllergies.Location = new System.Drawing.Point(127, 344);
             this.tbAllergies.Name = "tbAllergies";
             this.tbAllergies.ReadOnly = true;
             this.tbAllergies.Size = new System.Drawing.Size(265, 20);
@@ -555,7 +561,7 @@
             // 
             this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbName.Location = new System.Drawing.Point(104, 62);
+            this.tbName.Location = new System.Drawing.Point(127, 62);
             this.tbName.Name = "tbName";
             this.tbName.ReadOnly = true;
             this.tbName.Size = new System.Drawing.Size(265, 20);
@@ -566,7 +572,7 @@
             this.lbDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(134, 29);
+            this.lbDate.Location = new System.Drawing.Point(157, 29);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(30, 13);
             this.lbDate.TabIndex = 70;
@@ -576,7 +582,7 @@
             // 
             this.cbDaysInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbDaysInformation.Location = new System.Drawing.Point(169, 26);
+            this.cbDaysInformation.Location = new System.Drawing.Point(192, 26);
             this.cbDaysInformation.Name = "cbDaysInformation";
             this.cbDaysInformation.ReadOnly = true;
             this.cbDaysInformation.Size = new System.Drawing.Size(200, 20);
@@ -588,7 +594,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatLunchLittle.AutoSize = true;
             this.cbEatLunchLittle.Enabled = false;
-            this.cbEatLunchLittle.Location = new System.Drawing.Point(691, 180);
+            this.cbEatLunchLittle.Location = new System.Drawing.Point(711, 180);
             this.cbEatLunchLittle.Name = "cbEatLunchLittle";
             this.cbEatLunchLittle.Size = new System.Drawing.Size(48, 17);
             this.cbEatLunchLittle.TabIndex = 134;
@@ -601,7 +607,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatLunchHalf.AutoSize = true;
             this.cbEatLunchHalf.Enabled = false;
-            this.cbEatLunchHalf.Location = new System.Drawing.Point(544, 180);
+            this.cbEatLunchHalf.Location = new System.Drawing.Point(564, 180);
             this.cbEatLunchHalf.Name = "cbEatLunchHalf";
             this.cbEatLunchHalf.Size = new System.Drawing.Size(45, 17);
             this.cbEatLunchHalf.TabIndex = 136;
@@ -614,7 +620,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatLunchAll.AutoSize = true;
             this.cbEatLunchAll.Enabled = false;
-            this.cbEatLunchAll.Location = new System.Drawing.Point(389, 180);
+            this.cbEatLunchAll.Location = new System.Drawing.Point(409, 180);
             this.cbEatLunchAll.Name = "cbEatLunchAll";
             this.cbEatLunchAll.Size = new System.Drawing.Size(37, 17);
             this.cbEatLunchAll.TabIndex = 135;
@@ -627,7 +633,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatBreakLittle.AutoSize = true;
             this.cbEatBreakLittle.Enabled = false;
-            this.cbEatBreakLittle.Location = new System.Drawing.Point(691, 64);
+            this.cbEatBreakLittle.Location = new System.Drawing.Point(711, 64);
             this.cbEatBreakLittle.Name = "cbEatBreakLittle";
             this.cbEatBreakLittle.Size = new System.Drawing.Size(48, 17);
             this.cbEatBreakLittle.TabIndex = 139;
@@ -640,7 +646,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatBreakHalf.AutoSize = true;
             this.cbEatBreakHalf.Enabled = false;
-            this.cbEatBreakHalf.Location = new System.Drawing.Point(544, 64);
+            this.cbEatBreakHalf.Location = new System.Drawing.Point(564, 64);
             this.cbEatBreakHalf.Name = "cbEatBreakHalf";
             this.cbEatBreakHalf.Size = new System.Drawing.Size(45, 17);
             this.cbEatBreakHalf.TabIndex = 138;
@@ -653,7 +659,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatBreakAll.AutoSize = true;
             this.cbEatBreakAll.Enabled = false;
-            this.cbEatBreakAll.Location = new System.Drawing.Point(389, 66);
+            this.cbEatBreakAll.Location = new System.Drawing.Point(409, 66);
             this.cbEatBreakAll.Name = "cbEatBreakAll";
             this.cbEatBreakAll.Size = new System.Drawing.Size(37, 17);
             this.cbEatBreakAll.TabIndex = 137;
@@ -666,7 +672,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatSnackLittle.AutoSize = true;
             this.cbEatSnackLittle.Enabled = false;
-            this.cbEatSnackLittle.Location = new System.Drawing.Point(691, 317);
+            this.cbEatSnackLittle.Location = new System.Drawing.Point(711, 317);
             this.cbEatSnackLittle.Name = "cbEatSnackLittle";
             this.cbEatSnackLittle.Size = new System.Drawing.Size(48, 17);
             this.cbEatSnackLittle.TabIndex = 142;
@@ -679,7 +685,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatSnackHalf.AutoSize = true;
             this.cbEatSnackHalf.Enabled = false;
-            this.cbEatSnackHalf.Location = new System.Drawing.Point(544, 317);
+            this.cbEatSnackHalf.Location = new System.Drawing.Point(564, 317);
             this.cbEatSnackHalf.Name = "cbEatSnackHalf";
             this.cbEatSnackHalf.Size = new System.Drawing.Size(45, 17);
             this.cbEatSnackHalf.TabIndex = 141;
@@ -692,7 +698,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEatSnackAll.AutoSize = true;
             this.cbEatSnackAll.Enabled = false;
-            this.cbEatSnackAll.Location = new System.Drawing.Point(389, 317);
+            this.cbEatSnackAll.Location = new System.Drawing.Point(409, 317);
             this.cbEatSnackAll.Name = "cbEatSnackAll";
             this.cbEatSnackAll.Size = new System.Drawing.Size(37, 17);
             this.cbEatSnackAll.TabIndex = 140;
@@ -705,7 +711,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTypeAge.AutoSize = true;
             this.lbTypeAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTypeAge.Location = new System.Drawing.Point(170, 157);
+            this.lbTypeAge.Location = new System.Drawing.Point(193, 157);
             this.lbTypeAge.Name = "lbTypeAge";
             this.lbTypeAge.Size = new System.Drawing.Size(0, 17);
             this.lbTypeAge.TabIndex = 145;
@@ -716,18 +722,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAge.AutoSize = true;
             this.lbAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAge.Location = new System.Drawing.Point(57, 157);
+            this.lbAge.Location = new System.Drawing.Point(63, 155);
             this.lbAge.Name = "lbAge";
             this.lbAge.Size = new System.Drawing.Size(33, 17);
             this.lbAge.TabIndex = 144;
             this.lbAge.Text = "Age";
+            this.lbAge.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tbAge
             // 
             this.tbAge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbAge.Enabled = false;
-            this.tbAge.Location = new System.Drawing.Point(104, 156);
+            this.tbAge.Location = new System.Drawing.Point(127, 156);
             this.tbAge.Name = "tbAge";
             this.tbAge.ReadOnly = true;
             this.tbAge.Size = new System.Drawing.Size(60, 20);

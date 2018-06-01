@@ -53,6 +53,7 @@
             // clbVegFrt
             // 
             this.clbVegFrt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clbVegFrt.CheckOnClick = true;
             this.clbVegFrt.FormattingEnabled = true;
             this.clbVegFrt.HorizontalScrollbar = true;
             this.clbVegFrt.Items.AddRange(new object[] {
@@ -81,7 +82,7 @@
             "Watermelon",
             "Wheat",
             "Zucchini"});
-            this.clbVegFrt.Location = new System.Drawing.Point(511, 54);
+            this.clbVegFrt.Location = new System.Drawing.Point(527, 58);
             this.clbVegFrt.MultiColumn = true;
             this.clbVegFrt.Name = "clbVegFrt";
             this.clbVegFrt.Size = new System.Drawing.Size(211, 229);
@@ -90,7 +91,7 @@
             // 
             // btOK
             // 
-            this.btOK.Location = new System.Drawing.Point(562, 315);
+            this.btOK.Location = new System.Drawing.Point(593, 319);
             this.btOK.Name = "btOK";
             this.btOK.Size = new System.Drawing.Size(75, 23);
             this.btOK.TabIndex = 62;
@@ -101,7 +102,7 @@
             // lbAllergy
             // 
             this.lbAllergy.AutoSize = true;
-            this.lbAllergy.Location = new System.Drawing.Point(584, 21);
+            this.lbAllergy.Location = new System.Drawing.Point(615, 25);
             this.lbAllergy.Name = "lbAllergy";
             this.lbAllergy.Size = new System.Drawing.Size(38, 13);
             this.lbAllergy.TabIndex = 61;
@@ -118,7 +119,7 @@
             // 
             // tbObservation
             // 
-            this.tbObservation.Location = new System.Drawing.Point(152, 265);
+            this.tbObservation.Location = new System.Drawing.Point(152, 244);
             this.tbObservation.Multiline = true;
             this.tbObservation.Name = "tbObservation";
             this.tbObservation.Size = new System.Drawing.Size(228, 111);
@@ -127,7 +128,7 @@
             // lbObservations
             // 
             this.lbObservations.AutoSize = true;
-            this.lbObservations.Location = new System.Drawing.Point(77, 268);
+            this.lbObservations.Location = new System.Drawing.Point(227, 217);
             this.lbObservations.Name = "lbObservations";
             this.lbObservations.Size = new System.Drawing.Size(69, 13);
             this.lbObservations.TabIndex = 58;
@@ -135,7 +136,7 @@
             // 
             // tbCod
             // 
-            this.tbCod.Location = new System.Drawing.Point(153, 211);
+            this.tbCod.Location = new System.Drawing.Point(270, 176);
             this.tbCod.Name = "tbCod";
             this.tbCod.ReadOnly = true;
             this.tbCod.Size = new System.Drawing.Size(228, 20);
@@ -143,7 +144,7 @@
             // 
             // tbSex
             // 
-            this.tbSex.Location = new System.Drawing.Point(153, 175);
+            this.tbSex.Location = new System.Drawing.Point(7, 176);
             this.tbSex.Name = "tbSex";
             this.tbSex.Size = new System.Drawing.Size(228, 20);
             this.tbSex.TabIndex = 56;
@@ -151,7 +152,7 @@
             // 
             // tbAge
             // 
-            this.tbAge.Location = new System.Drawing.Point(156, 109);
+            this.tbAge.Location = new System.Drawing.Point(275, 123);
             this.tbAge.Name = "tbAge";
             this.tbAge.ReadOnly = true;
             this.tbAge.Size = new System.Drawing.Size(37, 20);
@@ -160,14 +161,14 @@
             // 
             // tbSurnames
             // 
-            this.tbSurnames.Location = new System.Drawing.Point(156, 73);
+            this.tbSurnames.Location = new System.Drawing.Point(270, 58);
             this.tbSurnames.Name = "tbSurnames";
             this.tbSurnames.Size = new System.Drawing.Size(228, 20);
             this.tbSurnames.TabIndex = 54;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(156, 42);
+            this.tbName.Location = new System.Drawing.Point(12, 58);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(228, 20);
             this.tbName.TabIndex = 53;
@@ -176,7 +177,7 @@
             // lbAge
             // 
             this.lbAge.AutoSize = true;
-            this.lbAge.Location = new System.Drawing.Point(123, 112);
+            this.lbAge.Location = new System.Drawing.Point(286, 107);
             this.lbAge.Name = "lbAge";
             this.lbAge.Size = new System.Drawing.Size(26, 13);
             this.lbAge.TabIndex = 52;
@@ -185,7 +186,7 @@
             // lbSex
             // 
             this.lbSex.AutoSize = true;
-            this.lbSex.Location = new System.Drawing.Point(121, 178);
+            this.lbSex.Location = new System.Drawing.Point(96, 160);
             this.lbSex.Name = "lbSex";
             this.lbSex.Size = new System.Drawing.Size(25, 13);
             this.lbSex.TabIndex = 51;
@@ -194,7 +195,7 @@
             // lbSurname
             // 
             this.lbSurname.AutoSize = true;
-            this.lbSurname.Location = new System.Drawing.Point(95, 76);
+            this.lbSurname.Location = new System.Drawing.Point(363, 42);
             this.lbSurname.Name = "lbSurname";
             this.lbSurname.Size = new System.Drawing.Size(54, 13);
             this.lbSurname.TabIndex = 50;
@@ -203,7 +204,7 @@
             // lbCod
             // 
             this.lbCod.AutoSize = true;
-            this.lbCod.Location = new System.Drawing.Point(120, 216);
+            this.lbCod.Location = new System.Drawing.Point(358, 160);
             this.lbCod.Name = "lbCod";
             this.lbCod.Size = new System.Drawing.Size(26, 13);
             this.lbCod.TabIndex = 49;
@@ -212,7 +213,7 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(114, 42);
+            this.lbName.Location = new System.Drawing.Point(101, 42);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(35, 13);
             this.lbName.TabIndex = 48;
@@ -224,7 +225,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTypeAge.AutoSize = true;
             this.lbTypeAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTypeAge.Location = new System.Drawing.Point(199, 112);
+            this.lbTypeAge.Location = new System.Drawing.Point(318, 126);
             this.lbTypeAge.Name = "lbTypeAge";
             this.lbTypeAge.Size = new System.Drawing.Size(0, 17);
             this.lbTypeAge.TabIndex = 72;
@@ -232,7 +233,7 @@
             // dtpAge
             // 
             this.dtpAge.Checked = false;
-            this.dtpAge.Location = new System.Drawing.Point(152, 141);
+            this.dtpAge.Location = new System.Drawing.Point(9, 126);
             this.dtpAge.Name = "dtpAge";
             this.dtpAge.ShowCheckBox = true;
             this.dtpAge.Size = new System.Drawing.Size(227, 20);
@@ -241,7 +242,7 @@
             // lbBirthday
             // 
             this.lbBirthday.AutoSize = true;
-            this.lbBirthday.Location = new System.Drawing.Point(101, 141);
+            this.lbBirthday.Location = new System.Drawing.Point(101, 110);
             this.lbBirthday.Name = "lbBirthday";
             this.lbBirthday.Size = new System.Drawing.Size(45, 13);
             this.lbBirthday.TabIndex = 73;
@@ -249,7 +250,7 @@
             // 
             // tbBirthday
             // 
-            this.tbBirthday.Location = new System.Drawing.Point(270, 109);
+            this.tbBirthday.Location = new System.Drawing.Point(389, 123);
             this.tbBirthday.Name = "tbBirthday";
             this.tbBirthday.ReadOnly = true;
             this.tbBirthday.Size = new System.Drawing.Size(109, 20);
@@ -262,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(799, 385);
+            this.ClientSize = new System.Drawing.Size(784, 381);
             this.Controls.Add(this.tbBirthday);
             this.Controls.Add(this.dtpAge);
             this.Controls.Add(this.lbBirthday);
@@ -284,6 +285,8 @@
             this.Controls.Add(this.lbCod);
             this.Controls.Add(this.lbName);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 420);
+            this.MinimumSize = new System.Drawing.Size(800, 420);
             this.Name = "FormEdit";
             this.Text = "BLIST - Edit Child";
             this.Load += new System.EventHandler(this.FormEdit_Load);

@@ -48,10 +48,6 @@ namespace ProyectoFinal
         }
 
         //Function to take a meal randomly
-        /*TO DO: Do not change the diet every time you close 
-         * and open the program, each day have one and
-         * do not repeat two days in a row
-         * */
         private string FoodForShow(List<Meal> l)
         {
             int num1 = 0, num2;

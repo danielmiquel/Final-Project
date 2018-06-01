@@ -34,16 +34,17 @@ namespace ProyectoFinal
          * */
         private void DietSpecificForChild_Load(object sender, EventArgs e)
         {
+            this.Text = "BLIST - " + language["DietA"];
             lbB.Text = language["Bre"];
             lbL.Text = language["Lunch"];
-            lbS.Text = language["Sanck"];
+            lbS.Text = language["Snack"];
             btChange.Text = language["Chan"];
 
             if (breakfast == null && lunch == null && snack == null)
             {
                 FoodSelection food = new FoodSelection(listC, listM);
                 Child c = listC.GetChildOfList(index);
-                lbInfoChild.Text = c.GetCod().ToString() + "--" + c.GetName() + " " + c.GetSurname();
+                lbInfoChild.Text = c.GetCod().ToString() + "  :  " + c.GetName() + " " + c.GetSurname();
                 tbBreak.Text = food.SelectFoodForChild(listM.GetBreakfastFood(), index);
                 tbLunch.Text = food.SelectFoodForChild(listM.GetLunchFood(), index);
                 tbSnack.Text = food.SelectFoodForChild(listM.GetSnackFood(), index);
